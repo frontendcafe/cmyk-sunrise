@@ -1,1 +1,3 @@
 # cmyk-sunrise
+
+## Integrantes
