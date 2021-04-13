@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,IAAI,CAAC;EACD,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,eAAe,EAAE,aAAa;EAC9B,WAAW,EAAE,MAAM;EACnB,UAAU,EAAE,KAAK;EACjB,MAAM,EAAE,CAAC;EACT,gBAAgB,EAAE,OAAO;CAC5B",
+    "sources": [
+        "main.scss",
+        "sass/_colors.scss",
+        "sass/_cards.scss"
+    ],
+    "names": [],
+    "file": "main.css"
+}
