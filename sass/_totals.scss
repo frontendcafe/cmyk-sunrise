@@ -1,0 +1,48 @@
+.totals {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2fr 3fr;
+  gap: 0px 0px;
+  width: 80%;
+  padding: 15px;
+  margin: 0 auto;
+
+  border-radius: 7px;
+  color: $font-color-primary;
+  -webkit-box-shadow: 3px 11px 23px -5px rgba(0, 0, 0, 0.59);
+  box-shadow: 3px 11px 23px -5px rgba(0, 0, 0, 0.59);
+}
+
+.totals__title {
+  grid-area: 1 / 1 / 2 / 3;
+  height: fit-content;
+
+  text-align: center;
+}
+
+.totals__money {
+  grid-area: 2 / 1 / 3 / 2;
+  height: fit-content;
+  padding-left: 25px;
+
+  text-align: left;
+  border-right: 1px solid rgba(0, 0, 0, 0.171);
+}
+
+.totals__units {
+  grid-area: 2 / 2 / 3 / 3;
+  height: fit-content;
+  padding-right: 25px;
+  
+  text-align: right;
+}
+
+.totals__quantity {
+  font-weight: bold;
+}
+
+.totals__heading,
+.totals__subtitle,
+.totals__quantity {
+  margin: 5px 0;
+}

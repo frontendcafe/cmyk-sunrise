@@ -23,6 +23,7 @@ window.onload = function () {
   const footerWraper = document.getElementById("footer-wraper");
 
   loadHtml('header','/components/header.html')
+  loadHtml('totals','/components/totals.html')
   loadHtml('content','/components/products.html')
   footerWraper.innerHTML = "<h1>aquí va el footer</h1>";
 };
