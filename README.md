@@ -1,11 +1,11 @@
 # cmyk-sunrise
 
 ## Integrantes
-
-## Credits
+* **sarganar** [sebastian]
+## Resources
 
 Coffee Sharing 5 illustration by Streamline
-
 Exercise Shirt illustration by Streamline
 
 https://streamlinehq.com
+
