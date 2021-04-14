@@ -1,12 +1,14 @@
-@import 'sass/_colors';
-@import 'sass/_cards';
+@import "sass/_colors";
+@import "sass/_cards";
+@import "sass/_header";
+@import "sass/_totals";
 
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    background-color: #F3F3FB;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f3f3fb;
 }
