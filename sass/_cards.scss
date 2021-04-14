@@ -1,0 +1,49 @@
+.products {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    
+}
+
+.products__card {
+    width: 7.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #F9FAFF;
+}
+
+.products__title {
+    margin: 0 0 .5rem 0;
+}
+
+.products__image {
+    width: 100%;
+    height: 40%;
+}
+
+.products__buttons {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width:100%;
+    background-color: #DEDBDC;
+}
+
+.products__button {
+    height: 2rem;
+    width: 2rem;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.products__amount {
+    margin: 0;
+}
