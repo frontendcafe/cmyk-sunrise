@@ -1,10 +1,11 @@
 {
     "version": 3,
-    "mappings": "AAGA,AAAA,IAAI,CAAC;EACD,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,eAAe,EAAE,aAAa;EAC9B,WAAW,EAAE,MAAM;EACnB,UAAU,EAAE,KAAK;EACjB,MAAM,EAAE,CAAC;EACT,gBAAgB,EAAE,OAAO;CAC5B",
+    "mappings": "AGAA,AAAA,OAAO,CAAA;EACH,MAAM,EAAC,mBAAmB;EAC1B,KAAK,EAAE,GAAG;CACb;;AAED,AAAA,cAAc,CAAA;EACV,SAAS,EAAE,IAAI;EACf,UAAU,EAAE,MAAM;CACrB;;AHJD,AAAA,IAAI,CAAC;EACH,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,eAAe,EAAE,aAAa;EAC9B,WAAW,EAAE,MAAM;EACnB,UAAU,EAAE,KAAK;EACjB,MAAM,EAAE,CAAC;EACT,gBAAgB,EAAE,OAAO;CAC1B",
     "sources": [
         "main.scss",
         "sass/_colors.scss",
-        "sass/_cards.scss"
+        "sass/_cards.scss",
+        "sass/_header.scss"
     ],
     "names": [],
     "file": "main.css"

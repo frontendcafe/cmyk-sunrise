@@ -1,3 +1,13 @@
+.header {
+  margin: 10px auto 10px auto;
+  width: 90%;
+}
+
+.header__title {
+  font-size: 25px;
+  text-align: center;
+}
+
 body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -14,6 +24,6 @@ body {
           align-items: center;
   min-height: 100vh;
   margin: 0;
-  background-color: #F3F3FB;
+  background-color: #f3f3fb;
 }
 /*# sourceMappingURL=main.css.map */
