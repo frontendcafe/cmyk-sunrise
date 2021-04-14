@@ -11,7 +11,7 @@
 }
 
 .products__card {
-  width: 7.8rem;
+  width: 8.8rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -26,7 +26,10 @@
       -ms-flex-align: center;
           align-items: center;
   padding: 1rem;
-  background-color: #F9FAFF;
+  background-color: #F1EAE5;
+  border-radius: 1rem;
+  -webkit-box-shadow: 0px 10px 20px rgba(44, 37, 210, 0.05);
+          box-shadow: 0px 10px 20px rgba(44, 37, 210, 0.05);
 }
 
 .products__title {
@@ -35,7 +38,15 @@
 
 .products__image {
   width: 100%;
-  height: 40%;
+  min-height: 6rem;
+}
+
+.products__price-title {
+  opacity: 50%;
+}
+
+.products__price-value {
+  font-weight: 700;
 }
 
 .products__buttons {
@@ -50,8 +61,15 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100%;
-  background-color: #DEDBDC;
+  width: 85%;
+  background-color: #27272C;
+  color: #FFFF;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.products__buttons:hover {
+  background-color: #FCB929;
 }
 
 .products__button {
@@ -62,6 +80,7 @@
   outline: none;
   font-weight: 500;
   font-size: 1.5rem;
+  color: inherit;
 }
 
 .products__amount {
@@ -84,7 +103,7 @@ body {
           align-items: center;
   min-height: 100vh;
   margin: 0;
-  background-color: #E0E7FF;
+  background-color: #A67648;
 }
 
 #content {
