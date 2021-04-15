@@ -1,3 +1,93 @@
+.products {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1rem;
+}
+
+.products__card {
+  width: 8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+  background-color: #00C39D;
+  border-radius: 1rem;
+  -webkit-box-shadow: 0px 10px 20px rgba(44, 37, 210, 0.05);
+          box-shadow: 0px 10px 20px rgba(44, 37, 210, 0.05);
+}
+
+.products__title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.3rem;
+}
+
+.products__image {
+  width: 100%;
+  min-height: 6rem;
+}
+
+.products__price-title {
+  opacity: 50%;
+}
+
+.products__price-value {
+  font-weight: 700;
+}
+
+.products__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 85%;
+  background-color: #FFFF;
+  color: #27272C;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.products__buttons:hover {
+  background-color: #FCB929;
+}
+
+.products__button {
+  height: 2rem;
+  width: 2rem;
+  background-color: #27272C;
+  color: #FFFF;
+  border: none;
+  outline: none;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.products__amount {
+  margin: 0;
+}
+
 .header {
   margin: 10px auto 10px auto;
   width: 90%;
@@ -145,6 +235,10 @@ body {
           align-items: center;
   min-height: 100vh;
   margin: 0;
-  background-color: #f3f3fb;
+  background-color: #27272C;
+}
+
+#content {
+  margin: 2rem 0;
 }
 /*# sourceMappingURL=main.css.map */
