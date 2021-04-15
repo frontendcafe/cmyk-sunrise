@@ -1,4 +1,4 @@
-import { sayHello, getProducts } from '/js/_products.js';
+import { getProducts } from '/js/_products.js';
 
 const loadHtml = async function (parentElementId, filePath) {
   const init = {
@@ -21,27 +21,14 @@ const loadHtml = async function (parentElementId, filePath) {
     });
 };
 
-function resolveAfter2Seconds() {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      resolve('resolved');
-    }, 2000);
-  });
-}
-
 window.onload = async function () {
-  console.log(sayHello());
 
   const footerWraper = document.getElementById("footer-wraper");
 
   loadHtml('header','/components/header.html')
   loadHtml('totals','/components/totals.html')
   await loadHtml('content','/components/products.html')
-  footerWraper.innerHTML = "<h1>aquí va el footer</h1>";
-
-  // console.log('calling');
-  // const result = await resolveAfter2Seconds();
-  // console.log(result);
+  footerWraper.innerHTML = "<h1>aquí va el footer</h1>"; 
 
   getProducts()
 };

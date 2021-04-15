@@ -1,9 +1,5 @@
 import { products } from "/js/_mockProducts.js";
 
-export function sayHello() {
-  return products;
-}
-
 export function getProducts() {
   const section = document.getElementById("section-produts");
   section.innerHTML = "";
