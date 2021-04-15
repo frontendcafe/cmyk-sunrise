@@ -12,13 +12,14 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: $light;
+  background-color: $green;
   border-radius: 1rem;
   box-shadow: 0px 10px 20px rgba(44, 37, 210, 0.05);
 }
 
 .products__title {
   margin: 0 0 0.5rem 0;
+  font-size: 1.3rem;
 }
 
 .products__image {
@@ -40,8 +41,8 @@
   justify-content: space-between;
   align-items: center;
   width: 85%;
-  background-color: $dark;
-  color: $white;
+  background-color: $white;
+  color: $dark;
   border-radius: 2rem;
   overflow: hidden;
 
@@ -53,12 +54,12 @@
 .products__button {
   height: 2rem;
   width: 2rem;
-  background-color: inherit;
+  background-color: $dark;
+  color: $white;
   border: none;
   outline: none;
   font-weight: 500;
   font-size: 1.5rem;
-  color: inherit;
 }
 
 .products__amount {

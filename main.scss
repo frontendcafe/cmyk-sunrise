@@ -10,5 +10,9 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
-  background-color: #f3f3fb;
+  background-color: $dark;
+}
+
+#content {
+  margin: 2rem 0;
 }
