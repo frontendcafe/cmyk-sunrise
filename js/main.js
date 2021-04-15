@@ -20,10 +20,10 @@ const loadHtml = function (parentElementId, filePath) {
 };
 
 window.onload = function () {
-  const navbarWraper = document.getElementById("navbar-wraper");
   const footerWraper = document.getElementById("footer-wraper");
 
-  navbarWraper.innerHTML = "<h1>aquí va el navbar</h1>";
+  loadHtml('header','/components/header.html')
+  loadHtml('totals','/components/totals.html')
   loadHtml('content','/components/products.html')
   footerWraper.innerHTML = "<h1>aquí va el footer</h1>";
 };
