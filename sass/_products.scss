@@ -1,0 +1,66 @@
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.products__card {
+  width: 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: $light;
+  border-radius: 1rem;
+  box-shadow: 0px 10px 20px rgba(44, 37, 210, 0.05);
+}
+
+.products__title {
+  margin: 0 0 0.5rem 0;
+}
+
+.products__image {
+  width: 100%;
+  min-height: 6rem;
+}
+
+.products__price-title {
+  opacity: 50%;
+}
+
+.products__price-value {
+  font-weight: 700;
+}
+
+.products__buttons {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+  background-color: $dark;
+  color: $white;
+  border-radius: 2rem;
+  overflow: hidden;
+
+  &:hover {
+    background-color: $yellow;
+  }
+}
+
+.products__button {
+  height: 2rem;
+  width: 2rem;
+  background-color: inherit;
+  border: none;
+  outline: none;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: inherit;
+}
+
+.products__amount {
+  margin: 0;
+}
