@@ -22,7 +22,18 @@ export function getProducts() {
   // add events to increment and decrement buttons
   const productsCard = document.querySelectorAll(".products__card");
 
-  productsCard.forEach(product => product.addEventListener('click', event => {
-    console.log(product);
-  }));
+  productsCard.forEach((product) => {
+    const decreaseButton = product.querySelector(".products__decrease");
+    const amount = product.querySelector(".products__amount");
+    const increaseButton = product.querySelector(".products__increase");
+
+    decreaseButton.addEventListener("click", () => {
+      amount.textContent =
+        Number(amount.textContent) === 0 ? 0 : Number(amount.textContent) - 1;
+    });
+
+    increaseButton.addEventListener("click", () => {
+      amount.textContent = Number(amount.textContent) + 1;
+    });
+  });
 }

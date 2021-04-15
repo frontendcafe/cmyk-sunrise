@@ -65,3 +65,16 @@
 .products__amount {
   margin: 0;
 }
+
+.products__register-sale {
+  width: 90%;
+  margin: 2rem 0;
+  position: fixed;
+  bottom: 0;
+  background-color: $blue;
+  color: $white;
+  border: none;
+  border-radius: 0.5rem;
+  height: 3rem;
+  font-size: 1rem;
+}
