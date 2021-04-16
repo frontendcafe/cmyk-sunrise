@@ -3,3 +3,5 @@
 ## Integrantes
 
 * **sarganar** [sebastian]
+
+* **Mr.R** [rhonald]
