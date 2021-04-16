@@ -120,7 +120,7 @@
   color: #27272C;
 }
 
-.totals__title {
+.totals__box--title {
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   -ms-grid-column: 1;
@@ -132,7 +132,7 @@
   text-align: center;
 }
 
-.totals__money {
+.totals__box--money {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   -ms-grid-column: 1;
@@ -146,7 +146,7 @@
   border-right: 1px solid rgba(0, 0, 0, 0.171);
 }
 
-.totals__units {
+.totals__box--units {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   -ms-grid-column: 2;
@@ -204,12 +204,12 @@
     color: #27272C;
     border-radius: 12px;
   }
-  .totals__title2 {
+  .totals__subtitle--desktop {
     padding: 0 20px;
     text-align: center;
     font-size: 18px;
   }
-  .totals__quantity2 {
+  .totals__quantity--desktop {
     padding: 0 20px;
     font-size: 25px;
     font-weight: bold;
