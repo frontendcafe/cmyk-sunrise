@@ -1,7 +1,6 @@
-$shadow-box: 3px 11px 23px -5px rgba(0, 0, 0, 0.59);
-
 .totals {
   width: 100vw;
+  margin-top: 20px;
 }
 .totals__mobile {
   display: grid;
@@ -13,10 +12,8 @@ $shadow-box: 3px 11px 23px -5px rgba(0, 0, 0, 0.59);
   margin: 0 auto;
 
   border-radius: 7px;
-  background-color: white;
-  color: $font-color-primary;
-  -webkit-box-shadow: $shadow-box;
-  box-shadow: $shadow-box;
+  background-color: $green;
+  color: $dark;
 }
 
 .totals__title {
@@ -66,7 +63,6 @@ $shadow-box: 3px 11px 23px -5px rgba(0, 0, 0, 0.59);
     gap: 20px;
     grid-template-columns: repeat(3, 1fr);
 
-    // background-color: rgba(205, 92, 92, 0.103);
     width: 80%;
     height: fit-content;
     margin: 0 auto;
@@ -77,11 +73,9 @@ $shadow-box: 3px 11px 23px -5px rgba(0, 0, 0, 0.59);
     align-items: center;
     height: 120px;
 
-    background-color: white;
-    color: $font-color-primary;
+    background-color: $green;
+    color: $dark;
     border-radius: 12px;
-    -webkit-box-shadow: $shadow-box;
-    box-shadow: $shadow-box;
   }
 
   .totals__title2 {

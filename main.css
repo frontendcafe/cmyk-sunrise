@@ -101,6 +101,7 @@
 
 .totals {
   width: 100vw;
+  margin-top: 20px;
 }
 
 .totals__mobile {
@@ -115,10 +116,8 @@
   padding: 15px;
   margin: 0 auto;
   border-radius: 7px;
-  background-color: white;
-  color: #001026;
-  -webkit-box-shadow: 3px 11px 23px -5px rgba(0, 0, 0, 0.59);
-  box-shadow: 3px 11px 23px -5px rgba(0, 0, 0, 0.59);
+  background-color: #00C39D;
+  color: #27272C;
 }
 
 .totals__title {
@@ -201,11 +200,9 @@
         -ms-flex-align: center;
             align-items: center;
     height: 120px;
-    background-color: white;
-    color: #001026;
+    background-color: #00C39D;
+    color: #27272C;
     border-radius: 12px;
-    -webkit-box-shadow: 3px 11px 23px -5px rgba(0, 0, 0, 0.59);
-    box-shadow: 3px 11px 23px -5px rgba(0, 0, 0, 0.59);
   }
   .totals__title2 {
     padding: 0 20px;
