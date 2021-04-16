@@ -12,11 +12,53 @@
 
     <section id="totals" class="totals"></section>
 
+    <form id="todo_form">
+      <div>
+        <input type="text" id="todo_name" placeholder="Nombre de tarea" />
+      </div>
+      <div>
+        <input type="url" id="todo_url" placeholder="URL (opcional)" />
+      </div>
+      <div>
+        <textarea
+          rows="4"
+          id="todo_description"
+          placeholder="Descripción"
+        ></textarea>
+      </div>
+      <button id="btn_todo_form">Guardar</button>
+    </form>
     <main id="content"></main>
 
     <div id="footer-wraper">
       <!-- will load common footer with js in load method -->
     </div>
     <script type="module" src="/js/main.js"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyCJubctYFQYUlQeKL1w529wfEAcW_NthgM",
+        authDomain: "cmyksunrise.firebaseapp.com",
+        projectId: "cmyksunrise",
+        storageBucket: "cmyksunrise.appspot.com",
+        messagingSenderId: "758721495761",
+        appId: "1:758721495761:web:6c02f7d2c75831831dbbf0",
+        measurementId: "G-YJPKCN2JKS",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      // firebase.analytics();
+    </script>
+
+    <script src="/js/_getDataForm.js"></script>
   </body>
 </html>
