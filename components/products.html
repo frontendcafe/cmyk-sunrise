@@ -1,1 +1,20 @@
-<h1>listado de productos </h1>
+<section id="section-produts" class="products">
+  <!-- will load the products with js -->
+</section>
+
+<template id="template-product-card">
+  <article class="products__card">
+    <p class="products__title">Coffe</p>
+    <!-- TODO: Use picture tag and default image -->
+    <img class="products__image" src="images/coffe.png" alt="product 1" />
+    <p class="products__price">
+      <span class="products__price-title">Precio</span>
+      $<span class="products__price-value"></span>
+    </p>
+    <div class="products__buttons">
+      <button class="products__button products__decrease">-</button>
+      <p class="products__amount">0</p>
+      <button class="products__button products__increase">+</button>
+    </div>
+  </article>
+</template>

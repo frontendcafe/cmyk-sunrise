@@ -1,5 +1,5 @@
 @import "sass/_colors";
-@import "sass/_cards";
+@import 'sass/_products';
 @import "sass/_header";
 @import "sass/_totals";
 
@@ -10,5 +10,9 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
-  background-color: #f3f3fb;
+  background-color: $dark;
+}
+
+#content {
+  margin: 2rem 0;
 }

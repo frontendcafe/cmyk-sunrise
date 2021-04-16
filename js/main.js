@@ -1,4 +1,6 @@
-const loadHtml = function (parentElementId, filePath) {
+import { getProducts } from '/js/_products.js';
+
+const loadHtml = async function (parentElementId, filePath) {
   const init = {
     method: "GET",
     headers: { "Content-Type": "text/html" },
@@ -6,7 +8,7 @@ const loadHtml = function (parentElementId, filePath) {
     cache: "default",
   };
   const req = new Request(filePath, init);
-  fetch(req)
+  await fetch(req)
     .then(function (response) {
       return response.text();
     })
@@ -19,11 +21,14 @@ const loadHtml = function (parentElementId, filePath) {
     });
 };
 
-window.onload = function () {
+window.onload = async function () {
+
   const footerWraper = document.getElementById("footer-wraper");
 
   loadHtml('header','/components/header.html')
   loadHtml('totals','/components/totals.html')
-  loadHtml('content','/components/products.html')
-  footerWraper.innerHTML = "<h1>aquí va el footer</h1>";
+  await loadHtml('content','/components/products.html')
+  footerWraper.innerHTML = "<h1>aquí va el footer</h1>"; 
+
+  getProducts()
 };
