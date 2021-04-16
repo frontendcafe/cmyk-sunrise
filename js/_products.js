@@ -1,4 +1,4 @@
-import { products } from '/js/_mockProducts.js';
+const db = firebase.firestore();
 
 function getItemsToSale() {
   const productsCard = document.querySelectorAll('.products__card');
@@ -28,19 +28,24 @@ export function getProducts() {
   section.innerHTML = '';
   const template = document.getElementById('template-product-card');
 
-  products.forEach((product) => {
-    const productClone = template.content.cloneNode(true);
+  db.collection('products')
+    .get()
+    .then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        const productClone = template.content.cloneNode(true);
 
-    const title = productClone.querySelector('.products__title');
-    const image = productClone.querySelector('.products__image');
-    const price = productClone.querySelector('.products__price-value');
+        const title = productClone.querySelector('.products__title');
+        const image = productClone.querySelector('.products__image');
+        const price = productClone.querySelector('.products__price-value');
 
-    title.textContent = product.name;
-    image.src = product.imageUrl;
-    price.textContent = product.price;
+        title.textContent = doc.data().name;
+        image.src = doc.data().imageUrl;
+        price.textContent = doc.data().price;
 
-    section.appendChild(productClone);
-  });
+        section.appendChild(productClone);
+      });
+    });
 
   // add events to increment and decrement buttons
   const productsCard = document.querySelectorAll('.products__card');

@@ -108,6 +108,7 @@
   display: -ms-grid;
   display: grid;
   place-items: center;
+  display: none;
 }
 
 .confirm-sale__div {

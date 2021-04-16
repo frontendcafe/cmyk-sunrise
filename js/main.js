@@ -2,10 +2,10 @@ import { onLoadProducts, getProducts } from '/js/_products.js';
 
 const loadHtml = async function (parentElementId, filePath) {
   const init = {
-    method: "GET",
-    headers: { "Content-Type": "text/html" },
-    mode: "cors",
-    cache: "default",
+    method: 'GET',
+    headers: { 'Content-Type': 'text/html' },
+    mode: 'cors',
+    cache: 'default',
   };
   const req = new Request(filePath, init);
   await fetch(req)
@@ -14,26 +14,24 @@ const loadHtml = async function (parentElementId, filePath) {
     })
     .then(function (body) {
       // Replace `#` char in case the function gets called `querySelector` or jQuery style
-      if (parentElementId.startsWith("#")) {
-        parentElementId.replace("#", "");
+      if (parentElementId.startsWith('#')) {
+        parentElementId.replace('#', '');
       }
       document.getElementById(parentElementId).innerHTML = body;
     });
 };
 
 window.onload = async function () {
+  const footerWraper = document.getElementById('footer-wraper');
 
-  const footerWraper = document.getElementById("footer-wraper");
-
-  loadHtml('header','/components/header.html')
-  loadHtml('totals','/components/totals.html')
+  loadHtml('header', '/components/header.html');
+  loadHtml('totals', '/components/totals.html');
 
   // Products //
-  await loadHtml('content','/components/products.html')
-  onLoadProducts()
-  getProducts()
+  await loadHtml('content', '/components/products.html');
+  onLoadProducts();
+  getProducts();
 
   // Footer
-  footerWraper.innerHTML = "<h1>aquí va el footer</h1>"; 
-
+  footerWraper.innerHTML = '<h1>aquí va el footer</h1>';
 };
