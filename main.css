@@ -101,6 +101,32 @@
   font-size: 1rem;
 }
 
+#section-confirm-sale {
+  position: absolute;
+  top: 2rem;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.confirm-sale__div {
+  background-color: #FFFF;
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px;
+  text-align: center;
+}
+
 .header {
   margin: 10px auto 10px auto;
   width: 90%;
@@ -254,5 +280,6 @@ body {
 
 #content {
   margin: 2rem 0;
+  position: relative;
 }
 /*# sourceMappingURL=main.css.map */

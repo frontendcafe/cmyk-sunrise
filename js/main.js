@@ -1,4 +1,4 @@
-import { getProducts } from '/js/_products.js';
+import { onLoadProducts, getProducts } from '/js/_products.js';
 
 const loadHtml = async function (parentElementId, filePath) {
   const init = {
@@ -27,8 +27,13 @@ window.onload = async function () {
 
   loadHtml('header','/components/header.html')
   loadHtml('totals','/components/totals.html')
+
+  // Products //
   await loadHtml('content','/components/products.html')
+  onLoadProducts()
+  getProducts()
+
+  // Footer
   footerWraper.innerHTML = "<h1>aquí va el footer</h1>"; 
 
-  getProducts()
 };
