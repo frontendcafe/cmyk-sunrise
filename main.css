@@ -89,9 +89,9 @@
 }
 
 .header {
-  margin: 10px auto 10px auto;
-  width: 90%;
-  color: #001026;
+  width: 100vw;
+  background-color: #235fac;
+  color: #F1EAE5;
 }
 
 .header__title {
