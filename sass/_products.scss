@@ -65,3 +65,37 @@
 .products__amount {
   margin: 0;
 }
+
+.products__register-sale {
+  width: 90%;
+  margin: 2rem 0;
+  position: fixed;
+  bottom: 0;
+  background-color: $blue;
+  color: $white;
+  border: none;
+  border-radius: 0.5rem;
+  height: 3rem;
+  font-size: 1rem;
+
+}
+
+#section-confirm-sale {
+  position: absolute;
+  top: 2rem;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  display: none;
+}
+
+.confirm-sale__div {
+  background-color: $white;
+  width: 90%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+  text-align: center;
+}
+
