@@ -26,7 +26,7 @@
       -ms-flex-align: center;
           align-items: center;
   padding: 1rem;
-  background-color: #00C39D;
+  background-color: #00c39d;
   border-radius: 1rem;
   -webkit-box-shadow: 0px 10px 20px rgba(44, 37, 210, 0.05);
           box-shadow: 0px 10px 20px rgba(44, 37, 210, 0.05);
@@ -63,21 +63,21 @@
       -ms-flex-align: center;
           align-items: center;
   width: 85%;
-  background-color: #FFFF;
-  color: #27272C;
+  background-color: #ffff;
+  color: #27272c;
   border-radius: 2rem;
   overflow: hidden;
 }
 
 .products__buttons:hover {
-  background-color: #FCB929;
+  background-color: #fcb929;
 }
 
 .products__button {
   height: 2rem;
   width: 2rem;
-  background-color: #27272C;
-  color: #FFFF;
+  background-color: #27272c;
+  color: #ffff;
   border: none;
   outline: none;
   font-weight: 500;
@@ -93,8 +93,8 @@
   margin: 2rem 0;
   position: fixed;
   bottom: 0;
-  background-color: #235FAC;
-  color: #FFFF;
+  background-color: #235fac;
+  color: #ffff;
   border: none;
   border-radius: 0.5rem;
   height: 3rem;
@@ -112,7 +112,7 @@
 }
 
 .confirm-sale__div {
-  background-color: #FFFF;
+  background-color: #ffff;
   width: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -275,7 +275,7 @@ body {
           align-items: center;
   min-height: 100vh;
   margin: 0;
-  background-color: #27272C;
+  background-color: #27272c;
   padding: 5%;
 }
 
