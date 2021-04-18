@@ -1,10 +1,36 @@
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+
   width: 100vw;
+  height: 6.5rem;
+  display: flex;
+  align-items: baseline;
+
   background-color: $blue;
   color: $light;
-}
 
-.header__title {
-  font-size: 2.5rem;
-  text-align: center;
+  &__left {
+    flex: 0 0 4rem;
+
+    text-align: center;
+    // align-self: center;
+  }
+
+  &__right {
+    flex: 1;
+    padding-right: 10%;
+    text-align: center;
+  }
+
+  &__icon{
+    font-size: 2rem;
+  }
+
+  &__title {
+    align-self: center;
+    font-size: 2.5rem;
+  }
 }
