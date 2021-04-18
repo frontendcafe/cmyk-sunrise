@@ -11,7 +11,7 @@
 }
 
 .products__card {
-  width: 8rem;
+  width: 10rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -88,7 +88,7 @@
   margin: 0;
 }
 
-.products__register-sale {
+.register-sale-button {
   width: 90%;
   margin: 2rem 0;
   position: fixed;
@@ -101,7 +101,7 @@
   font-size: 1rem;
 }
 
-#section-confirm-sale {
+.confirm-sale {
   position: absolute;
   top: 2rem;
   width: 100%;
@@ -131,7 +131,7 @@
 .header {
   width: 100vw;
   background-color: #235fac;
-  color: #F1EAE5;
+  color: #f1eae5;
 }
 
 .header__title {
@@ -257,6 +257,18 @@
     font-size: 25px;
     font-weight: bold;
   }
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 body {

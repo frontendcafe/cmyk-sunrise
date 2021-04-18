@@ -1,7 +1,16 @@
-@import "sass/_colors";
+@import 'sass/_colors';
 @import 'sass/_products';
-@import "sass/_header";
-@import "sass/_totals";
+@import 'sass/_header';
+@import 'sass/_totals';
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 
 body {
   display: flex;

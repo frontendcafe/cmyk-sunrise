@@ -22,7 +22,6 @@ const loadHtml = async function (parentElementId, filePath) {
 };
 
 window.onload = async function () {
-  const footerWraper = document.getElementById('footer-wraper');
 
   loadHtml('header', '/components/header.html');
   loadHtml('totals', '/components/totals.html');
@@ -32,6 +31,4 @@ window.onload = async function () {
   onLoadProducts();
   getProducts();
 
-  // Footer
-  footerWraper.innerHTML = '<h1>aquí va el footer</h1>';
 };
