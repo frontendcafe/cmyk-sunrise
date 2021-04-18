@@ -5,13 +5,12 @@ const formatter = new Intl.NumberFormat('es-AR', {
   currency: 'ARS',
 });
 
-export function getTotals() {
-  console.log('[ getTotals() ]',totals);
+// renderTotals: inyects the values in both mobile and desktop divs:
+export function renderTotalsValues() {
+  console.log('[ renderTotals() ]', totals);
   const { totalAmount, totalSales, units } = totals;
 
   const uiTotals = document.querySelector('.totals');
-
-  // inyects the values in both mobile and desktop divs:
 
   const uiTotalAmount = uiTotals.querySelectorAll('.totals__total-amount');
   uiTotalAmount.forEach((element) => (element.textContent = formatter.format(totalAmount)));
@@ -20,5 +19,5 @@ export function getTotals() {
   uiUnits.forEach((element) => (element.textContent = units));
 
   const uiTotalSales = uiTotals.querySelector('.totals__total-sales');
-  uiTotalSales.textContent = formatter.format(totalSales);
+  uiTotalSales.textContent = totalSales;
 }
