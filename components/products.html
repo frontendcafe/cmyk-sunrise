@@ -1,10 +1,52 @@
 <section id="section-produts" class="products">
   <!-- will load the products with js -->
 </section>
+<section id="section-confirm-sale">
+  <div class="confirm-sale__div">
+    <h3>¿Confirmar venta?</h3>
+    <p class="confirm-sale__description">
+      La venta quedará registrada con los itms cargados hasta el momento
+    </p>
+
+    <table border="1" class="confirm-sale__table" aria-label="products to sale">
+      <tr>
+        <th id="name">Producto</th>
+        <th id="amount">Cantidad</th>
+        <th id="total">Total</th>
+      </tr>
+      <tr>
+        <td headers="name">Producto #1</td>
+        <td headers="amount">2</td>
+        <td headers="total">$10,00</td>
+      </tr>
+      <tr>
+        <td headers="name">Producto #2</td>
+        <td headers="amount">4</td>
+        <td headers="total">$545,00</td>
+      </tr>
+      <tr>
+        <td headers="name">Producto #3</td>
+        <td headers="amount">5</td>
+        <td headers="total">$354,00</td>
+      </tr>
+      <tr>
+        <td colspan="2">Total</td>
+        <td>$909,00</td>
+      </tr>
+    </table>
+
+    <div class="confirm-sale__buttons">
+      <button class="confirm-sale__buttons-cancel">Cancelar</button>
+      <button class="confirm-sale__buttons-confirm">Confirmar</button>
+    </div>
+  </div>
+</section>
+
+<button id="register-sale" class="products__register-sale">Registrar venta</button>
 
 <template id="template-product-card">
   <article class="products__card">
-    <p class="products__title">Coffe</p>
+    <p class="products__title"></p>
     <!-- TODO: Use picture tag and default image -->
     <img class="products__image" src="images/coffe.png" alt="product 1" />
     <p class="products__price">

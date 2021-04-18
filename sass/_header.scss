@@ -1,12 +1,10 @@
-$font-color-primary: rgba(0, 16, 38, 1);
-
 .header {
-  margin: 10px auto 10px auto;
-  width: 90%;
-  color: $font-color-primary;
+  width: 100vw;
+  background-color: $blue;
+  color: $light;
 }
 
 .header__title {
-  font-size: 25px;
+  font-size: 2.5rem;
   text-align: center;
 }

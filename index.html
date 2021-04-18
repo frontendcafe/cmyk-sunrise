@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>FrontendCafe Store</title>
+    <link rel="shortcut icon" type="image/jpg" href="images/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
   </head>
@@ -11,12 +12,22 @@
     <header id="header" class="header"></header>
 
     <section id="totals" class="totals"></section>
-
+    
     <main id="content"></main>
 
     <div id="footer-wraper">
       <!-- will load common footer with js in load method -->
     </div>
     <script type="module" src="/js/main.js"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+
+    <script type='text/javascript' src='config.js'></script>
+
   </body>
 </html>

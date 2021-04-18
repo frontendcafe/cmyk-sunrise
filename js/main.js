@@ -27,9 +27,12 @@ window.onload = async function () {
 
   await loadHtml('header', '/components/header.html');
   await loadHtml('totals', '/components/totals.html');
-  await loadHtml('content', '/components/products.html');
-  footerWraper.innerHTML = '<h1>aquí va el footer</h1>';
 
-  getTotals();
+  // Products //
+  await loadHtml('content', '/components/products.html');
+  onLoadProducts();
   getProducts();
+
+  // Footer
+  footerWraper.innerHTML = '<h1>aquí va el footer</h1>';
 };

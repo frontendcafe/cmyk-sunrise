@@ -1,7 +1,11 @@
-@import "sass/_colors";
+@import 'sass/_colors';
 @import 'sass/_products';
-@import "sass/_header";
-@import "sass/_totals";
+@import 'sass/_header';
+@import 'sass/_totals';
+
+html {
+  font-size: 62.5%;
+}
 
 body {
   display: flex;
@@ -11,8 +15,12 @@ body {
   min-height: 100vh;
   margin: 0;
   background-color: $dark;
+  padding: 5%;
+  font-size: 16px;
 }
 
 #content {
-  margin: 2rem 0;
+  margin: 3.2rem 0;
+  position: relative;
+  width: 100%;
 }
