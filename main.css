@@ -4,15 +4,18 @@
   left: 0;
   height: 100vh;
   width: 100vh;
+  z-index: 999;
   background-color: #27272c;
+  -webkit-animation: fadeInFromNone 1s ease-out;
+          animation: fadeInFromNone 1s ease-out;
 }
 
 .landing__container {
   position: relative;
   width: 100vw;
   height: 100vh;
-  background: -webkit-gradient(linear, left top, left bottom, from(#00C39D), to(#181B1B));
-  background: linear-gradient(#00C39D, #181B1B);
+  background: -webkit-gradient(linear, left top, left bottom, from(#00c39d), to(#181b1b));
+  background: linear-gradient(#00c39d, #181b1b);
 }
 
 .landing__central {
@@ -50,6 +53,66 @@
   right: 0;
   width: 56%;
   height: 100%;
+}
+
+@-webkit-keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeOutFromBlock {
+  0% {
+    display: block;
+    opacity: 1;
+  }
+  1% {
+    display: block;
+    opacity: 1;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOutFromBlock {
+  0% {
+    display: block;
+    opacity: 1;
+  }
+  1% {
+    display: block;
+    opacity: 1;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+  }
 }
 
 .products {
@@ -186,12 +249,10 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999;
+  z-index: 10;
   width: 100vw;
   height: 6.5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
@@ -228,6 +289,7 @@
 .totals {
   width: 100vw;
   margin-top: 7rem;
+  display: none;
 }
 
 .totals__mobile {

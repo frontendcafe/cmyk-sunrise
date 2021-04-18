@@ -4,14 +4,16 @@
   left: 0;
   height: 100vh;
   width: 100vh;
+  z-index: 999;
 
   background-color: $dark;
+  animation: fadeInFromNone 1s ease-out;
 
   &__container {
     position: relative;
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(#00C39D,  #181B1B);
+    background: linear-gradient(#00c39d, #181b1b);
   }
 
   &__central {
@@ -37,15 +39,49 @@
     color: $light;
   }
 
-  &__wave--one{
+  &__wave--one {
     width: 55%;
     height: 100%;
   }
-  &__wave--two{
+  &__wave--two {
     position: absolute;
-    top:0;
-    right: 0;    
+    top: 0;
+    right: 0;
     width: 56%;
     height: 100%;
+  }
+}
+
+@keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  1% {
+    display: block;
+    opacity: 0;
+  }
+
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutFromBlock {
+  0% {
+    display: block;
+    opacity: 1;
+  }
+
+  1% {
+    display: block;
+    opacity: 1;
+  }
+
+  100% {
+    display: none;
+    opacity: 0;
   }
 }

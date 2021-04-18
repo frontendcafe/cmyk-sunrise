@@ -23,18 +23,36 @@ const loadHtml = async function (parentElementId, filePath) {
 };
 
 window.onload = async function () {
+  await loadHtml('landing', '/components/landing.html');
+  await wait(3000);
+
+  // setTimeout(async () => {
+  const divLanding = document.querySelector('.landing');
+  divLanding.style.animation = 'fadeOutFromBlock 0.5s ease-out';
+  await wait(500);
+  divLanding.style.display = 'none';
+
   const footerWraper = document.getElementById('footer-wraper');
 
-  loadHtml('landing','/components/landing.html');
+  await loadHtml('header', '/components/header.html');
+  await loadHtml('totals', '/components/totals.html');
+  document.querySelector('.header').style.display = 'flex';
+  document.querySelector('.totals').style.display = 'block';
+  
+  renderTotalsValues();
 
-  // loadHtml('header', '/components/header.html');
-  // loadHtml('totals', '/components/totals.html');
-  // renderTotalsValues();
   // // Products //
-  // await loadHtml('content', '/components/products.html');
-  // onLoadProducts();
-  // getProducts();
+  await loadHtml('content', '/components/products.html');
+  onLoadProducts();
+  getProducts();
 
-  // // Footer
-  // footerWraper.innerHTML = '<h1>aquí va el footer</h1>';
+  // Footer
+  footerWraper.innerHTML = '<h1>aquí va el footer</h1>';
+  // }, 3000);
 };
+
+async function wait(ms) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+}
