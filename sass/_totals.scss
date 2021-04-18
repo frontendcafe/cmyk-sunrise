@@ -1,7 +1,8 @@
+$shadow-box: 0.3rem 1.1rem 2.3rem -0.5rem rgba(0, 0, 0, 0.59);
+$font-color-primary: rgba(0, 16, 38, 1);
 
 .totals {
   width: 100vw;
-  margin-top: 20px;
 }
 .totals__mobile {
   display: grid;
@@ -13,18 +14,20 @@
   margin: 0 auto;
 
   border-radius: 0.7rem;
-  background-color: $green;
-  color: $dark;
+  background-color: white;
+  color: $font-color-primary;
+  -webkit-box-shadow: $shadow-box;
+  box-shadow: $shadow-box;
 }
 
-.totals__box--title {
+.totals__title {
   grid-area: 1 / 1 / 2 / 3;
   height: fit-content;
 
   text-align: center;
 }
 
-.totals__box--money {
+.totals__money {
   grid-area: 2 / 1 / 3 / 2;
   height: fit-content;
   padding-left: 2.5rem;
@@ -33,7 +36,7 @@
   border-right: 0.1rem solid rgba(0, 0, 0, 0.171);
 }
 
-.totals__box--units {
+.totals__units {
   grid-area: 2 / 2 / 3 / 3;
   height: fit-content;
   padding-right: 2.5rem;
@@ -64,6 +67,7 @@
     gap: 2rem;
     grid-template-columns: repeat(3, 1fr);
 
+    // background-color: rgba(205, 92, 92, 0.103);
     width: 80%;
     height: fit-content;
     margin: 0 auto;
@@ -74,18 +78,20 @@
     align-items: center;
     height: 12rem;
 
-    background-color: $green;
-    color: $dark;
+    background-color: white;
+    color: $font-color-primary;
     border-radius: 1.2rem;
+    -webkit-box-shadow: $shadow-box;
+    box-shadow: $shadow-box;
   }
 
-  .totals__subtitle--desktop {
+  .totals__title2 {
     padding: 0 2rem;
     text-align: center;
     font-size: 1.8rem;
   }
 
-  .totals__quantity--desktop {
+  .totals__quantity2 {
     padding: 0 2rem;
     font-size: 2.5rem;
     font-weight: bold;
