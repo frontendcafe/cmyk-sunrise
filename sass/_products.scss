@@ -5,13 +5,13 @@
   gap: 1.6rem;
 
   &__card {
-    width: 12.8rem;
+    width: 15.8rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding: 1.6rem;
-    background-color: $green;
+    background-color: $primary;
     border-radius: 1.6rem;
     box-shadow: 0rem 1rem 2rem rgba(44, 37, 210, 0.05);
   }
@@ -46,7 +46,7 @@
     overflow: hidden;
 
     &:hover {
-      background-color: $yellow;
+      background-color: $secondary;
     }
   }
 
@@ -71,7 +71,7 @@
   margin: 3.2rem 0;
   position: fixed;
   bottom: 0;
-  background-color: $blue;
+  background-color: $secondary;
   color: $white;
   border: none;
   border-radius: 0.8rem;
