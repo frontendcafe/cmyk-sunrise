@@ -1,3 +1,57 @@
+.landing {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vh;
+  background-color: #27272c;
+}
+
+.landing__container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(#00C39D), to(#181B1B));
+  background: linear-gradient(#00C39D, #181B1B);
+}
+
+.landing__central {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 20rem;
+  height: 20rem;
+  z-index: 10;
+}
+
+.landing__picture {
+  width: 100%;
+  height: 100%;
+}
+
+.landing__text-box {
+  position: absolute;
+  top: 65%;
+  left: 2rem;
+  width: 10rem;
+  color: #f1eae5;
+}
+
+.landing__wave--one {
+  width: 55%;
+  height: 100%;
+}
+
+.landing__wave--two {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 56%;
+  height: 100%;
+}
+
 .products {
   display: -webkit-box;
   display: -ms-flexbox;

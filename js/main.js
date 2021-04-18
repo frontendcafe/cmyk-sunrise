@@ -24,14 +24,16 @@ const loadHtml = async function (parentElementId, filePath) {
 window.onload = async function () {
   const footerWraper = document.getElementById('footer-wraper');
 
-  loadHtml('header', '/components/header.html');
-  loadHtml('totals', '/components/totals.html');
+  loadHtml('landing','/components/landing.html');
 
-  // Products //
-  await loadHtml('content', '/components/products.html');
-  onLoadProducts();
-  getProducts();
+  // loadHtml('header', '/components/header.html');
+  // loadHtml('totals', '/components/totals.html');
 
-  // Footer
-  footerWraper.innerHTML = '<h1>aquí va el footer</h1>';
+  // // Products //
+  // await loadHtml('content', '/components/products.html');
+  // onLoadProducts();
+  // getProducts();
+
+  // // Footer
+  // footerWraper.innerHTML = '<h1>aquí va el footer</h1>';
 };
