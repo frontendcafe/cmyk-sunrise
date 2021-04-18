@@ -2,29 +2,29 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.6rem;
 }
 
 .products__card {
-  width: 8rem;
+  width: 12.8rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 1.6rem;
   background-color: $green;
-  border-radius: 1rem;
-  box-shadow: 0px 10px 20px rgba(44, 37, 210, 0.05);
+  border-radius: 1.6rem;
+  box-shadow: 0rem 1rem 2rem rgba(44, 37, 210, 0.05);
 }
 
 .products__title {
-  margin: 0 0 0.5rem 0;
-  font-size: 1.3rem;
+  margin: 0 0 0.8rem 0;
+  font-size: 2.08rem;
 }
 
 .products__image {
   width: 100%;
-  min-height: 6rem;
+  min-height: 9.6rem;
 }
 
 .products__price-title {
@@ -43,7 +43,7 @@
   width: 85%;
   background-color: $white;
   color: $dark;
-  border-radius: 2rem;
+  border-radius: 3.2rem;
   overflow: hidden;
 
   &:hover {
@@ -52,14 +52,14 @@
 }
 
 .products__button {
-  height: 2rem;
-  width: 2rem;
+  height: 3.2rem;
+  width: 3.2rem;
   background-color: $dark;
   color: $white;
   border: none;
   outline: none;
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 2.4rem;
 }
 
 .products__amount {
@@ -68,21 +68,20 @@
 
 .products__register-sale {
   width: 90%;
-  margin: 2rem 0;
+  margin: 3.2rem 0;
   position: fixed;
   bottom: 0;
   background-color: $blue;
   color: $white;
   border: none;
-  border-radius: 0.5rem;
-  height: 3rem;
-  font-size: 1rem;
-
+  border-radius: 0.8rem;
+  height: 4.8rem;
+  font-size: 1.6rem;
 }
 
 #section-confirm-sale {
   position: absolute;
-  top: 2rem;
+  top: 3.2rem;
   width: 100%;
   display: grid;
   place-items: center;
@@ -92,10 +91,9 @@
 .confirm-sale__div {
   background-color: $white;
   width: 90%;
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5px;
+  padding: 0.5rem;
   text-align: center;
 }
-
