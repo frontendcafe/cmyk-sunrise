@@ -25,10 +25,10 @@ const loadHtml = async function (parentElementId, filePath) {
 window.onload = async function () {
   const footerWraper = document.getElementById('footer-wraper');
 
-  loadHtml('header', '/components/header.html');
-  loadHtml('totals', '/components/totals.html');
+  await loadHtml('header', '/components/header.html');
+  await loadHtml('totals', '/components/totals.html');
 
-  // renderTotalsValues();
+  renderTotalsValues();
 
   // Products //
   await loadHtml('content', '/components/products.html');
