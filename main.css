@@ -141,6 +141,7 @@
 
 .totals {
   width: 100vw;
+  margin-top: 20px;
 }
 
 .totals__mobile {
@@ -159,7 +160,7 @@
   color: #27272c;
 }
 
-.totals__title {
+.totals__box--title {
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   -ms-grid-column: 1;
@@ -171,7 +172,7 @@
   text-align: center;
 }
 
-.totals__money {
+.totals__box--money {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   -ms-grid-column: 1;
@@ -185,7 +186,7 @@
   border-right: 0.1rem solid rgba(0, 0, 0, 0.171);
 }
 
-.totals__units {
+.totals__box--units {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   -ms-grid-column: 2;
@@ -202,9 +203,7 @@
   font-weight: bold;
 }
 
-.totals__heading,
-.totals__subtitle,
-.totals__quantity {
+.totals__heading, .totals__subtitle, .totals__quantity {
   margin: 0.5rem 0;
 }
 
