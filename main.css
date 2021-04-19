@@ -11,7 +11,7 @@
 }
 
 .products__card {
-  width: 12.8rem;
+  width: 15.8rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -70,7 +70,7 @@
 }
 
 .products__buttons:hover {
-  background-color: #fcb929;
+  background-color: #235fac;
 }
 
 .products__button {
@@ -88,7 +88,7 @@
   margin: 0;
 }
 
-.products__register-sale {
+.register-sale-button {
   width: 90%;
   margin: 3.2rem 0;
   position: fixed;
@@ -101,7 +101,7 @@
   font-size: 1.6rem;
 }
 
-#section-confirm-sale {
+.confirm-sale {
   position: absolute;
   top: 3.2rem;
   width: 100%;
@@ -129,73 +129,87 @@
 }
 
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
   width: 100vw;
+  height: 6.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
   background-color: #235fac;
   color: #f1eae5;
 }
 
-.header__title {
-  font-size: 2.5rem;
+.header__left {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 4rem;
+          flex: 0 0 4rem;
   text-align: center;
+}
+
+.header__right {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding-right: 10%;
+  text-align: center;
+}
+
+.header__icon {
+  font-size: 2rem;
+}
+
+.header__title {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: 2.5rem;
 }
 
 .totals {
   width: 100vw;
+  margin-top: 7rem;
 }
 
 .totals__mobile {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  -ms-grid-rows: 2fr 3fr;
-      grid-template-rows: 2fr 3fr;
-  gap: 0px 0px;
   width: 80%;
   padding: 1.5rem;
   margin: 0 auto;
   border-radius: 0.7rem;
-  background-color: white;
-  color: #001026;
-  -webkit-box-shadow: 0.3rem 1.1rem 2.3rem -0.5rem rgba(0, 0, 0, 0.59);
-  box-shadow: 0.3rem 1.1rem 2.3rem -0.5rem rgba(0, 0, 0, 0.59);
+  background-color: #00c39d;
+  color: #27272c;
 }
 
-.totals__title {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-area: 1 / 1 / 2 / 3;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+.totals__panel-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.totals__box--title {
+  display: block;
   text-align: center;
+  font-weight: bold;
 }
 
-.totals__money {
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 1;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-area: 2 / 1 / 3 / 2;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+.totals__box--title[data-layout="shop"] {
+  display: none;
+}
+
+.totals__box--money {
   padding-left: 2.5rem;
   text-align: left;
   border-right: 0.1rem solid rgba(0, 0, 0, 0.171);
 }
 
-.totals__units {
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 1;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-area: 2 / 2 / 3 / 3;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+.totals__box--units {
   padding-right: 2.5rem;
   text-align: right;
 }
@@ -204,9 +218,7 @@
   font-weight: bold;
 }
 
-.totals__heading,
-.totals__subtitle,
-.totals__quantity {
+.totals__heading, .totals__subtitle, .totals__quantity {
   margin: 0.5rem 0;
 }
 
@@ -241,18 +253,16 @@
         -ms-flex-align: center;
             align-items: center;
     height: 12rem;
-    background-color: white;
-    color: #001026;
+    background-color: #00c39d;
+    color: #27272c;
     border-radius: 1.2rem;
-    -webkit-box-shadow: 0.3rem 1.1rem 2.3rem -0.5rem rgba(0, 0, 0, 0.59);
-    box-shadow: 0.3rem 1.1rem 2.3rem -0.5rem rgba(0, 0, 0, 0.59);
   }
-  .totals__title2 {
+  .totals__subtitle--desktop {
     padding: 0 2rem;
     text-align: center;
     font-size: 1.8rem;
   }
-  .totals__quantity2 {
+  .totals__quantity--desktop {
     padding: 0 2rem;
     font-size: 2.5rem;
     font-weight: bold;
@@ -321,7 +331,16 @@
 }
 
 html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 body {
