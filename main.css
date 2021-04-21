@@ -133,14 +133,10 @@
   top: 0;
   left: 0;
   z-index: 999;
-  width: 100vw;
-  height: 6.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
+  width: 100vw;
   background-color: #235fac;
   color: #f1eae5;
 }
@@ -185,6 +181,10 @@
   color: #27272c;
 }
 
+.totals__mobile[data-layout='shop'] {
+  background-color: #5f8492;
+}
+
 .totals__panel-container {
   display: -ms-grid;
   display: grid;
@@ -199,7 +199,7 @@
   font-weight: bold;
 }
 
-.totals__box--title[data-layout="shop"] {
+.totals__box--title[data-layout='shop'] {
   display: none;
 }
 
@@ -328,6 +328,36 @@
   margin: 0 2.5rem 0 2rem;
   margin-right: 2.5rem;
   font-size: 1.2rem;
+}
+
+.container {
+  background: #27272c;
+  width: 411px;
+  height: 745px;
+  left: 0px;
+  top: 77px;
+}
+
+.summary {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  color: #ffff;
+  width: 340px;
+}
+
+.summary__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 8px;
+  width: 350px;
+  border-bottom: 1px solid #ffff;
 }
 
 html {
