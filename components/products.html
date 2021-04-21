@@ -1,38 +1,26 @@
-
 <section id="section-produts" class="products">
   <!-- will load the products with js -->
 </section>
 <section id="section-confirm-sale" class="confirm-sale">
   <div class="confirm-sale__div">
-    <h3>¿Confirmar venta?</h3>
+    <h3 class="confirm-sale__title">¿Confirmar venta?</h3>
     <p class="confirm-sale__description">
       La venta quedará registrada con los itms cargados hasta el momento
     </p>
 
-    <table border="1" class="confirm-sale__table" aria-label="products to sale">
-      <tr>
+    <table class="confirm-sale__table" aria-label="products to sale">
+      <tr class="confirm-sale__table-header">
         <th id="name">Producto</th>
         <th id="amount">Cantidad</th>
         <th id="total">Total</th>
       </tr>
-      <tr>
-        <td headers="name">Producto #1</td>
-        <td headers="amount">2</td>
-        <td headers="total">$10,00</td>
-      </tr>
-      <tr>
-        <td headers="name">Producto #2</td>
-        <td headers="amount">4</td>
-        <td headers="total">$545,00</td>
-      </tr>
-      <tr>
-        <td headers="name">Producto #3</td>
-        <td headers="amount">5</td>
-        <td headers="total">$354,00</td>
-      </tr>
-      <tr>
+
+      <tbody class="confirm-sale__table-body">
+
+      </tbody>
+      <tr class="confirm-sale__table-footer">
         <td colspan="2">Total</td>
-        <td>$909,00</td>
+        <td class="confirm-sale__total-sale"></td>
       </tr>
     </table>
 
@@ -60,4 +48,12 @@
       <button class="products__button products__increase">+</button>
     </div>
   </article>
+</template>
+
+<template id="confirm-sale-template-row" class="confirm-sale__table-row">
+  <tr class="confirm-sale__table-row">
+    <td class="confirm-sale__name" headers="name"></td>
+    <td class="confirm-sale__amount" headers="amount"></td>
+    <td class="confirm-sale__total" headers="total"></td>
+  </tr>
 </template>
