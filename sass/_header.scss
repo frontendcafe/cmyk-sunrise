@@ -8,12 +8,12 @@
   width: 100vw;
   background-color: $secondary;
   color: $light;
+  
 
   &__left {
     flex: 0 0 4rem;
 
     text-align: center;
-    // align-self: center;
   }
 
   &__right {
@@ -28,6 +28,7 @@
 
   &__title {
     align-self: center;
+    font-family: $font-title;
     font-size: 2.5rem;
   }
 }

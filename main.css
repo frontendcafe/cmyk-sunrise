@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Advent+Pro:wght@400;700&family=Lora:wght@400;700&display=swap");
 .products {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -164,6 +165,7 @@
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  font-family: "Advent Pro", sans-serif;
   font-size: 2.5rem;
 }
 
@@ -391,6 +393,7 @@ body {
   margin: 0;
   background-color: #27272c;
   padding: 5%;
+  font-family: "Lora", serif;
   font-size: 16px;
 }
 
