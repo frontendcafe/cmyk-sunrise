@@ -265,6 +265,67 @@
   }
 }
 
+.aboutUs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 87.4rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.aboutUs__description {
+  display: inline;
+  width: 36.2rem;
+  height: 12rem;
+  border-radius: 1rem;
+  background-color: #5f8492;
+}
+
+.aboutUs__paragraph {
+  width: 34.2rem;
+  margin: 2rem auto;
+  font-size: 1.4rem;
+}
+
+.aboutUs__testimonial {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 36.2rem;
+  height: 10rem;
+  border-radius: 1rem;
+  background-color: #00c39d;
+}
+
+.aboutUs__image {
+  width: 6.5rem;
+  height: 6.7rem;
+  margin-left: 2rem;
+}
+
+.aboutUs__paragraph--name {
+  margin: 0 0 0 2rem;
+  font-size: 1.8rem;
+}
+
+.aboutUs__paragraph--testimony {
+  margin: 0 2.5rem 0 2rem;
+  margin-right: 2.5rem;
+  font-size: 1.2rem;
+}
+
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;

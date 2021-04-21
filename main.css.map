@@ -6,7 +6,8 @@
         "sass/_colors.scss",
         "sass/_products.scss",
         "sass/_header.scss",
-        "sass/_totals.scss"
+        "sass/_totals.scss",
+        "sass/_aboutUs.scss"
     ],
     "names": [],
     "file": "main.css"
