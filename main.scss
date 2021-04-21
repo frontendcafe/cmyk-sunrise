@@ -1,4 +1,4 @@
-@import 'sass/_colors';
+@import 'sass/_base';
 @import 'sass/_products';
 @import 'sass/_header';
 @import 'sass/_totals';
@@ -25,6 +25,7 @@ body {
   margin: 0;
   background-color: $dark;
   padding: 5%;
+  font-family: $font-principal;
   font-size: 16px;
 }
 
