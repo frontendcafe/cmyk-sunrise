@@ -103,9 +103,6 @@
 }
 
 .confirm-sale {
-  position: absolute;
-  top: 3.2rem;
-  width: 100%;
   display: none;
 }
 
@@ -122,11 +119,88 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0.5rem;
   text-align: center;
+  border: 1px solid #27272c;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.confirm-sale__title {
+  background-color: #235fac;
+  width: 100%;
+  margin: 0;
+  color: #ffff;
+  padding: 1rem 0;
+  border-bottom: 1px solid #27272c;
+  border-radius: 1rem 1rem 0 0;
+  font-family: 'Advent Pro';
+  font-size: 2.2rem;
+}
+
+.confirm-sale__description {
+  margin: 0;
+  padding: 1.8rem;
+}
+
+.confirm-sale__table {
+  border-collapse: collapse;
+}
+
+.confirm-sale__table th,
+.confirm-sale__table td {
+  padding: 1rem 0;
+}
+
+.confirm-sale__table-header {
+  border-bottom: 2px solid #5f8492;
+}
+
+.confirm-sale__name {
+  text-align: left;
+}
+
+.confirm-sale__table-row {
+  border-bottom: 1px solid #5f8492;
+}
+
+.confirm-sale__table-footer {
+  font-weight: 700;
+}
+
+.confirm-sale__buttons {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  margin-top: 2rem;
+}
+
+.confirm-sale__buttons-cancel, .confirm-sale__buttons-confirm {
+  padding: 1rem 2rem;
+  color: white;
+  border: none;
+  font-family: 'Advent Pro';
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.015em;
+  cursor: pointer;
+}
+
+.confirm-sale__buttons-cancel {
+  background-color: gray;
+}
+
+.confirm-sale__buttons-confirm {
+  background-color: #235fac;
 }
 
 .confirm-sale-active {
+  position: absolute;
+  top: 3.2rem;
+  width: 100%;
+  z-index: 1;
   display: -ms-grid;
   display: grid;
   place-items: center;

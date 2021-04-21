@@ -80,9 +80,6 @@
 }
 
 .confirm-sale {
-  position: absolute;
-  top: 3.2rem;
-  width: 100%;
   display: none;
 
   &__div {
@@ -91,12 +88,88 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0.5rem;
     text-align: center;
+    border: 1px solid $dark;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+
+  &__title {
+    background-color: $secondary;
+    width: 100%;
+    margin: 0;
+    color: $white;
+    padding: 1rem 0;
+    border-bottom: 1px solid $dark;
+    border-radius: 1rem 1rem 0 0;
+    font-family: 'Advent Pro';
+    font-size: 2.2rem;
+  }
+
+  &__description {
+    margin: 0;
+    padding: 1.8rem;
+  }
+
+  &__table {
+    border-collapse: collapse;
+
+    th,
+    td {
+      padding: 1rem 0;
+    }
+  }
+
+  &__table-header {
+    border-bottom: 2px solid $gray;
+  }
+
+  &__name {
+    text-align: left;
+  }
+
+  &__table-row {
+    border-bottom: 1px solid $gray;
+  }
+
+  &__table-footer {
+    font-weight: 700;
+  }
+
+  &__buttons {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 2rem;
+  }
+
+  &__buttons-cancel,
+  &__buttons-confirm {
+    padding: 1rem 2rem;
+    color: white;
+    border: none;
+    font-family: 'Advent Pro';
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.015em;
+    cursor: pointer;
+  }
+
+  &__buttons-cancel {
+    background-color: gray;
+  }
+
+  &__buttons-confirm {
+    background-color: $secondary;
   }
 }
 
 .confirm-sale-active {
+  position: absolute;
+  top: 3.2rem;
+  width: 100%;
+  z-index: 1;
   display: grid;
   place-items: center;
 }

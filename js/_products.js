@@ -1,29 +1,62 @@
 const db = firebase.firestore();
 
-function getItemsToSale() {
+function removeCurrentData(tableBody) {
+  while (tableBody.hasChildNodes()) {
+    tableBody.removeChild(tableBody.lastChild);
+  }
+}
+
+function populateTableWithNewData(tableBody) {
   const productsCard = document.querySelectorAll('.products__card');
-  const itemsToSale = [];
+  const templateRow = document.getElementById('confirm-sale-template-row');
+  const totalSale = document.querySelector('.confirm-sale__total-sale');
+  let totalSaleSum = 0;
 
   productsCard.forEach((product) => {
     const name = product.querySelector('.products__title').textContent;
     const price = Number(product.querySelector('.products__price-value').textContent);
     const amount = Number(product.querySelector('.products__amount').textContent);
 
-    if (amount > 0) itemsToSale.push({ name: name, price: price, amount: amount });
+    
+
+    if (amount > 0) {
+      const rowClone = templateRow.content.cloneNode(true);
+
+      const nameTemplate = rowClone.querySelector('.confirm-sale__name');
+      const amountTemplate = rowClone.querySelector('.confirm-sale__amount');
+      const totalTemplate = rowClone.querySelector('.confirm-sale__total');
+
+      nameTemplate.textContent = name;
+      amountTemplate.textContent = amount;
+      totalTemplate.textContent = price * amount;
+
+      totalSaleSum += price * amount;
+
+      tableBody.appendChild(rowClone);
+    }
   });
 
-  return itemsToSale;
+  totalSale.textContent = totalSaleSum;
+
 }
 
 export function onLoadProducts() {
   const registerSaleButton = document.getElementById('register-sale');
-  registerSaleButton.addEventListener('click', () => {    
+  const sectionConfirmSale = document.getElementById('section-confirm-sale');
+  const tableBody = document.querySelector('.confirm-sale__table-body');
+  console.log('tableBody :>> ', tableBody.innerHTML);
 
-    const itemsToSell = getItemsToSale();
-    console.log('itemsToSell :>> ', itemsToSell);
+  const registerSaleCancelButton = document.querySelector('.confirm-sale__buttons-cancel');
 
-    const sectionConfirmSale = document.getElementById('section-confirm-sale');
-    sectionConfirmSale.classList.add("confirm-sale-active")
+  registerSaleButton.addEventListener('click', () => {
+    sectionConfirmSale.classList.add('confirm-sale-active');
+
+    removeCurrentData(tableBody);
+    populateTableWithNewData(tableBody);
+  });
+
+  registerSaleCancelButton.addEventListener('click', () => {
+    sectionConfirmSale.classList.remove('confirm-sale-active');
   });
 }
 
@@ -61,5 +94,5 @@ export function getProducts() {
 
         section.appendChild(productClone);
       });
-    }); 
+    });
 }
