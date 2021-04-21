@@ -113,6 +113,8 @@
 
   &__table {
     border-collapse: collapse;
+    width: 80%;
+    text-align: left;
 
     th,
     td {
@@ -134,6 +136,14 @@
 
   &__table-footer {
     font-weight: 700;
+  }
+
+  &__amount,
+  &__total,
+  &__total-sale,
+  #amount,
+  #total {
+    text-align: right;
   }
 
   &__buttons {
@@ -172,4 +182,5 @@
   z-index: 1;
   display: grid;
   place-items: center;
+  max-width: 90rem;
 }

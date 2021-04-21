@@ -1,4 +1,6 @@
 const db = firebase.firestore();
+let totalSaleSum = 0;
+let cantProductsSaleSum = 0;
 
 function removeCurrentData(tableBody) {
   while (tableBody.hasChildNodes()) {
@@ -10,14 +12,11 @@ function populateTableWithNewData(tableBody) {
   const productsCard = document.querySelectorAll('.products__card');
   const templateRow = document.getElementById('confirm-sale-template-row');
   const totalSale = document.querySelector('.confirm-sale__total-sale');
-  let totalSaleSum = 0;
 
   productsCard.forEach((product) => {
     const name = product.querySelector('.products__title').textContent;
     const price = Number(product.querySelector('.products__price-value').textContent);
     const amount = Number(product.querySelector('.products__amount').textContent);
-
-    
 
     if (amount > 0) {
       const rowClone = templateRow.content.cloneNode(true);
@@ -28,25 +27,41 @@ function populateTableWithNewData(tableBody) {
 
       nameTemplate.textContent = name;
       amountTemplate.textContent = amount;
-      totalTemplate.textContent = price * amount;
+      totalTemplate.textContent = `$ ${price * amount}`;
 
       totalSaleSum += price * amount;
+      cantProductsSaleSum += amount;
 
       tableBody.appendChild(rowClone);
     }
   });
 
-  totalSale.textContent = totalSaleSum;
+  totalSale.textContent = `$ ${totalSaleSum}`;
+}
 
+function saveSale() {
+
+  db.collection('sales')
+    .add({
+      amount: totalSaleSum,
+      quantity: cantProductsSaleSum,
+      time: Date().toString(),
+    })
+    .then(() => {
+      alert('Venta registrada !!')
+    })
+    .catch((error) => {
+      console.error('Error adding document: ', error);
+    });
 }
 
 export function onLoadProducts() {
   const registerSaleButton = document.getElementById('register-sale');
   const sectionConfirmSale = document.getElementById('section-confirm-sale');
   const tableBody = document.querySelector('.confirm-sale__table-body');
-  console.log('tableBody :>> ', tableBody.innerHTML);
 
   const registerSaleCancelButton = document.querySelector('.confirm-sale__buttons-cancel');
+  const registerSaleConfirmButton = document.querySelector('.confirm-sale__buttons-confirm');
 
   registerSaleButton.addEventListener('click', () => {
     sectionConfirmSale.classList.add('confirm-sale-active');
@@ -58,6 +73,8 @@ export function onLoadProducts() {
   registerSaleCancelButton.addEventListener('click', () => {
     sectionConfirmSale.classList.remove('confirm-sale-active');
   });
+
+  registerSaleConfirmButton.addEventListener('click', saveSale);
 }
 
 export function getProducts() {

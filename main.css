@@ -144,6 +144,8 @@
 
 .confirm-sale__table {
   border-collapse: collapse;
+  width: 80%;
+  text-align: left;
 }
 
 .confirm-sale__table th,
@@ -165,6 +167,12 @@
 
 .confirm-sale__table-footer {
   font-weight: 700;
+}
+
+.confirm-sale__amount, .confirm-sale__total, .confirm-sale__total-sale,
+.confirm-sale #amount,
+.confirm-sale #total {
+  text-align: right;
 }
 
 .confirm-sale__buttons {
@@ -204,6 +212,7 @@
   display: -ms-grid;
   display: grid;
   place-items: center;
+  max-width: 90rem;
 }
 
 .header {
@@ -475,5 +484,8 @@ body {
   margin: 3.2rem 0;
   position: relative;
   width: 100%;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
 }
 /*# sourceMappingURL=main.css.map */
