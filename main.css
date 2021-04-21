@@ -106,9 +106,6 @@
   position: absolute;
   top: 3.2rem;
   width: 100%;
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
   display: none;
 }
 
@@ -127,6 +124,12 @@
           align-items: center;
   padding: 0.5rem;
   text-align: center;
+}
+
+.confirm-sale-active {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
 }
 
 .header {
@@ -383,9 +386,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;

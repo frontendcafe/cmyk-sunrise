@@ -17,9 +17,13 @@ function getItemsToSale() {
 
 export function onLoadProducts() {
   const registerSaleButton = document.getElementById('register-sale');
-  registerSaleButton.addEventListener('click', () => {
+  registerSaleButton.addEventListener('click', () => {    
+
     const itemsToSell = getItemsToSale();
     console.log('itemsToSell :>> ', itemsToSell);
+
+    const sectionConfirmSale = document.getElementById('section-confirm-sale');
+    sectionConfirmSale.classList.add("confirm-sale-active")
   });
 }
 
@@ -38,29 +42,24 @@ export function getProducts() {
         const title = productClone.querySelector('.products__title');
         const image = productClone.querySelector('.products__image');
         const price = productClone.querySelector('.products__price-value');
+        const decreaseButton = productClone.querySelector('.products__decrease');
+        const amount = productClone.querySelector('.products__amount');
+        const increaseButton = productClone.querySelector('.products__increase');
 
         title.textContent = doc.data().name;
         image.src = doc.data().imageUrl;
         price.textContent = doc.data().price;
 
+        decreaseButton.addEventListener('click', () => {
+          amount.textContent =
+            Number(amount.textContent) === 0 ? 0 : Number(amount.textContent) - 1;
+        });
+
+        increaseButton.addEventListener('click', () => {
+          amount.textContent = Number(amount.textContent) + 1;
+        });
+
         section.appendChild(productClone);
       });
-    });
-
-  // add events to increment and decrement buttons
-  const productsCard = document.querySelectorAll('.products__card');
-
-  productsCard.forEach((product) => {
-    const decreaseButton = product.querySelector('.products__decrease');
-    const amount = product.querySelector('.products__amount');
-    const increaseButton = product.querySelector('.products__increase');
-
-    decreaseButton.addEventListener('click', () => {
-      amount.textContent = Number(amount.textContent) === 0 ? 0 : Number(amount.textContent) - 1;
-    });
-
-    increaseButton.addEventListener('click', () => {
-      amount.textContent = Number(amount.textContent) + 1;
-    });
-  });
+    }); 
 }
