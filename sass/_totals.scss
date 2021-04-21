@@ -12,6 +12,10 @@
     color: $dark;
   }
 
+  &__mobile[data-layout='shop'] {
+    background-color: $gray;
+  }
+
   &__panel-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -24,7 +28,7 @@
     font-weight: bold;
   }
 
-  &__box--title[data-layout="shop"] {
+  &__box--title[data-layout='shop'] {
     display: none;
   }
 
