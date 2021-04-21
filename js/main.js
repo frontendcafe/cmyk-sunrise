@@ -23,7 +23,6 @@ const loadHtml = async function (parentElementId, filePath) {
 };
 
 window.onload = async function () {
-
   await loadHtml('header', '/components/header.html');
   await loadHtml('totals', '/components/totals.html');
 
@@ -33,5 +32,4 @@ window.onload = async function () {
   await loadHtml('content', '/components/products.html');
   onLoadProducts();
   getProducts();
-
 };

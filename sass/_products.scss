@@ -82,9 +82,7 @@
 .confirm-sale {
   position: absolute;
   top: 3.2rem;
-  width: 100%;
-  display: grid;
-  place-items: center;
+  width: 100%;  
   display: none;
 
   &__div {
@@ -96,4 +94,9 @@
     padding: 0.5rem;
     text-align: center;
   }
+}
+
+.confirm-sale-active {
+  display: grid;
+  place-items: center;
 }
