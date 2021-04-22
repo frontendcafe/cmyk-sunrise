@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Advent+Pro:wght@400;700&family=Lora:wght@400;700&display=swap");
 .products {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -11,7 +12,7 @@
 }
 
 .products__card {
-  width: 15.8rem;
+  width: 15.4rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -102,12 +103,6 @@
 }
 
 .confirm-sale {
-  position: absolute;
-  top: 3.2rem;
-  width: 100%;
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
   display: none;
 }
 
@@ -124,8 +119,100 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0.5rem;
   text-align: center;
+  border: 1px solid #27272c;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.confirm-sale__title {
+  background-color: #235fac;
+  width: 100%;
+  margin: 0;
+  color: #ffff;
+  padding: 1rem 0;
+  border-bottom: 1px solid #27272c;
+  border-radius: 1rem 1rem 0 0;
+  font-family: 'Advent Pro';
+  font-size: 2.2rem;
+}
+
+.confirm-sale__description {
+  margin: 0;
+  padding: 1.8rem;
+}
+
+.confirm-sale__table {
+  border-collapse: collapse;
+  width: 80%;
+  text-align: left;
+}
+
+.confirm-sale__table th,
+.confirm-sale__table td {
+  padding: 1rem 0;
+}
+
+.confirm-sale__table-header {
+  border-bottom: 2px solid #5f8492;
+}
+
+.confirm-sale__name {
+  text-align: left;
+}
+
+.confirm-sale__table-row {
+  border-bottom: 1px solid #5f8492;
+}
+
+.confirm-sale__table-footer {
+  font-weight: 700;
+}
+
+.confirm-sale__amount, .confirm-sale__total, .confirm-sale__total-sale,
+.confirm-sale #amount,
+.confirm-sale #total {
+  text-align: right;
+}
+
+.confirm-sale__buttons {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  margin-top: 2rem;
+}
+
+.confirm-sale__buttons-cancel, .confirm-sale__buttons-confirm {
+  padding: 1rem 2rem;
+  color: white;
+  border: none;
+  font-family: 'Advent Pro';
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.015em;
+  cursor: pointer;
+}
+
+.confirm-sale__buttons-cancel {
+  background-color: gray;
+}
+
+.confirm-sale__buttons-confirm {
+  background-color: #235fac;
+}
+
+.confirm-sale-active {
+  position: absolute;
+  top: 3.2rem;
+  width: 100%;
+  z-index: 1;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  max-width: 90rem;
 }
 
 .header {
@@ -133,14 +220,10 @@
   top: 0;
   left: 0;
   z-index: 999;
-  width: 100vw;
-  height: 6.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
+  width: 100vw;
   background-color: #235fac;
   color: #f1eae5;
 }
@@ -168,6 +251,7 @@
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  font-family: "Advent Pro", sans-serif;
   font-size: 2.5rem;
 }
 
@@ -185,6 +269,10 @@
   color: #27272c;
 }
 
+.totals__mobile[data-layout='shop'] {
+  background-color: #5f8492;
+}
+
 .totals__panel-container {
   display: -ms-grid;
   display: grid;
@@ -199,7 +287,7 @@
   font-weight: bold;
 }
 
-.totals__box--title[data-layout="shop"] {
+.totals__box--title[data-layout='shop'] {
   display: none;
 }
 
@@ -330,6 +418,36 @@
   font-size: 1.2rem;
 }
 
+.container {
+  background: #27272c;
+  width: 411px;
+  height: 745px;
+  left: 0px;
+  top: 77px;
+}
+
+.summary {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  color: #ffff;
+  width: 340px;
+}
+
+.summary__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 8px;
+  width: 350px;
+  border-bottom: 1px solid #ffff;
+}
+
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -351,9 +469,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -361,6 +476,7 @@ body {
   margin: 0;
   background-color: #27272c;
   padding: 5%;
+  font-family: "Lora", serif;
   font-size: 16px;
 }
 
@@ -368,5 +484,8 @@ body {
   margin: 3.2rem 0;
   position: relative;
   width: 100%;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
 }
 /*# sourceMappingURL=main.css.map */

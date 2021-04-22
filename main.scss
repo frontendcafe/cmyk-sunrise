@@ -1,4 +1,4 @@
-@import 'sass/_colors';
+@import 'sass/_base';
 @import 'sass/_products';
 @import 'sass/_header';
 @import 'sass/_totals';
@@ -19,12 +19,12 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   min-height: 100vh;
   margin: 0;
   background-color: $dark;
   padding: 5%;
+  font-family: $font-principal;
   font-size: 16px;
 }
 
@@ -32,4 +32,6 @@ body {
   margin: 3.2rem 0;
   position: relative;
   width: 100%;
+  display: grid;
+  place-items: center;
 }
