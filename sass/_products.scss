@@ -3,75 +3,75 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.6rem;
-}
 
-.products__card {
-  width: 12.8rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.6rem;
-  background-color: $green;
-  border-radius: 1.6rem;
-  box-shadow: 0rem 1rem 2rem rgba(44, 37, 210, 0.05);
-}
+  &__card {
+    width: 15.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.6rem;
+    background-color: $primary;
+    border-radius: 1.6rem;
+    box-shadow: 0rem 1rem 2rem rgba(44, 37, 210, 0.05);
+  }
 
-.products__title {
-  margin: 0 0 0.8rem 0;
-  font-size: 2.08rem;
-}
+  &__title {
+    margin: 0 0 0.8rem 0;
+    font-size: 2.08rem;
+  }
 
-.products__image {
-  width: 100%;
-  min-height: 9.6rem;
-}
+  &__image {
+    width: 100%;
+    min-height: 9.6rem;
+  }
 
-.products__price-title {
-  opacity: 50%;
-}
+  &__price-title {
+    opacity: 50%;
+  }
 
-.products__price-value {
-  font-weight: 700;
-}
+  &__price-value {
+    font-weight: 700;
+  }
 
-.products__buttons {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: center;
-  width: 85%;
-  background-color: $white;
-  color: $dark;
-  border-radius: 3.2rem;
-  overflow: hidden;
+  &__buttons {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+    background-color: $white;
+    color: $dark;
+    border-radius: 3.2rem;
+    overflow: hidden;
 
-  &:hover {
-    background-color: $yellow;
+    &:hover {
+      background-color: $secondary;
+    }
+  }
+
+  &__button {
+    height: 3.2rem;
+    width: 3.2rem;
+    background-color: $dark;
+    color: $white;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    font-size: 2.4rem;
+  }
+
+  &__amount {
+    margin: 0;
   }
 }
 
-.products__button {
-  height: 3.2rem;
-  width: 3.2rem;
-  background-color: $dark;
-  color: $white;
-  border: none;
-  outline: none;
-  font-weight: 500;
-  font-size: 2.4rem;
-}
-
-.products__amount {
-  margin: 0;
-}
-
-.products__register-sale {
+.register-sale-button {
   width: 90%;
   margin: 3.2rem 0;
   position: fixed;
   bottom: 0;
-  background-color: $blue;
+  background-color: $secondary;
   color: $white;
   border: none;
   border-radius: 0.8rem;
@@ -79,21 +79,108 @@
   font-size: 1.6rem;
 }
 
-#section-confirm-sale {
+.confirm-sale {
+  display: none;
+
+  &__div {
+    background-color: $white;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid $dark;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+
+  &__title {
+    background-color: $secondary;
+    width: 100%;
+    margin: 0;
+    color: $white;
+    padding: 1rem 0;
+    border-bottom: 1px solid $dark;
+    border-radius: 1rem 1rem 0 0;
+    font-family: 'Advent Pro';
+    font-size: 2.2rem;
+  }
+
+  &__description {
+    margin: 0;
+    padding: 1.8rem;
+  }
+
+  &__table {
+    border-collapse: collapse;
+    width: 80%;
+    text-align: left;
+
+    th,
+    td {
+      padding: 1rem 0;
+    }
+  }
+
+  &__table-header {
+    border-bottom: 2px solid $gray;
+  }
+
+  &__name {
+    text-align: left;
+  }
+
+  &__table-row {
+    border-bottom: 1px solid $gray;
+  }
+
+  &__table-footer {
+    font-weight: 700;
+  }
+
+  &__amount,
+  &__total,
+  &__total-sale,
+  #amount,
+  #total {
+    text-align: right;
+  }
+
+  &__buttons {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 2rem;
+  }
+
+  &__buttons-cancel,
+  &__buttons-confirm {
+    padding: 1rem 2rem;
+    color: white;
+    border: none;
+    font-family: 'Advent Pro';
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.015em;
+    cursor: pointer;
+  }
+
+  &__buttons-cancel {
+    background-color: gray;
+  }
+
+  &__buttons-confirm {
+    background-color: $secondary;
+  }
+}
+
+.confirm-sale-active {
   position: absolute;
   top: 3.2rem;
   width: 100%;
+  z-index: 1;
   display: grid;
   place-items: center;
-  display: none;
-}
-
-.confirm-sale__div {
-  background-color: $white;
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0.5rem;
-  text-align: center;
+  max-width: 90rem;
 }

@@ -9,8 +9,12 @@
     margin: 0 auto;
 
     border-radius: 0.7rem;
-    background-color: $green;
+    background-color: $primary;
     color: $dark;
+  }
+
+  &__mobile[data-layout='shop'] {
+    background-color: $gray;
   }
 
   &__panel-container {
@@ -25,7 +29,7 @@
     font-weight: bold;
   }
 
-  &__box--title[data-layout="shop"] {
+  &__box--title[data-layout='shop'] {
     display: none;
   }
 
@@ -75,7 +79,7 @@
       align-items: center;
       height: 12rem;
 
-      background-color: $green;
+      background-color: $primary;
       color: $dark;
       border-radius: 1.2rem;
     }

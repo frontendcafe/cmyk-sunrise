@@ -45,10 +45,6 @@ window.onload = async function () {
   await loadHtml('content', '/components/products.html');
   onLoadProducts();
   getProducts();
-
-  // Footer
-  footerWraper.innerHTML = '<h1>aquí va el footer</h1>';
-  // }, 3000);
 };
 
 async function wait(ms) {
