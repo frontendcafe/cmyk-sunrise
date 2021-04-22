@@ -28,6 +28,16 @@ body {
   font-size: 16px;
 }
 
+button {
+  cursor: pointer;
+  opacity: 1;
+  transition: 0.3s;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
 #content {
   margin: 3.2rem 0;
   position: relative;
