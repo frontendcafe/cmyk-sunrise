@@ -27,24 +27,24 @@ window.onload = async function () {
   await wait(3000);
 
   // setTimeout(async () => {
-  const divLanding = document.querySelector('.landing');
-  divLanding.style.animation = 'fadeOutFromBlock 0.5s ease-out';
-  await wait(500);
-  divLanding.style.display = 'none';
+  //const divLanding = document.querySelector('.landing');
+  //divLanding.style.animation = 'fadeOutFromBlock 0.5s ease-out';
+  // await wait(500);
+  // divLanding.style.display = 'none';
 
-  const footerWraper = document.getElementById('footer-wraper');
+  // const footerWraper = document.getElementById('footer-wraper');
 
-  await loadHtml('header', '/components/header.html');
-  await loadHtml('totals', '/components/totals.html');
-  document.querySelector('.header').style.display = 'flex';
-  document.querySelector('.totals').style.display = 'block';
+  // await loadHtml('header', '/components/header.html');
+  // await loadHtml('totals', '/components/totals.html');
+  // document.querySelector('.header').style.display = 'flex';
+  // document.querySelector('.totals').style.display = 'block';
   
-  renderTotalsValues();
+  // renderTotalsValues();
 
-  // // Products //
-  await loadHtml('content', '/components/products.html');
-  onLoadProducts();
-  getProducts();
+  // // // Products //
+  // await loadHtml('content', '/components/products.html');
+  // onLoadProducts();
+  // getProducts();
 };
 
 async function wait(ms) {

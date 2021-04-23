@@ -21,8 +21,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 20rem;
-    height: 20rem;
+    width: 24rem;
+    height: 24rem;
     z-index: 10;
   }
 
@@ -31,12 +31,35 @@
     height: 100%;
   }
 
+  &__curved-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24rem;
+    height: 24rem;
+    z-index: 10;
+  }
+
+  &__path{
+    // fill: transparent;
+  }
+
+  &__curved-text {
+    fill: $light;
+    font-family: $font-title;
+    font-size: 3rem;
+  }
+
   &__text-box {
     position: absolute;
     top: 65%;
     left: 2rem;
-    width: 10rem;
+    width: 12rem;
     color: $light;
+  }
+  &__text {
+    font-size: 2rem;
   }
 
   &__wave--one {
