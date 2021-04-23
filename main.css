@@ -65,7 +65,7 @@
           align-items: center;
   width: 85%;
   background-color: #ffff;
-  color: #27272c;
+  color: #181b1b;
   border-radius: 3.2rem;
   overflow: hidden;
 }
@@ -77,7 +77,7 @@
 .products__button {
   height: 3.2rem;
   width: 3.2rem;
-  background-color: #27272c;
+  background-color: #181b1b;
   color: #ffff;
   border: none;
   outline: none;
@@ -120,7 +120,7 @@
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  border: 1px solid #27272c;
+  border: 1px solid #181b1b;
   border-radius: 1rem;
   overflow: hidden;
 }
@@ -131,7 +131,7 @@
   margin: 0;
   color: #ffff;
   padding: 1rem 0;
-  border-bottom: 1px solid #27272c;
+  border-bottom: 1px solid #181b1b;
   border-radius: 1rem 1rem 0 0;
   font-family: 'Advent Pro';
   font-size: 2.2rem;
@@ -225,7 +225,7 @@
   display: flex;
   width: 100vw;
   background-color: #235fac;
-  color: #f1eae5;
+  color: #f4f4f5;
 }
 
 .header__left {
@@ -266,7 +266,7 @@
   margin: 0 auto;
   border-radius: 0.7rem;
   background-color: #00c39d;
-  color: #27272c;
+  color: #181b1b;
 }
 
 .totals__mobile[data-layout='shop'] {
@@ -342,7 +342,7 @@
             align-items: center;
     height: 12rem;
     background-color: #00c39d;
-    color: #27272c;
+    color: #181b1b;
     border-radius: 1.2rem;
   }
   .totals__subtitle--desktop {
@@ -419,7 +419,7 @@
 }
 
 .container {
-  background: #27272c;
+  background: #181b1b;
   width: 411px;
   height: 745px;
   left: 0px;
@@ -448,6 +448,66 @@
   border-bottom: 1px solid #ffff;
 }
 
+.menu {
+  display: block;
+  width: 26rem;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  background: url(/images/Wave.svg);
+}
+
+.menu__elements {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.menu__anchor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 2.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-family: "Lora", serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #f4f4f5;
+}
+
+.menu__anchor-home {
+  position: absolute;
+  top: 8vh;
+}
+
+.menu__anchor-products {
+  position: absolute;
+  top: 27vh;
+}
+
+.menu__anchor-aboutUs {
+  position: absolute;
+  top: 46vh;
+}
+
+.menu__icon {
+  display: inline;
+  width: 5rem;
+  height: 4.5rem;
+  margin-right: 1rem;
+  font-size: 4rem;
+  color: #235fac;
+}
+
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -474,7 +534,7 @@ body {
           align-items: center;
   min-height: 100vh;
   margin: 0;
-  background-color: #27272c;
+  background-color: #181b1b;
   padding: 5%;
   font-family: "Lora", serif;
   font-size: 16px;
