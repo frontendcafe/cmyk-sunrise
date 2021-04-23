@@ -9,7 +9,8 @@
         "sass/_header.scss",
         "sass/_totals.scss",
         "sass/_aboutUs.scss",
-        "sass/_summary.scss"
+        "sass/_summary.scss",
+        "sass/__menuMobile.scss"
     ],
     "names": [],
     "file": "main.css"
