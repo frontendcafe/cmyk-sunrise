@@ -26,26 +26,26 @@ window.onload = async function () {
   // Landing Screen - step 1 //
   await loadHtml('landing', '/components/landing.html');
   const divLanding = document.querySelector('.landing');
-  divLanding.style.display = 'block';
-
+  divLanding.style.display = 'block'; //this fire the css animation
   // const footerWraper = document.getElementById('footer-wraper');
-
+  
   // Header & Totals Panel Info //
   await loadHtml('header', '/components/header.html');
   await loadHtml('totals', '/components/totals.html');
-
+  
   renderTotalsValues();
-
+  
   // Products //
   await loadHtml('content', '/components/products.html');
   onLoadProducts();
   getProducts();
-
+  
   // Landing Screen - step 2 //
-  document.querySelector('.header').style.display = 'flex';
-  document.querySelector('.totals').style.display = 'block';
   await wait(3000);
   divLanding.style.animation = 'fadeOutFromBlock 0.5s ease-out';
+  document.querySelector('.header').style.display = 'flex';
+  document.querySelector('.totals').style.display = 'block';
+  document.querySelector('#content').style.display = 'grid';
   await wait(500);
   divLanding.style.display = 'none';
 };
