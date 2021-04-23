@@ -1,4 +1,10 @@
-import { totals } from './_mockTotals.js';
+let totals = {
+  globalUnits: 0,
+  globalSales: 0,
+  globalTotalMoney: 0,
+  currentUnits: 0,
+  currentTotalMoney: 0,
+};
 
 const formatter = new Intl.NumberFormat('es-AR', {
   style: 'currency',
@@ -6,7 +12,10 @@ const formatter = new Intl.NumberFormat('es-AR', {
 });
 
 // renderTotals: inyects the values in both mobile and desktop divs:
-export function renderTotalsValues() {
+
+// renderGlobalTotals: used in home page
+//      extract data from firebase DB
+export function renderGlobalTotals() {
   console.log('[ renderTotals() ]', totals);
   const { totalAmount, totalSales, units } = totals;
 
@@ -22,38 +31,37 @@ export function renderTotalsValues() {
   uiTotalSales.textContent = totalSales;
 }
 
-function updateProductsChosen() {
+// renderCurrentTotals: used in products page, 
+//    extract data from products selected.
+export function renderCurrentTotals() {
+  console.log('[ renderTotals() ]', totals);
+  const { currentTotalMoney, currentUnits } = totals;
+
+  const uiTotals = document.querySelector('.totals');
+
+  const uiTotalMoney = uiTotals.querySelectorAll('.totals__total-money');
+  uiTotalMoney.forEach((element) => (element.textContent = formatter.format(currentTotalMoney)));
+
+  const uiUnits = uiTotals.querySelectorAll('.totals__units');
+  uiUnits.forEach((element) => (element.textContent = currentUnits));
+}
+
+export function updateProductsChosen() {
   let totalSaleSum = 0;
   let cantProductsSaleSum = 0;
   const productsCard = document.querySelectorAll('.products__card');
-  // const templateRow = document.getElementById('confirm-sale-template-row');
-  // const totalSale = document.querySelector('.confirm-sale__total-sale');
 
   productsCard.forEach((product) => {
-    //const name = product.querySelector('.products__title').textContent;
     const price = Number(product.querySelector('.products__price-value').textContent);
     const amount = Number(product.querySelector('.products__amount').textContent);
 
     if (amount > 0) {
-      // const rowClone = templateRow.content.cloneNode(true);
-
-      // const nameTemplate = rowClone.querySelector('.confirm-sale__name');
-      // const amountTemplate = rowClone.querySelector('.confirm-sale__amount');
-      // const totalTemplate = rowClone.querySelector('.confirm-sale__total');
-
-      // nameTemplate.textContent = name;
-      // amountTemplate.textContent = amount;
-      // totalTemplate.textContent = `$ ${price * amount}`;
-
       totalSaleSum += price * amount;
       cantProductsSaleSum += amount;
-
-      // tableBody.appendChild(rowClone);
     }
   });
   totals = {
-    units: cantProductsSaleSum,
-    totalSales: totalSaleSum,
+    currentUnits: cantProductsSaleSum,
+    currentTotalMoney: totalSaleSum,
   };
-  // totalSale.textContent = `$ ${totalSaleSum}`;
 }
