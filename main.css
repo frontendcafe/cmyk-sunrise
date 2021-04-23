@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Advent+Pro:wght@400;700&family=Lora:wght@400;700&display=swap");
 .landing {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -7,8 +8,8 @@
   width: 100vh;
   z-index: 999;
   background-color: #27272c;
-  -webkit-animation: fadeInFromNone 1s ease-out;
-          animation: fadeInFromNone 1s ease-out;
+  -webkit-animation: fadeInFromNone 1s ease-in-out;
+          animation: fadeInFromNone 1s ease-in-out;
 }
 
 .landing__container {
@@ -19,7 +20,7 @@
   background: linear-gradient(#00c39d, #181b1b);
 }
 
-.landing__central {
+.landing__picture-box {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -46,10 +47,18 @@
   z-index: 10;
 }
 
+.landing__path {
+  fill: transparent;
+}
+
 .landing__curved-text {
   fill: #f1eae5;
   font-family: "Advent Pro", sans-serif;
-  font-size: 3rem;
+  font-size: 2.5rem;
+  letter-spacing: 4px;
+  font-weight: bold;
+  -webkit-animation: fadeInFromNone 1.3s ease-in-out;
+          animation: fadeInFromNone 1.3s ease-in-out;
 }
 
 .landing__text-box {
@@ -58,18 +67,20 @@
   left: 2rem;
   width: 12rem;
   color: #f1eae5;
+  -webkit-animation: fadeInFromNone 2s ease-in-out;
+          animation: fadeInFromNone 2s ease-in-out;
 }
 
 .landing__text {
   font-size: 2rem;
 }
 
-.landing__wave--one {
+.landing__wave--left {
   width: 55%;
   height: 100%;
 }
 
-.landing__wave--two {
+.landing__wave--right {
   position: absolute;
   top: 0;
   right: 0;
@@ -421,9 +432,7 @@
   top: 0;
   left: 0;
   z-index: 10;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   width: 100vw;
   background-color: #235fac;
   color: #f1eae5;

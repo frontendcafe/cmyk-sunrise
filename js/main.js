@@ -23,28 +23,31 @@ const loadHtml = async function (parentElementId, filePath) {
 };
 
 window.onload = async function () {
+  // Landing Screen - step 1 //
   await loadHtml('landing', '/components/landing.html');
-  await wait(3000);
-
-  // setTimeout(async () => {
-  //const divLanding = document.querySelector('.landing');
-  //divLanding.style.animation = 'fadeOutFromBlock 0.5s ease-out';
-  // await wait(500);
-  // divLanding.style.display = 'none';
+  const divLanding = document.querySelector('.landing');
+  divLanding.style.display = 'block';
 
   // const footerWraper = document.getElementById('footer-wraper');
 
-  // await loadHtml('header', '/components/header.html');
-  // await loadHtml('totals', '/components/totals.html');
-  // document.querySelector('.header').style.display = 'flex';
-  // document.querySelector('.totals').style.display = 'block';
-  
-  // renderTotalsValues();
+  // Header & Totals Panel Info //
+  await loadHtml('header', '/components/header.html');
+  await loadHtml('totals', '/components/totals.html');
 
-  // // // Products //
-  // await loadHtml('content', '/components/products.html');
-  // onLoadProducts();
-  // getProducts();
+  renderTotalsValues();
+
+  // Products //
+  await loadHtml('content', '/components/products.html');
+  onLoadProducts();
+  getProducts();
+
+  // Landing Screen - step 2 //
+  document.querySelector('.header').style.display = 'flex';
+  document.querySelector('.totals').style.display = 'block';
+  await wait(3000);
+  divLanding.style.animation = 'fadeOutFromBlock 0.5s ease-out';
+  await wait(500);
+  divLanding.style.display = 'none';
 };
 
 async function wait(ms) {

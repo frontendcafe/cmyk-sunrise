@@ -1,4 +1,5 @@
 .landing {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -7,7 +8,7 @@
   z-index: 999;
 
   background-color: $dark;
-  animation: fadeInFromNone 1s ease-out;
+  animation: fadeInFromNone 1s ease-in-out;
 
   &__container {
     position: relative;
@@ -16,7 +17,7 @@
     background: linear-gradient(#00c39d, #181b1b);
   }
 
-  &__central {
+  &__picture-box {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -41,14 +42,17 @@
     z-index: 10;
   }
 
-  &__path{
-    // fill: transparent;
+  &__path {
+    fill: transparent;
   }
 
   &__curved-text {
     fill: $light;
     font-family: $font-title;
-    font-size: 3rem;
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+    font-weight: bold;
+    animation: fadeInFromNone 1.3s ease-in-out;
   }
 
   &__text-box {
@@ -57,16 +61,17 @@
     left: 2rem;
     width: 12rem;
     color: $light;
+    animation: fadeInFromNone 2s ease-in-out;
   }
   &__text {
     font-size: 2rem;
   }
 
-  &__wave--one {
+  &__wave--left {
     width: 55%;
     height: 100%;
   }
-  &__wave--two {
+  &__wave--right {
     position: absolute;
     top: 0;
     right: 0;
