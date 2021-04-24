@@ -160,8 +160,7 @@
   margin: 0;
   color: #ffff;
   padding: 1rem 0;
-
-  border-bottom: 1px solid #27272c;
+  border-bottom: 1px solid #181b1b;
   font-family: "Advent Pro", sans-serif;
   font-size: 2.4rem;
   line-height: 3.1rem;
@@ -172,7 +171,6 @@
     font-size: 3rem;
     line-height: 3.8rem;
   }
-
 }
 
 .confirm-sale__description {
@@ -334,7 +332,7 @@
   color: #181b1b;
 }
 
-.totals__mobile[data-layout='shop'] {
+.totals__mobile[data-layout='products'] {
   background-color: #5f8492;
 }
 
@@ -352,7 +350,7 @@
   font-weight: bold;
 }
 
-.totals__box--title[data-layout='shop'] {
+.totals__box--title[data-layout='products'] {
   display: none;
 }
 
@@ -368,7 +366,12 @@
 }
 
 .totals__quantity {
+  font-size: 2.4rem;
   font-weight: bold;
+}
+
+.totals__subtitle {
+  font-size: 1.8rem;
 }
 
 .totals__heading, .totals__subtitle, .totals__quantity {
@@ -395,6 +398,18 @@
     height: fit-content;
     margin: 0 auto;
   }
+  .totals__desktop[data-layout='products'] {
+    display: -ms-grid;
+    display: grid;
+    gap: 2rem;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    width: 80%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin: 0 auto;
+  }
   .totals__box {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -410,10 +425,16 @@
     color: #181b1b;
     border-radius: 1.2rem;
   }
+  .totals__box[data-layout='products'] {
+    background-color: #5f8492;
+  }
+  .totals__box--first[data-layout='products'] {
+    display: none;
+  }
   .totals__subtitle--desktop {
     padding: 0 2rem;
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 2.4rem;
   }
   .totals__quantity--desktop {
     padding: 0 2rem;
@@ -484,8 +505,7 @@
 }
 
 .container {
-
-  background: #27272c;
+  background: #181b1b;
   width: 100%;
   height: 500px;
   display: -webkit-box;
@@ -497,7 +517,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-
 }
 
 .summary {
@@ -523,6 +542,26 @@
   border-bottom: 1px solid #ffff;
 }
 
+button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 4.8rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 0.8rem;
+  color: #ffff;
+  background: #235fac;
+  position: relative;
+  border: none;
+  font-size: 1.6rem;
+  font-family: "Lora", serif;
+}
 
 .menu {
   display: block;
