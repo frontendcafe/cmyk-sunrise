@@ -31,7 +31,7 @@ export function renderGlobalTotals() {
   uiTotalSales.textContent = totalSales;
 }
 
-// renderCurrentTotals: used in products page, 
+// renderCurrentTotals: used in products page,
 //    extract data from products selected.
 export function renderCurrentTotals() {
   console.log('[ renderTotals() ]', totals);
@@ -64,4 +64,26 @@ export function updateProductsChosen() {
     currentUnits: cantProductsSaleSum,
     currentTotalMoney: totalSaleSum,
   };
+}
+
+export function onLoadTotalsConfig(whichPage) {
+  const uiSubtitleUnits = document.querySelector('.totals__subtitle--units');
+  const uiTotalsDesktop = document.querySelector('.totals__desktop');
+  const uiTotalsBox = document.querySelectorAll('.totals__box');
+
+  uiTotalsDesktop.dataset.layout = whichPage;
+  uiTotalsBox.forEach((element) => (element.dataset.layout = whichPage));
+
+  switch (whichPage) {
+    case 'products':
+      uiSubtitleUnits.textContent = 'Cantidad de items';
+      break;
+
+    case 'home':
+      uiSubtitleUnits.textContent = 'Unidades';
+      break;
+
+    default:
+      break;
+  }
 }

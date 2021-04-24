@@ -1,5 +1,5 @@
 import { onLoadProducts, getProducts } from '/js/_products.js';
-import { renderCurrentTotals } from './_totals.js';
+import { onLoadTotalsConfig,renderCurrentTotals } from './_totals.js';
 
 const loadHtml = async function (parentElementId, filePath) {
   const init = {
@@ -25,7 +25,8 @@ const loadHtml = async function (parentElementId, filePath) {
 window.onload = async function () {
   await loadHtml('header', '/components/header.html');
   await loadHtml('totals', '/components/totals.html');
-
+  
+  onLoadTotalsConfig('products');
   renderCurrentTotals();
 
   // Products //
