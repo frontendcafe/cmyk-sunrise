@@ -1,3 +1,5 @@
+import { renderCurrentTotals, updateProductsChosen } from './_totals.js';
+
 const db = firebase.firestore();
 let totalSaleSum = 0;
 let cantProductsSaleSum = 0;
@@ -40,7 +42,6 @@ function populateTableWithNewData(tableBody) {
 }
 
 function saveSale() {
-
   db.collection('sales')
     .add({
       amount: totalSaleSum,
@@ -48,7 +49,7 @@ function saveSale() {
       time: Date().toString(),
     })
     .then(() => {
-      alert('Venta registrada !!')
+      alert('Venta registrada !!');
     })
     .catch((error) => {
       console.error('Error adding document: ', error);
@@ -103,10 +104,14 @@ export function getProducts() {
         decreaseButton.addEventListener('click', () => {
           amount.textContent =
             Number(amount.textContent) === 0 ? 0 : Number(amount.textContent) - 1;
+          updateProductsChosen();
+          renderCurrentTotals();
         });
 
         increaseButton.addEventListener('click', () => {
           amount.textContent = Number(amount.textContent) + 1;
+          updateProductsChosen();
+          renderCurrentTotals();
         });
 
         section.appendChild(productClone);

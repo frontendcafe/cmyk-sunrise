@@ -1,4 +1,10 @@
-import { totals } from './_mockTotals.js';
+let totals = {
+  globalUnits: 0,
+  globalSales: 0,
+  globalTotalMoney: 0,
+  currentUnits: 0,
+  currentTotalMoney: 0,
+};
 
 const formatter = new Intl.NumberFormat('es-AR', {
   style: 'currency',
@@ -6,7 +12,10 @@ const formatter = new Intl.NumberFormat('es-AR', {
 });
 
 // renderTotals: inyects the values in both mobile and desktop divs:
-export function renderTotalsValues() {
+
+// renderGlobalTotals: used in home page
+//      extract data from firebase DB
+export function renderGlobalTotals() {
   console.log('[ renderTotals() ]', totals);
   const { totalAmount, totalSales, units } = totals;
 
@@ -20,4 +29,61 @@ export function renderTotalsValues() {
 
   const uiTotalSales = uiTotals.querySelector('.totals__total-sales');
   uiTotalSales.textContent = totalSales;
+}
+
+// renderCurrentTotals: used in products page,
+//    extract data from products selected.
+export function renderCurrentTotals() {
+  console.log('[ renderTotals() ]', totals);
+  const { currentTotalMoney, currentUnits } = totals;
+
+  const uiTotals = document.querySelector('.totals');
+
+  const uiTotalMoney = uiTotals.querySelectorAll('.totals__total-money');
+  uiTotalMoney.forEach((element) => (element.textContent = formatter.format(currentTotalMoney)));
+
+  const uiUnits = uiTotals.querySelectorAll('.totals__units');
+  uiUnits.forEach((element) => (element.textContent = currentUnits));
+}
+
+export function updateProductsChosen() {
+  let totalSaleSum = 0;
+  let cantProductsSaleSum = 0;
+  const productsCard = document.querySelectorAll('.products__card');
+
+  productsCard.forEach((product) => {
+    const price = Number(product.querySelector('.products__price-value').textContent);
+    const amount = Number(product.querySelector('.products__amount').textContent);
+
+    if (amount > 0) {
+      totalSaleSum += price * amount;
+      cantProductsSaleSum += amount;
+    }
+  });
+  totals = {
+    currentUnits: cantProductsSaleSum,
+    currentTotalMoney: totalSaleSum,
+  };
+}
+
+export function onLoadTotalsConfig(whichPage) {
+  const uiSubtitleUnits = document.querySelector('.totals__subtitle--units');
+  const uiTotalsDesktop = document.querySelector('.totals__desktop');
+  const uiTotalsBox = document.querySelectorAll('.totals__box');
+
+  uiTotalsDesktop.dataset.layout = whichPage;
+  uiTotalsBox.forEach((element) => (element.dataset.layout = whichPage));
+
+  switch (whichPage) {
+    case 'products':
+      uiSubtitleUnits.textContent = 'Cantidad de items';
+      break;
+
+    case 'home':
+      uiSubtitleUnits.textContent = 'Unidades';
+      break;
+
+    default:
+      break;
+  }
 }
