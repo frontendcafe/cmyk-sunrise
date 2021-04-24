@@ -13,6 +13,20 @@ const formatter = new Intl.NumberFormat('es-AR', {
 
 // renderTotals: inyects the values in both mobile and desktop divs:
 
+export function renderTotals(whichPage) {
+  switch (whichPage) {
+    case 'products':
+      renderCurrentTotals();
+      break;
+
+    case 'home':
+      break;
+
+    default:
+      break;
+  }
+}
+
 // renderGlobalTotals: used in home page
 //      extract data from firebase DB
 export function renderGlobalTotals() {
@@ -34,6 +48,7 @@ export function renderGlobalTotals() {
 // renderCurrentTotals: used in products page,
 //    extract data from products selected.
 export function renderCurrentTotals() {
+  updateProductsChosen();
   console.log('[ renderTotals() ]', totals);
   const { currentTotalMoney, currentUnits } = totals;
 
@@ -46,7 +61,9 @@ export function renderCurrentTotals() {
   uiUnits.forEach((element) => (element.textContent = currentUnits));
 }
 
-export function updateProductsChosen() {
+// updateProductsChosen: used in products page,
+//   travels for all product cards and see if it was chosen
+function updateProductsChosen() {
   let totalSaleSum = 0;
   let cantProductsSaleSum = 0;
   const productsCard = document.querySelectorAll('.products__card');
@@ -67,6 +84,14 @@ export function updateProductsChosen() {
 }
 
 export function onLoadTotalsConfig(whichPage) {
+  // mobile laoyut references:
+  const uiTotalsMobile=document.querySelector('.totals__mobile');
+  const uiTotalsMobileTitle=document.querySelector('.totals__box--title');
+  uiTotalsMobile.dataset.layout = whichPage;
+  uiTotalsMobileTitle.dataset.layout = whichPage;
+
+
+  // desktop layout references:
   const uiSubtitleUnits = document.querySelector('.totals__subtitle--units');
   const uiTotalsDesktop = document.querySelector('.totals__desktop');
   const uiTotalsBox = document.querySelectorAll('.totals__box');

@@ -1,4 +1,4 @@
-import { renderCurrentTotals, updateProductsChosen } from './_totals.js';
+import { renderTotals } from './_totals.js';
 
 const db = firebase.firestore();
 let totalSaleSum = 0;
@@ -104,14 +104,12 @@ export function getProducts() {
         decreaseButton.addEventListener('click', () => {
           amount.textContent =
             Number(amount.textContent) === 0 ? 0 : Number(amount.textContent) - 1;
-          updateProductsChosen();
-          renderCurrentTotals();
+          renderTotals('products');
         });
 
         increaseButton.addEventListener('click', () => {
           amount.textContent = Number(amount.textContent) + 1;
-          updateProductsChosen();
-          renderCurrentTotals();
+          renderTotals('products');
         });
 
         section.appendChild(productClone);
