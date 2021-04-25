@@ -7,6 +7,8 @@ let totals = {
 };
 let summarySales = [];
 
+export { summarySales };
+
 const formatter = new Intl.NumberFormat('es-AR', {
   style: 'currency',
   currency: 'ARS',
@@ -134,7 +136,7 @@ export async function dbGetTotalSales() {
         //console.log(registerSale);
         summarySales.push({ ...registerSale });
       });
-      console.log('summarySales:',summarySales);
+      console.log('summarySales:', summarySales);
       totals.globalUnits = summarySales.reduce((acc, item) => (acc = acc + item.quantity), 0);
       totals.globalTotalMoney = summarySales.reduce((acc, item) => (acc = acc + item.amount), 0);
       totals.globalSales = summarySales.length;

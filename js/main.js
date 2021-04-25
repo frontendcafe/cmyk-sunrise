@@ -23,13 +23,14 @@ const loadHtml = async function (parentElementId, filePath) {
 };
 
 window.onload = async function () {
+ // Header //
   await loadHtml('header', '/components/header.html');
-  await loadHtml('totals', '/components/totals.html');
   
-  
-  onLoadTotalsConfig('home');
+  // Totals Panel//
+  await loadHtml('totals', '/components/totals.html');    
+  onLoadTotalsConfig('home'); //set appropriated layout (which screen)
   await dbGetTotalSales();
-  renderTotals('home');
+  renderTotals('home'); // inyect values in DOM
 
   // Products //
   await loadHtml('content', '/components/products.html');
