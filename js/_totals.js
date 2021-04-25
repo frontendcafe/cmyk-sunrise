@@ -32,7 +32,7 @@ export function renderTotals(whichPage) {
 // renderGlobalTotals: used in home page
 //      extract data from firebase DB
 function renderGlobalTotals() {
-  console.log('[ renderTotals() ]', totals);
+  // console.log('[ renderTotals() ]', totals);
   const { globalTotalMoney, globalSales, globalUnits } = totals;
 
   const uiTotals = document.querySelector('.totals');
@@ -51,7 +51,7 @@ function renderGlobalTotals() {
 //    extract data from products selected.
 export function renderCurrentTotals() {
   updateProductsChosen();
-  console.log('[ renderTotals() ]', totals);
+  // console.log('[ renderTotals() ]', totals);
   const { currentTotalMoney, currentUnits } = totals;
 
   const uiTotals = document.querySelector('.totals');
@@ -115,7 +115,6 @@ export function onLoadTotalsConfig(whichPage) {
 }
 
 export async function dbGetTotalSales() {
-  console.log('[dbGetTotalSales] Starting...');
   const db = firebase.firestore();
 
   let registerSale = {
@@ -135,7 +134,7 @@ export async function dbGetTotalSales() {
         //console.log(registerSale);
         summarySales.push({ ...registerSale });
       });
-            console.log(summarySales);
+      console.log('summarySales:',summarySales);
       totals.globalUnits = summarySales.reduce((acc, item) => (acc = acc + item.quantity), 0);
       totals.globalTotalMoney = summarySales.reduce((acc, item) => (acc = acc + item.amount), 0);
       totals.globalSales = summarySales.length;
