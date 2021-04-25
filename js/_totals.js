@@ -5,6 +5,7 @@ let totals = {
   currentUnits: 0,
   currentTotalMoney: 0,
 };
+let summarySales = [];
 
 const formatter = new Intl.NumberFormat('es-AR', {
   style: 'currency',
@@ -20,6 +21,7 @@ export function renderTotals(whichPage) {
       break;
 
     case 'home':
+      renderGlobalTotals();
       break;
 
     default:
@@ -29,20 +31,20 @@ export function renderTotals(whichPage) {
 
 // renderGlobalTotals: used in home page
 //      extract data from firebase DB
-export function renderGlobalTotals() {
+function renderGlobalTotals() {
   console.log('[ renderTotals() ]', totals);
-  const { totalAmount, totalSales, units } = totals;
+  const { globalTotalMoney, globalSales, globalUnits } = totals;
 
   const uiTotals = document.querySelector('.totals');
 
-  const uiTotalAmount = uiTotals.querySelectorAll('.totals__total-amount');
-  uiTotalAmount.forEach((element) => (element.textContent = formatter.format(totalAmount)));
+  const uiTotalAmount = uiTotals.querySelectorAll('.totals__total-money');
+  uiTotalAmount.forEach((element) => (element.textContent = formatter.format(globalTotalMoney)));
 
   const uiUnits = uiTotals.querySelectorAll('.totals__units');
-  uiUnits.forEach((element) => (element.textContent = units));
+  uiUnits.forEach((element) => (element.textContent = globalUnits));
 
   const uiTotalSales = uiTotals.querySelector('.totals__total-sales');
-  uiTotalSales.textContent = totalSales;
+  uiTotalSales.textContent = globalSales;
 }
 
 // renderCurrentTotals: used in products page,
@@ -112,38 +114,32 @@ export function onLoadTotalsConfig(whichPage) {
   }
 }
 
-export function dbGetTotalSales() {
+export async function dbGetTotalSales() {
+  console.log('[dbGetTotalSales] Starting...');
   const db = firebase.firestore();
-  let amount, quantity, time;
-  let summarySales = [];
+
   let registerSale = {
-    amount,
-    quantity,
-    time,
+    amount: 0,
+    quantity: 0,
+    time: 0,
   };
 
-  db.collection('sales')
+  await db
+    .collection('sales')
     .get()
-    .then((response) => {
-      response.forEach((register) => {
-        amount = register.data().amount;
-        quantity = register.data().quantity;
-        time = register.data().time;
-        registerSale = {
-          amount,
-          quantity,
-          time,
-        };
-        console.log(registerSale);
-        summarySales = [...summarySales, registerSale];
+    .then((querySnapshot) => {
+      querySnapshot.forEach((register) => {
+        registerSale.amount = register.data().amount;
+        registerSale.quantity = register.data().quantity;
+        registerSale.time = register.data().time;
+        //console.log(registerSale);
+        summarySales.push({ ...registerSale });
       });
-      console.log (summarySales);
-    });
-
-    var scoresRef = firebase.database().ref("sales");
-    scoresRef.orderByValue().limitToLast(3).on("time", function(snapshot) {
-      snapshot.forEach(function(data) {
-        console.log("The " + data.key + " time is " + data.val());
-      });
-    });
+            console.log(summarySales);
+      totals.globalUnits = summarySales.reduce((acc, item) => (acc = acc + item.quantity), 0);
+      totals.globalTotalMoney = summarySales.reduce((acc, item) => (acc = acc + item.amount), 0);
+      totals.globalSales = summarySales.length;
+      //      console.log(totals);
+    })
+    .catch((error) => console.error('[dbGetTotalSales]:', error));
 }

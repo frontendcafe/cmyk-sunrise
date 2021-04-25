@@ -26,9 +26,9 @@ window.onload = async function () {
   await loadHtml('header', '/components/header.html');
   await loadHtml('totals', '/components/totals.html');
   
-  dbGetTotalSales();
-
+  
   onLoadTotalsConfig('home');
+  await dbGetTotalSales();
   renderTotals('home');
 
   // Products //

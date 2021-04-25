@@ -197,7 +197,7 @@
 }
 
 .confirm-sale__table-header {
-  border-bottom: 2px solid #5f8492;
+  border-bottom: 2px solid #769ba9;
 }
 
 .confirm-sale__name {
@@ -205,7 +205,7 @@
 }
 
 .confirm-sale__table-row {
-  border-bottom: 1px solid #5f8492;
+  border-bottom: 1px solid #769ba9;
 }
 
 .confirm-sale__table-footer {
@@ -334,7 +334,7 @@
 }
 
 .totals__mobile[data-layout='products'] {
-  background-color: #5f8492;
+  background-color: #769ba9;
 }
 
 .totals__panel-container {
@@ -429,7 +429,7 @@
     border-radius: 1.2rem;
   }
   .totals__box[data-layout='products'] {
-    background-color: #5f8492;
+    background-color: #769ba9;
   }
   .totals__box--first[data-layout='products'] {
     display: none;
@@ -468,7 +468,7 @@
   width: 36.2rem;
   height: 12rem;
   border-radius: 1rem;
-  background-color: #5f8492;
+  background-color: #769ba9;
 }
 
 .aboutUs__paragraph {
