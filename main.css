@@ -320,7 +320,7 @@
 
 .totals {
   width: 100vw;
-  margin-top: 7rem;
+  margin-top: 5rem;
 }
 
 .totals__mobile {
@@ -393,9 +393,10 @@
     display: -ms-grid;
     display: grid;
     gap: 2rem;
-    -ms-grid-columns: (1fr)[3];
-        grid-template-columns: repeat(3, 1fr);
-    width: 80%;
+    -ms-grid-columns: (minmax(0, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    min-width: 80%;
+    max-width: 95%;
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
@@ -424,6 +425,7 @@
         -ms-flex-align: center;
             align-items: center;
     height: 12rem;
+    padding: 0 1rem;
     background-color: #00c39d;
     color: #181b1b;
     border-radius: 1.2rem;
@@ -435,14 +437,29 @@
     display: none;
   }
   .totals__subtitle--desktop {
-    padding: 0 2rem;
+    padding: 0;
     text-align: center;
     font-size: 2.4rem;
   }
   .totals__quantity--desktop {
-    padding: 0 2rem;
+    padding: 0;
     font-size: 2.5rem;
     font-weight: bold;
+  }
+  .totals__total-money {
+    padding: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .totals__desktop {
+    width: 80%;
+  }
+  .totals__box {
+    padding: 0 2rem;
+  }
+  .totals__quantity--desktop {
+    font-size: 3.6rem;
   }
 }
 
