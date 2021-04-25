@@ -5,6 +5,9 @@ let totals = {
   currentUnits: 0,
   currentTotalMoney: 0,
 };
+let summarySales = [];
+
+export { summarySales };
 
 const formatter = new Intl.NumberFormat('es-AR', {
   style: 'currency',
@@ -13,28 +16,44 @@ const formatter = new Intl.NumberFormat('es-AR', {
 
 // renderTotals: inyects the values in both mobile and desktop divs:
 
+export function renderTotals(whichPage) {
+  switch (whichPage) {
+    case 'products':
+      renderCurrentTotals();
+      break;
+
+    case 'home':
+      renderGlobalTotals();
+      break;
+
+    default:
+      break;
+  }
+}
+
 // renderGlobalTotals: used in home page
 //      extract data from firebase DB
-export function renderGlobalTotals() {
-  console.log('[ renderTotals() ]', totals);
-  const { totalAmount, totalSales, units } = totals;
+function renderGlobalTotals() {
+  // console.log('[ renderTotals() ]', totals);
+  const { globalTotalMoney, globalSales, globalUnits } = totals;
 
   const uiTotals = document.querySelector('.totals');
 
-  const uiTotalAmount = uiTotals.querySelectorAll('.totals__total-amount');
-  uiTotalAmount.forEach((element) => (element.textContent = formatter.format(totalAmount)));
+  const uiTotalAmount = uiTotals.querySelectorAll('.totals__total-money');
+  uiTotalAmount.forEach((element) => (element.textContent = formatter.format(globalTotalMoney)));
 
   const uiUnits = uiTotals.querySelectorAll('.totals__units');
-  uiUnits.forEach((element) => (element.textContent = units));
+  uiUnits.forEach((element) => (element.textContent = globalUnits));
 
   const uiTotalSales = uiTotals.querySelector('.totals__total-sales');
-  uiTotalSales.textContent = totalSales;
+  uiTotalSales.textContent = globalSales;
 }
 
 // renderCurrentTotals: used in products page,
 //    extract data from products selected.
 export function renderCurrentTotals() {
-  console.log('[ renderTotals() ]', totals);
+  updateProductsChosen();
+  // console.log('[ renderTotals() ]', totals);
   const { currentTotalMoney, currentUnits } = totals;
 
   const uiTotals = document.querySelector('.totals');
@@ -46,7 +65,9 @@ export function renderCurrentTotals() {
   uiUnits.forEach((element) => (element.textContent = currentUnits));
 }
 
-export function updateProductsChosen() {
+// updateProductsChosen: used in products page,
+//   travels for all product cards and see if it was chosen
+function updateProductsChosen() {
   let totalSaleSum = 0;
   let cantProductsSaleSum = 0;
   const productsCard = document.querySelectorAll('.products__card');
@@ -67,6 +88,13 @@ export function updateProductsChosen() {
 }
 
 export function onLoadTotalsConfig(whichPage) {
+  // mobile laoyut references:
+  const uiTotalsMobile = document.querySelector('.totals__mobile');
+  const uiTotalsMobileTitle = document.querySelector('.totals__box--title');
+  uiTotalsMobile.dataset.layout = whichPage;
+  uiTotalsMobileTitle.dataset.layout = whichPage;
+
+  // desktop layout references:
   const uiSubtitleUnits = document.querySelector('.totals__subtitle--units');
   const uiTotalsDesktop = document.querySelector('.totals__desktop');
   const uiTotalsBox = document.querySelectorAll('.totals__box');
@@ -86,4 +114,33 @@ export function onLoadTotalsConfig(whichPage) {
     default:
       break;
   }
+}
+
+export async function dbGetTotalSales() {
+  const db = firebase.firestore();
+
+  let registerSale = {
+    amount: 0,
+    quantity: 0,
+    time: 0,
+  };
+
+  await db
+    .collection('sales')
+    .get()
+    .then((querySnapshot) => {
+      querySnapshot.forEach((register) => {
+        registerSale.amount = register.data().amount;
+        registerSale.quantity = register.data().quantity;
+        registerSale.time = register.data().time;
+        //console.log(registerSale);
+        summarySales.push({ ...registerSale });
+      });
+      console.log('summarySales:', summarySales);
+      totals.globalUnits = summarySales.reduce((acc, item) => (acc = acc + item.quantity), 0);
+      totals.globalTotalMoney = summarySales.reduce((acc, item) => (acc = acc + item.amount), 0);
+      totals.globalSales = summarySales.length;
+      //      console.log(totals);
+    })
+    .catch((error) => console.error('[dbGetTotalSales]:', error));
 }
