@@ -85,11 +85,10 @@ function updateProductsChosen() {
 
 export function onLoadTotalsConfig(whichPage) {
   // mobile laoyut references:
-  const uiTotalsMobile=document.querySelector('.totals__mobile');
-  const uiTotalsMobileTitle=document.querySelector('.totals__box--title');
+  const uiTotalsMobile = document.querySelector('.totals__mobile');
+  const uiTotalsMobileTitle = document.querySelector('.totals__box--title');
   uiTotalsMobile.dataset.layout = whichPage;
   uiTotalsMobileTitle.dataset.layout = whichPage;
-
 
   // desktop layout references:
   const uiSubtitleUnits = document.querySelector('.totals__subtitle--units');
@@ -111,4 +110,40 @@ export function onLoadTotalsConfig(whichPage) {
     default:
       break;
   }
+}
+
+export function dbGetTotalSales() {
+  const db = firebase.firestore();
+  let amount, quantity, time;
+  let summarySales = [];
+  let registerSale = {
+    amount,
+    quantity,
+    time,
+  };
+
+  db.collection('sales')
+    .get()
+    .then((response) => {
+      response.forEach((register) => {
+        amount = register.data().amount;
+        quantity = register.data().quantity;
+        time = register.data().time;
+        registerSale = {
+          amount,
+          quantity,
+          time,
+        };
+        console.log(registerSale);
+        summarySales = [...summarySales, registerSale];
+      });
+      console.log (summarySales);
+    });
+
+    var scoresRef = firebase.database().ref("sales");
+    scoresRef.orderByValue().limitToLast(3).on("time", function(snapshot) {
+      snapshot.forEach(function(data) {
+        console.log("The " + data.key + " time is " + data.val());
+      });
+    });
 }
