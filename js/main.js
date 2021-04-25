@@ -1,7 +1,7 @@
 import { onLoadProducts, getProducts } from '/js/_products.js';
-import { onLoadTotalsConfig,renderTotals,dbGetTotalSales } from './_totals.js';
+import { onLoadTotalsConfig, renderTotals, dbGetTotalSales } from './_totals.js';
 
-const loadHtml = async function (parentElementId, filePath) {
+export const loadHtml = async function (parentElementId, filePath) {
   const init = {
     method: 'GET',
     headers: { 'Content-Type': 'text/html' },
@@ -23,11 +23,17 @@ const loadHtml = async function (parentElementId, filePath) {
 };
 
 window.onload = async function () {
- // Header //
+  document.getElementById('header').innerHTML = 'LANDING';
+  // document.getElementById('totals').innerHTML = '';
+  await loadHtml('totals', '/components/landing.html');
+};
+
+export const goToHome = async function () {
+  //  // Header //
   await loadHtml('header', '/components/header.html');
-  
+
   // Totals Panel//
-  await loadHtml('totals', '/components/totals.html');    
+  await loadHtml('totals', '/components/totals.html');
   onLoadTotalsConfig('home'); //set appropriated layout (which screen)
   await dbGetTotalSales();
   renderTotals('home'); // inyect values in DOM
