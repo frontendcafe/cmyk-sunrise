@@ -28,6 +28,9 @@ window.onload = async function () {
   await loadHtml('totals', '/components/landing.html');
 };
 
+export const buttonHome = function () {
+  goToHome();
+};
 export const goToHome = async function () {
   //  // Header //
   await loadHtml('header', '/components/header.html');
@@ -42,4 +45,6 @@ export const goToHome = async function () {
   await loadHtml('content', '/components/products.html');
   onLoadProducts();
   getProducts();
+
+  ROUTER.load('home');
 };

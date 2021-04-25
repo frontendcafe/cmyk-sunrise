@@ -37,8 +37,8 @@ class Router {
     console.log(paths[page] || paths.error);
 
     // const { path, template } = paths[page] || paths.error;
-    // const $CONTAINER = document.querySelector('#content');
-    // $CONTAINER.innerHTML = page;
+    const $CONTAINER = document.querySelector('#content');
+    $CONTAINER.innerHTML = page;
     // document.querySelector('#content').innerHTML = template;
 
     window.history.pushState({}, 'Genial', page);
