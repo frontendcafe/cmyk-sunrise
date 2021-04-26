@@ -1,6 +1,6 @@
 // import goToHome from './main';
 
-class Router {
+export default class Router {
   /**
    * Metodo inicial.
    *
@@ -33,6 +33,7 @@ class Router {
    * @return {void}.
    */
   load(page = 'home') {
+    console.log("TEST load");
     const { paths } = this;
     console.log(paths[page] || paths.error);
 
