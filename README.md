@@ -2,7 +2,7 @@
 
 ## Members
 
-- **Sebastian** [sarganar]
+- **Sebastian Argañaraz** [sarganar]
 - **Freud Alexandro Múnera González** [Freud]
 - **Rhonald Maradey** [Mr.R]
 - **Víctor Olivera** [victor_]

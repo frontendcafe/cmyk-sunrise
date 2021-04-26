@@ -1,7 +1,11 @@
 import { onLoadProducts, getProducts } from '/js/_products.js';
-import { renderTotalsValues } from './_totals.js';
+import { onLoadTotalsConfig, renderTotals, dbGetTotalSales } from './_totals.js';
+import Router from './router.js';
+import { PATHS } from './routes.js';
 
-const loadHtml = async function (parentElementId, filePath) {
+const ROUTER = new Router(PATHS);
+
+export const loadHtml = async function (parentElementId, filePath) {
   const init = {
     method: 'GET',
     headers: { 'Content-Type': 'text/html' },
@@ -23,45 +27,51 @@ const loadHtml = async function (parentElementId, filePath) {
 };
 
 window.onload = async function () {
-  goToLanding();
+  await loadHtml('totals', '/components/landing.html');
+  document.querySelector('#Home').addEventListener('click', () => {
+    goToHome();
+  });
 };
 
-async function goToLanding(){
-  // Landing Screen - step 1 //
-  await loadHtml('landing', '/components/landing.html');
-  setDisplay('.landing', 'block');
+export const buttonHome = function () {
+  goToHome();
+};
 
-  // Header //
+export const buttonSale = function () {
+  goToSale();
+};
+
+export const goToHome = async function () {
+  //  // Header //
   await loadHtml('header', '/components/header.html');
 
-  // Totals Panel Info //
+  await loadHtml('totals', '/components/summary.html');
+  renderTotals('home'); // inyect values in DOM
+
+  document.querySelector('#Sale').addEventListener('click', () => {
+    goToSale();
+  });
+
+  ROUTER.load('home');
+};
+
+export const goToSale = async function () {
+  //  // Header //
+  await loadHtml('header', '/components/header.html');
+
+  // Totals Panel//
   await loadHtml('totals', '/components/totals.html');
-  renderTotalsValues();
+  onLoadTotalsConfig('products'); //set appropriated layout (which screen)
+  await dbGetTotalSales();
+  renderTotals('products'); // inyect values in DOM
 
   // Summary //
   await loadHtml('content', '/components/summary.html');
 
   // Products //
-  // await loadHtml('content', '/components/products.html');
-  // onLoadProducts();
-  // getProducts();
+  await loadHtml('content', '/components/products.html');
+  onLoadProducts();
+  getProducts();
 
-  // Landing Screen - step 2 transition to Home//
-  await wait(3000);
-  setAnimation('.landing', 'fadeOutFromBlock 0.5s ease-out');
-  setDisplay('.header', 'flex');
-  setDisplay('.totals', 'block');
-  setDisplay('#content', 'grid');
-  await wait(500);
-  setDisplay('.landing', 'none');
-
-}
-
-async function wait(ms) {
-  return new Promise((resolve) => {
-    setTimeout(resolve, ms);
-  });
-}
-
-const setDisplay = (div, style) => (document.querySelector(div).style.display = style);
-const setAnimation = (div, animation) => (document.querySelector(div).style.animation = animation);
+  ROUTER.load('sale');
+};
