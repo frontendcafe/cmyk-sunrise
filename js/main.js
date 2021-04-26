@@ -23,35 +23,42 @@ const loadHtml = async function (parentElementId, filePath) {
 };
 
 window.onload = async function () {
+  goToLanding();
+};
+
+async function goToLanding(){
   // Landing Screen - step 1 //
   await loadHtml('landing', '/components/landing.html');
-  const divLanding = document.querySelector('.landing');
-  divLanding.style.display = 'block'; //this fire the css animation
-  // const footerWraper = document.getElementById('footer-wraper');
-  
-  // Header & Totals Panel Info //
+  setDisplay('.landing', 'block');
+
+  // Header //
   await loadHtml('header', '/components/header.html');
+
+  // Totals Panel Info //
   await loadHtml('totals', '/components/totals.html');
-  
   renderTotalsValues();
-  
+
   // Products //
   await loadHtml('content', '/components/products.html');
   onLoadProducts();
   getProducts();
-  
+
   // Landing Screen - step 2 //
   await wait(3000);
-  divLanding.style.animation = 'fadeOutFromBlock 0.5s ease-out';
-  document.querySelector('.header').style.display = 'flex';
-  document.querySelector('.totals').style.display = 'block';
-  document.querySelector('#content').style.display = 'grid';
+  setAnimation('.landing', 'fadeOutFromBlock 0.5s ease-out');
+  setDisplay('.header', 'flex');
+  setDisplay('.totals', 'block');
+  setDisplay('#content', 'grid');
   await wait(500);
-  divLanding.style.display = 'none';
-};
+  setDisplay('.landing', 'none');
+
+}
 
 async function wait(ms) {
   return new Promise((resolve) => {
     setTimeout(resolve, ms);
   });
 }
+
+const setDisplay = (div, style) => (document.querySelector(div).style.display = style);
+const setAnimation = (div, animation) => (document.querySelector(div).style.animation = animation);
