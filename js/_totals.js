@@ -46,7 +46,9 @@ function renderGlobalTotals() {
   uiUnits.forEach((element) => (element.textContent = globalUnits));
 
   const uiTotalSales = uiTotals.querySelector('.totals__total-sales');
-  uiTotalSales.textContent = globalSales;
+
+  //_totals.js:49 Uncaught (in promise) TypeError: Cannot set property 'textContent' of null
+  // uiTotalSales.textContent = globalSales;
 }
 
 // renderCurrentTotals: used in products page,

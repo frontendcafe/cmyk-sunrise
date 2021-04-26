@@ -33,9 +33,8 @@ export default class Router {
    * @return {void}.
    */
   load(page = 'home') {
-    console.log("TEST load");
     const { paths } = this;
-    console.log(paths[page] || paths.error);
+    // console.log(paths[page] || paths.error);
 
     // const { path, template } = paths[page] || paths.error;
     // const $CONTAINER = document.querySelector('#content');
