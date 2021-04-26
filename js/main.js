@@ -1,7 +1,11 @@
 import { onLoadProducts, getProducts } from '/js/_products.js';
-import { onLoadTotalsConfig,renderTotals,dbGetTotalSales } from './_totals.js';
+import { onLoadTotalsConfig, renderTotals, dbGetTotalSales } from './_totals.js';
+import Router from './router.js';
+import { PATHS } from './routes.js';
 
-const loadHtml = async function (parentElementId, filePath) {
+const ROUTER = new Router(PATHS);
+
+export const loadHtml = async function (parentElementId, filePath) {
   const init = {
     method: 'GET',
     headers: { 'Content-Type': 'text/html' },
@@ -23,17 +27,48 @@ const loadHtml = async function (parentElementId, filePath) {
 };
 
 window.onload = async function () {
- // Header //
+  await loadHtml('totals', '/components/landing.html');
+  document.querySelector('#Home').addEventListener('click', () => {
+    goToHome();
+  });
+};
+
+export const buttonHome = function () {
+  goToHome();
+};
+
+export const buttonSale = function () {
+  goToSale();
+};
+
+export const goToHome = async function () {
+  //  // Header //
   await loadHtml('header', '/components/header.html');
-  
-  // Totals Panel//
-  await loadHtml('totals', '/components/totals.html');    
-  onLoadTotalsConfig('home'); //set appropriated layout (which screen)
-  await dbGetTotalSales();
+
+  await loadHtml('totals', '/components/summary.html');
   renderTotals('home'); // inyect values in DOM
+
+  document.querySelector('#Sale').addEventListener('click', () => {
+    goToSale();
+  });
+
+  ROUTER.load('home');
+};
+
+export const goToSale = async function () {
+  //  // Header //
+  await loadHtml('header', '/components/header.html');
+
+  // Totals Panel//
+  await loadHtml('totals', '/components/totals.html');
+  onLoadTotalsConfig('products'); //set appropriated layout (which screen)
+  await dbGetTotalSales();
+  renderTotals('products'); // inyect values in DOM
 
   // Products //
   await loadHtml('content', '/components/products.html');
   onLoadProducts();
   getProducts();
+
+  ROUTER.load('sale');
 };
