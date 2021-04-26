@@ -38,12 +38,15 @@ async function goToLanding(){
   await loadHtml('totals', '/components/totals.html');
   renderTotalsValues();
 
-  // Products //
-  await loadHtml('content', '/components/products.html');
-  onLoadProducts();
-  getProducts();
+  // Summary //
+  await loadHtml('content', '/components/summary.html');
 
-  // Landing Screen - step 2 //
+  // Products //
+  // await loadHtml('content', '/components/products.html');
+  // onLoadProducts();
+  // getProducts();
+
+  // Landing Screen - step 2 transition to Home//
   await wait(3000);
   setAnimation('.landing', 'fadeOutFromBlock 0.5s ease-out');
   setDisplay('.header', 'flex');
