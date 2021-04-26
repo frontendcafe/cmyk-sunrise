@@ -90,7 +90,7 @@ function updateProductsChosen() {
 }
 
 export function onLoadTotalsConfig(whichPage) {
-  // mobile laoyut references:
+  // mobile layout references:
   const uiTotalsMobile = document.querySelector('.totals__mobile');
   const uiTotalsMobileTitle = document.querySelector('.totals__box--title');
   uiTotalsMobile.dataset.layout = whichPage;

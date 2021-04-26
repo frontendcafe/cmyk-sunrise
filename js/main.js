@@ -1,5 +1,6 @@
 import { onLoadProducts, getProducts } from '/js/_products.js';
 import { onLoadTotalsConfig, renderTotals, dbGetTotalSales } from './_totals.js';
+import { onLoadHeaderConfig } from '/js/_header.js';
 import Router from './router.js';
 import { PATHS } from './routes.js';
 
@@ -27,10 +28,11 @@ export const loadHtml = async function (parentElementId, filePath) {
 };
 
 window.onload = async function () {
-  await loadHtml('totals', '/components/landing.html');
-  document.querySelector('#Home').addEventListener('click', () => {
-    goToHome();
-  });
+  // await loadHtml('totals', '/components/landing.html');
+  // document.querySelector('#Home').addEventListener('click', () => {
+  //   goToHome();
+  // });
+  goToLanding();
 };
 
 export const buttonHome = function () {
@@ -75,3 +77,45 @@ export const goToSale = async function () {
 
   ROUTER.load('sale');
 };
+
+async function goToLanding() {
+  // Landing Screen - step 1 //
+  await loadHtml('landing', '/components/landing.html');
+  setDisplay('.landing', 'block');
+
+  // Header //
+  await loadHtml('header', '/components/header.html');
+  onLoadHeaderConfig('home');
+
+  // Totals Panel Info //
+  await loadHtml('totals', '/components/totals.html');
+  onLoadTotalsConfig('home'); //set appropriated layout (which screen)
+  await dbGetTotalSales();
+  renderTotals('home'); // inyect values in DOM
+
+  // Summary //
+  await loadHtml('content', '/components/summary.html');
+
+  // Products //
+  // await loadHtml('content', '/components/products.html');
+  // onLoadProducts();
+  // getProducts();
+
+  // Landing Screen - step 2 transition to Home//
+  await wait(3000);
+  setAnimation('.landing', 'fadeOutFromBlock 0.5s ease-out');
+  setDisplay('.header', 'flex');
+  setDisplay('.totals', 'block');
+  setDisplay('#content', 'grid');
+  await wait(500);
+  setDisplay('.landing', 'none');
+}
+
+async function wait(ms) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+}
+
+const setDisplay = (div, style) => (document.querySelector(div).style.display = style);
+const setAnimation = (div, animation) => (document.querySelector(div).style.animation = animation);
