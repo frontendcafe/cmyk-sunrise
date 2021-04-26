@@ -1,4 +1,153 @@
 @import url("https://fonts.googleapis.com/css2?family=Advent+Pro:wght@400;700&family=Lora:wght@400;700&display=swap");
+.landing {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vh;
+  z-index: 999;
+  background-color: #181b1b;
+  -webkit-animation: fadeInFromNone 1s ease-in-out;
+          animation: fadeInFromNone 1s ease-in-out;
+}
+
+.landing__container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(#00c39d), to(#181b1b));
+  background: linear-gradient(#00c39d, #181b1b);
+}
+
+.landing__picture-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 24rem;
+  height: 24rem;
+  z-index: 10;
+}
+
+.landing__picture {
+  width: 100%;
+  height: 100%;
+}
+
+.landing__curved-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 24rem;
+  height: 24rem;
+  z-index: 10;
+}
+
+.landing__path {
+  fill: transparent;
+}
+
+.landing__curved-text {
+  fill: #f4f4f5;
+  font-family: "Advent Pro", sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 4px;
+  font-weight: bold;
+  -webkit-animation: fadeInFromNone 1.3s ease-in-out;
+          animation: fadeInFromNone 1.3s ease-in-out;
+}
+
+.landing__text-box {
+  position: absolute;
+  top: 65%;
+  left: 2rem;
+  width: 12rem;
+  color: #f4f4f5;
+  -webkit-animation: fadeInFromNone 2s ease-in-out;
+          animation: fadeInFromNone 2s ease-in-out;
+}
+
+.landing__text {
+  font-size: 2rem;
+}
+
+.landing__wave--left {
+  width: 55%;
+  height: 100%;
+}
+
+.landing__wave--right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 56%;
+  height: 100%;
+}
+
+@-webkit-keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInFromNone {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeOutFromBlock {
+  0% {
+    display: block;
+    opacity: 1;
+  }
+  1% {
+    display: block;
+    opacity: 1;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOutFromBlock {
+  0% {
+    display: block;
+    opacity: 1;
+  }
+  1% {
+    display: block;
+    opacity: 1;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+  }
+}
+
 .products {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -282,10 +431,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  z-index: 10;
+  display: none;
   width: 100vw;
   background-color: #235fac;
   color: #f4f4f5;
@@ -308,6 +455,7 @@
 
 .header__icon {
   font-size: 2rem;
+  cursor: pointer;
 }
 
 .header__title {
@@ -321,6 +469,7 @@
 .totals {
   width: 100vw;
   margin-top: 7rem;
+  display: none;
 }
 
 .totals__mobile {
@@ -673,8 +822,7 @@ button:hover {
   margin: 3.2rem 0;
   position: relative;
   width: 100%;
-  display: -ms-grid;
-  display: grid;
+  display: none;
   place-items: center;
 }
 /*# sourceMappingURL=main.css.map */
