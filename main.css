@@ -455,6 +455,7 @@
 
 .header__icon {
   font-size: 2rem;
+  cursor: pointer;
 }
 
 .header__title {

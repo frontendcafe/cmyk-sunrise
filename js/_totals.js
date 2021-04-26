@@ -48,7 +48,7 @@ function renderGlobalTotals() {
   const uiTotalSales = uiTotals.querySelector('.totals__total-sales');
 
   //_totals.js:49 Uncaught (in promise) TypeError: Cannot set property 'textContent' of null
-  // uiTotalSales.textContent = globalSales;
+  uiTotalSales.textContent = globalSales;
 }
 
 // renderCurrentTotals: used in products page,
@@ -120,6 +120,7 @@ export function onLoadTotalsConfig(whichPage) {
 
 export async function dbGetTotalSales() {
   const db = firebase.firestore();
+  summarySales = [];
 
   let registerSale = {
     amount: 0,
@@ -143,6 +144,7 @@ export async function dbGetTotalSales() {
       totals.globalTotalMoney = summarySales.reduce((acc, item) => (acc = acc + item.amount), 0);
       totals.globalSales = summarySales.length;
       //      console.log(totals);
+      // return [...summarySales];
     })
     .catch((error) => console.error('[dbGetTotalSales]:', error));
 }
