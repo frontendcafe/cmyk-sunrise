@@ -1,5 +1,9 @@
 import { onLoadProducts, getProducts } from '/js/_products.js';
 import { onLoadTotalsConfig, renderTotals, dbGetTotalSales } from './_totals.js';
+import Router from './router.js'
+import { PATHS } from './routes.js'
+
+const ROUTER = new Router(PATHS);
 
 export const loadHtml = async function (parentElementId, filePath) {
   const init = {
@@ -26,12 +30,15 @@ window.onload = async function () {
   document.getElementById('header').innerHTML = 'LANDING';
   // document.getElementById('totals').innerHTML = '';
   await loadHtml('totals', '/components/landing.html');
+  document.querySelector('#Home').addEventListener('click',()=>{
+    goToSale();
+  })
 };
 
 export const buttonHome = function () {
-  goToHome();
+  goToSale();
 };
-export const goToHome = async function () {
+export const goToSale = async function () {
   //  // Header //
   await loadHtml('header', '/components/header.html');
 
@@ -48,3 +55,5 @@ export const goToHome = async function () {
 
   ROUTER.load('home');
 };
+
+
