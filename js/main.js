@@ -28,7 +28,6 @@ export const loadHtml = async function (parentElementId, filePath) {
 };
 
 window.onload = async function () {
-
   goToLanding();
 };
 
@@ -119,8 +118,6 @@ async function goToLanding() {
   await wait(500);
   setDisplay('.landing', 'none');
 }
-
-
 
 // Helpers
 async function wait(ms) {
