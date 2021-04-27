@@ -28,7 +28,6 @@ export const loadHtml = async function (parentElementId, filePath) {
 };
 
 window.onload = async function () {
-
   goToLanding();
 };
 
@@ -51,13 +50,11 @@ export const goToHome = async function () {
   await dbGetTotalSales();
   renderTotals('home'); // inyect values in DOM
 
-
   document.getElementById('content').innerHTML = '';
 
   // Summary //
   await loadHtml('content', '/components/summary.html');
   document.querySelector('#sale').addEventListener('click', () => {
-
     goToSale();
   });
 
@@ -121,8 +118,6 @@ async function goToLanding() {
   await wait(500);
   setDisplay('.landing', 'none');
 }
-
-
 
 // Helpers
 async function wait(ms) {
