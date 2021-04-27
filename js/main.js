@@ -48,6 +48,8 @@ export const goToHome = async function () {
   await loadHtml('totals', '/components/summary.html');
   renderTotals('home'); // inyect values in DOM
 
+  document.getElementById('content').innerHTML = '';
+
   document.querySelector('#Sale').addEventListener('click', () => {
     goToSale();
   });
@@ -69,6 +71,11 @@ export const goToSale = async function () {
   await loadHtml('content', '/components/products.html');
   onLoadProducts();
   getProducts();
+
+  document.querySelector('#confirm-sale__Button-Confirm').addEventListener('click', () => {
+    console.log('di click en buttonConfirm');
+    goToHome();
+  });
 
   ROUTER.load('sale');
 };
