@@ -1,8 +1,4 @@
 import { renderTotals } from './_totals.js';
-import Router from './router.js';
-import { PATHS } from './routes.js';
-
-const ROUTER = new Router(PATHS);
 
 const db = firebase.firestore();
 let totalSaleSum = 0;
@@ -54,12 +50,9 @@ function saveSale() {
     })
     .then(() => {
       console.log('Venta registrada !!');
-      // goToHome();
-      // ROUTER.load('home');
     })
     .catch((error) => {
       alert('Error al registrar la venta.');
-
       console.error('Error adding document: ', error);
     });
 }
