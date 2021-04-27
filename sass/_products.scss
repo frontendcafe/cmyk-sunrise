@@ -14,6 +14,10 @@
     background-color: $primary;
     border-radius: 1.6rem;
     box-shadow: 0rem 1rem 2rem rgba(44, 37, 210, 0.05);
+
+    @media (min-width: 768px) {
+      width: 25rem;
+    }
   }
 
   &__title {
@@ -45,6 +49,10 @@
     border-radius: 3.2rem;
     overflow: hidden;
 
+    @media (min-width: 768px) {
+      width: 60%;
+    }
+
     &:hover {
       background-color: $secondary;
     }
@@ -59,6 +67,10 @@
     outline: none;
     font-weight: 500;
     font-size: 2.4rem;
+
+    @media (min-width: 768px) {
+      width: 3.8rem;
+    }
   }
 
   &__amount {
@@ -76,7 +88,14 @@
   border: none;
   border-radius: 0.8rem;
   height: 4.8rem;
-  font-size: 1.6rem;
+  font-size: 2.4rem;
+
+  @media (min-width: 768px) {
+    width: 52.5rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: 3rem;
+  }
 }
 
 .confirm-sale {
@@ -84,7 +103,8 @@
 
   &__div {
     background-color: $white;
-    width: 90%;
+    width: 96%;
+    max-width: 48.2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -101,14 +121,24 @@
     color: $white;
     padding: 1rem 0;
     border-bottom: 1px solid $dark;
-    border-radius: 1rem 1rem 0 0;
-    font-family: 'Advent Pro';
-    font-size: 2.2rem;
+    font-family: $font-title;
+    font-size: 2.4rem;
+    line-height: 3.1rem;
+
+    @media (min-width: 768px) {
+      font-size: 3rem;
+      line-height: 3.8rem;
+    }
   }
 
   &__description {
     margin: 0;
     padding: 1.8rem;
+    font-size: 1.6rem;
+
+    @media (min-width: 768px) {
+      font-size: 2.4rem;
+    }
   }
 
   &__table {
@@ -151,19 +181,30 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-top: 2rem;
+
+    @media (min-width: 768px) {
+      margin: 2rem 0;
+      display: flex;
+      justify-content: center;
+      column-gap: 3.4rem;
+    }
   }
 
   &__buttons-cancel,
   &__buttons-confirm {
+    border: 1px solid #27272c;
     padding: 1rem 2rem;
     color: white;
-    border: none;
-    font-family: 'Advent Pro';
+    font-family: $font-title;
     font-size: 2rem;
     font-weight: 700;
     line-height: 24px;
     letter-spacing: -0.015em;
     cursor: pointer;
+
+    @media (min-width: 768px) {
+      border-radius: 0.5rem;
+    }
   }
 
   &__buttons-cancel {
