@@ -76,9 +76,12 @@
     &__desktop {
       display: grid;
       gap: 2rem;
-      grid-template-columns: repeat(3, 1fr);
+      //grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+      //grid-template-columns: 1fr 1fr minmax(25rem, 30rem);
 
-      width: 80%;
+      min-width: 80%;
+      max-width: 95%;
       height: fit-content;
       margin: 0 auto;
     }
@@ -97,6 +100,7 @@
       justify-content: space-between;
       align-items: center;
       height: 12rem;
+      padding: 0 1rem;
 
       background-color: $primary;
       color: $dark;
@@ -112,15 +116,34 @@
     }
 
     &__subtitle--desktop {
-      padding: 0 2rem;
+      // padding: 0 2rem;
+      padding: 0;
       text-align: center;
       font-size: 2.4rem;
     }
 
     &__quantity--desktop {
-      padding: 0 2rem;
+      //padding: 0 2rem;
+      padding: 0;
       font-size: 2.5rem;
       font-weight: bold;
+    }
+
+    &__total-money {
+      padding: 0;
+    }
+  }
+  @media (min-width: 1024px) {
+    &__desktop {
+      width: 80%;
+    }
+
+    &__box {
+      padding: 0 2rem;
+    }
+
+    &__quantity--desktop {
+      font-size: 3.6rem;
     }
   }
 }
