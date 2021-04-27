@@ -49,9 +49,10 @@ function saveSale() {
       time: Date().toString(),
     })
     .then(() => {
-      alert('Venta registrada !!');
+      console.log('Venta registrada !!');
     })
     .catch((error) => {
+      alert('Error al registrar la venta.');
       console.error('Error adding document: ', error);
     });
 }
@@ -65,6 +66,8 @@ export function onLoadProducts() {
   const registerSaleConfirmButton = document.querySelector('.confirm-sale__buttons-confirm');
 
   registerSaleButton.addEventListener('click', () => {
+    window.scroll({ top: 40, left: 0, behavior: 'smooth' });
+
     sectionConfirmSale.classList.add('confirm-sale-active');
 
     removeCurrentData(tableBody);
