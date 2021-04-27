@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>FrontendCafe Store</title>
-    <link rel="shortcut icon" type="image/jpg" href="images/logo.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#235fac">
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" type="text/css" href="main.css" />
-    <script src="https://kit.fontawesome.com/17bbf751cc.js" crossorigin="anonymous"></script>
-  </head>
-  <body>
-   <main class="content">
-     <picture class="content__image">
-       <img src="/images/error.svg" alt="imagen de error">
-     </picture>
-     <div class="content__text">
-       <h1 class="content__text-title">
-         Página no encontrada
-       </h1>
-       <p class="content__text-description">
-        Lo sentimos no podemos encontrar la página que buscas, mientras podemos ofrecerte otra taza de café visitando nuestra página de inicio.
-       </p>
-     </div>
-     <!-- Coloco la misma clase porque no sé si podremos reutilizarla en este caso o no, lo veremos a la hora de aplicar estilos -->
-     <picture class="content__image">
-      <img src="/images/draw_coffee.svg" alt="imagen de un vaso de café con una cara feliz">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>FrontendCafe Store</title>
+  <link rel="shortcut icon" type="image/jpg" href="images/logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#235fac">
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" type="text/css" href="main.css" />
+  <script src="https://kit.fontawesome.com/17bbf751cc.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <main class="content">
+    <picture class="content__image">
+      <img src="./images/error.svg" alt="imagen de error">
+    </picture>
+    <div class="content__text">
+      <h1 class="content__text-title">
+        Página no encontrada
+      </h1>
+      <p class="content__text-description">
+        Lo sentimos no podemos encontrar la página que buscas, mientras podemos ofrecerte otra taza de café visitando
+        nuestra página de inicio.
+      </p>
+    </div>
+    <!-- Coloco la misma clase porque no sé si podremos reutilizarla en este caso o no, lo veremos a la hora de aplicar estilos -->
+    <picture class="content__image">
+      <img src="./images/draw_coffee.svg" alt="imagen de un vaso de café con una cara feliz">
     </picture>
     <!-- Aquí debajo irá el famoso botón que se repite en el resto de páginas y que supongo que haremos un componente único para él -->
-   </main> 
-  </body>
+    <a href="index.html" class="content__link">Ir a inicio</a>
+  </main>
+</body>
+
 </html>
