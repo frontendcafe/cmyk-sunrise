@@ -1,4 +1,5 @@
 @import 'sass/_base';
+@import 'sass/_landing';
 @import 'sass/_products';
 @import 'sass/_header';
 @import 'sass/_totals';
@@ -43,6 +44,7 @@ button {
   margin: 3.2rem 0;
   position: relative;
   width: 100%;
-  display: grid;
+  // display: grid; //<- original layout
+  display: none;
   place-items: center;
 }
