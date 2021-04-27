@@ -10,7 +10,7 @@
         "sass/_totals.scss",
         "sass/_aboutUs.scss",
         "sass/_summary.scss",
-        "sass/__menuMobile.scss"
+        "sass/_menuMobile.scss"
     ],
     "names": [],
     "file": "main.css"
