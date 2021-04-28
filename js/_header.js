@@ -11,6 +11,10 @@ export function onLoadHeaderConfig(whichPage) {
       uiHeaderIcon.innerHTML = '<i class="fas fa-bars"></i>';
       break;
 
+    case 'about':
+      uiHeaderIcon.innerHTML = '<i class="fas fa-chevron-left"></i>';
+      break;
+
     default:
       break;
   }
