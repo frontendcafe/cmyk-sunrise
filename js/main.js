@@ -45,6 +45,11 @@ export const buttonSale = function () {
 };
 
 export async function goToHome() {
+  // First, make invisible all divs  
+  // setDisplay('.header', 'none');
+  setDisplay('.totals', 'none');
+  setDisplay('#content', 'none');
+
   // Header //
   await loadHtml('header', '/components/header.html');
   onLoadHeaderConfig('home');
@@ -131,6 +136,25 @@ export async function goToLanding() {
   setDisplay('#content', 'grid');
   await wait(500);
   setDisplay('.landing', 'none');
+}
+
+export async function goToAbout() {
+  // Header //
+  await loadHtml('header', '/components/header.html');
+  onLoadHeaderConfig('about');
+  document.querySelector('.header__icon').addEventListener('click', () => {
+    ROUTER.goToRoute('home');
+  });
+
+  // Totals Panel//
+  setDisplay('.totals', 'none');
+
+  // About //
+  await loadHtml('content', '/components/aboutUs.html');
+  
+  setDisplay('.header', 'flex');
+  setDisplay('.totals', 'block');
+  setDisplay('#content', 'grid');
 }
 
 export function goToError() {

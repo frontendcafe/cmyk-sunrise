@@ -35,6 +35,7 @@ export default class Router {
 
     if (!(page in paths)) {
       page = 'error';
+      console.log('error: page route not found');
     }
     const { refFunc, path } = paths[page];
     refFunc();

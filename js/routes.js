@@ -1,4 +1,4 @@
-import { goToLanding,goToHome,goToSale,goToError } from './main.js';
+import { goToLanding, goToHome, goToSale, goToError,goToAbout } from './main.js';
 
 export const PATHS = {
   landing: {
@@ -7,7 +7,7 @@ export const PATHS = {
   },
   about: {
     path: '?page=about',
-    refFunc: goToLanding,
+    refFunc: goToAbout,
   },
   home: {
     path: '?page=home',
