@@ -1,0 +1,35 @@
+.content {
+  width: 80%;
+  &__image {
+    img {
+      display: block;
+      margin: 0 auto 50px auto;
+      width: 100%;
+    }
+  }
+  &__text {
+    color: $white;
+
+    &-title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    &-description {
+      font-size: 14px;
+      line-height: 28px;
+    }
+  }
+  &__link {
+    color: white;
+    background-color: $secondary;
+    border-radius: 10px;
+    width: 160px;
+    height: 60px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 20px 30px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
