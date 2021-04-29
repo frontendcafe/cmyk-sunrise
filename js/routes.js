@@ -1,26 +1,24 @@
+import { goToLanding, goToHome, goToSale, goToError,goToAbout } from './main.js';
+
 export const PATHS = {
-  home: {
-    path: '/',
-    template: `
-            <h1>🏠 Home</h1>
-        `,
+  landing: {
+    path: '?page=home',
+    refFunc: goToLanding,
   },
   about: {
-    path: '/about',
-    template: `
-            <h1>👩🏻‍💻 Sobre mi</h1>
-        `,
+    path: '?page=about',
+    refFunc: goToAbout,
+  },
+  home: {
+    path: '?page=home',
+    refFunc: goToHome,
   },
   error: {
-    path: '/error',
-    template: `
-                <h1> mi 404</h1>
-            `,
+    path: '?page=error',
+    refFunc: goToError,
   },
-  contact: {
-    path: '/contact',
-    template: `
-            <h1>📱 Contacto</h1>
-        `,
+  sale: {
+    path: '?page=sale',
+    refFunc: goToSale,
   },
 };

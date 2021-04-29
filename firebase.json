@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "cmyk-sunrise",
+    "public": "",
     "ignore": [
       "firebase.json",
       "**/.*",

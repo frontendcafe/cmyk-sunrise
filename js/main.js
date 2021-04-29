@@ -28,10 +28,14 @@ export const loadHtml = async function (parentElementId, filePath) {
 };
 
 window.onload = async function () {
-
-  goToLanding();
+  const page = ROUTER.getRoute();
+  ROUTER.goToRoute(page);
 };
 
+window.onpopstate = () => {
+  const page = ROUTER.getRoute();
+  ROUTER.goToRoute(page, true);
+};
 export const buttonHome = function () {
   goToHome();
 };
@@ -40,7 +44,12 @@ export const buttonSale = function () {
   goToSale();
 };
 
-export const goToHome = async function () {
+export async function goToHome() {
+  // First, make invisible all divs  
+  // setDisplay('.header', 'none');
+  setDisplay('.totals', 'none');
+  setDisplay('#content', 'none');
+
   // Header //
   await loadHtml('header', '/components/header.html');
   onLoadHeaderConfig('home');
@@ -51,25 +60,25 @@ export const goToHome = async function () {
   await dbGetTotalSales();
   renderTotals('home'); // inyect values in DOM
 
-
   document.getElementById('content').innerHTML = '';
 
   // Summary //
   await loadHtml('content', '/components/summary.html');
   document.querySelector('#sale').addEventListener('click', () => {
-
-    goToSale();
+    ROUTER.goToRoute('sale');
   });
 
-  ROUTER.load('home');
-};
+  setDisplay('.header', 'flex');
+  setDisplay('.totals', 'block');
+  setDisplay('#content', 'grid');
+}
 
-export const goToSale = async function () {
+export async function goToSale() {
   // Header //
   await loadHtml('header', '/components/header.html');
   onLoadHeaderConfig('products');
   document.querySelector('.header__icon').addEventListener('click', () => {
-    goToHome();
+    ROUTER.goToRoute('home');
   });
 
   // Totals Panel//
@@ -85,13 +94,20 @@ export const goToSale = async function () {
 
   document.querySelector('#confirm-sale__Button-Confirm').addEventListener('click', () => {
     console.log('di click en buttonConfirm');
-    goToHome();
+    ROUTER.goToRoute('home');
   });
 
-  ROUTER.load('sale');
-};
+  setDisplay('.header', 'flex');
+  setDisplay('.totals', 'block');
+  setDisplay('#content', 'grid');
+}
 
-async function goToLanding() {
+export async function goToLanding() {
+  // First, make invisible all divs  
+  setDisplay('.header', 'none');
+  setDisplay('.totals', 'none');
+  setDisplay('#content', 'none');
+
   // Landing Screen - step 1 //
   await loadHtml('landing', '/components/landing.html');
   setDisplay('.landing', 'block');
@@ -109,10 +125,10 @@ async function goToLanding() {
   // Summary //
   await loadHtml('content', '/components/summary.html');
   document.querySelector('#sale').addEventListener('click', () => {
-    goToSale();
+    ROUTER.goToRoute('sale');
   });
 
-  // Landing Screen - step 2 transition to Home //
+  // Landing Screen - step 2 transition to Home Screen //
   await wait(3000);
   setAnimation('.landing', 'fadeOutFromBlock 0.5s ease-out');
   setDisplay('.header', 'flex');
@@ -122,7 +138,28 @@ async function goToLanding() {
   setDisplay('.landing', 'none');
 }
 
+export async function goToAbout() {
+  // Header //
+  await loadHtml('header', '/components/header.html');
+  onLoadHeaderConfig('about');
+  document.querySelector('.header__icon').addEventListener('click', () => {
+    ROUTER.goToRoute('home');
+  });
 
+  // Totals Panel//
+  setDisplay('.totals', 'none');
+
+  // About //
+  await loadHtml('content', '/components/aboutUs.html');
+  
+  setDisplay('.header', 'flex');
+  setDisplay('.totals', 'block');
+  setDisplay('#content', 'grid');
+}
+
+export function goToError() {
+  location.href = 'error.html';
+}
 
 // Helpers
 async function wait(ms) {

@@ -1,5 +1,3 @@
-// import goToHome from './main';
-
 export default class Router {
   /**
    * Metodo inicial.
@@ -8,46 +6,43 @@ export default class Router {
    */
   constructor(paths) {
     this.paths = paths;
-    this.initRouter();
   }
 
   /**
-   * Permite inicializar el router
+   * Permite extraer el destino desde la URL
    *
    * @return {void}.
    */
-  initRouter() {
-    const {
-      location: { pathname = '/' },
-    } = window;
-    const URI = pathname === '/' ? 'home' : pathname.replace('/', '');
+  getRoute() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const pageActive = urlParams.get('page');
-    this.load(pageActive); // || 'home');
+
+    console.log('getRoute:', pageActive);
+
+    return pageActive ? pageActive : 'landing';
   }
 
   /**
    * Permite iniciar la carga de paginas.
-   *
+   *  page: qué pantalla mostrar
+   *  fromHistory: para incluirla o no en el historial (evitar doble inclusion)
    * @return {void}.
    */
-  load(page = 'home') {
+  goToRoute(page, fromHistory = false) {
     const { paths } = this;
-    // console.log(paths[page] || paths.error);
+    console.log('goToRoute:', page);
 
-    // const { path, template } = paths[page] || paths.error;
-    // const $CONTAINER = document.querySelector('#content');
-    // $CONTAINER.innerHTML = page;
-    // document.querySelector('#content').innerHTML = template;
-
-    window.history.pushState({}, 'Genial', page);
-    // window.history.pushState({}, 'Genial', '?page=' + page);
-
-    // history.pushState(body, "titulo", page)
-
-    if (page === 'home') {
-      //   goToHome();
+    if (!(page in paths)) {
+      page = 'error';
+      console.log('error: page route not found');
     }
+    const { refFunc, path } = paths[page];
+    refFunc();
+    if (!fromHistory) {
+      history.pushState({}, page, path);
+    }
+
+    console.log('goToRoute:', path);
   }
 }
