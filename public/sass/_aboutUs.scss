@@ -1,0 +1,47 @@
+.aboutUs {
+  display: flex;
+  height: 87.4rem;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  &__description {
+    display: inline;
+    width: 36.2rem;
+    height: 12rem;
+    border-radius: 1rem;
+    background-color: $gray;
+  }
+
+  &__paragraph {
+    width: 34.2rem;
+    margin: 2rem auto;
+    font-size: 1.4rem;
+  }
+
+  &__testimonial {
+    display: flex;
+    align-items: center;
+    width: 36.2rem;
+    height: 10rem;
+    border-radius: 1rem;
+    background-color: $primary;
+  }
+
+  &__image {
+    width: 6.5rem;
+    height: 6.7rem;
+    margin-left: 2rem;
+  }
+
+  &__paragraph--name {
+    margin: 0 0 0 2rem;
+    font-size: 1.8rem;
+  }
+
+  &__paragraph--testimony {
+    margin: 0 2.5rem 0 2rem;
+    margin-right: 2.5rem;
+    font-size: 1.2rem;
+  }
+}
