@@ -1,5 +1,4 @@
 .sales {
-  background: $dark;
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -11,6 +10,7 @@
     justify-content: space-around;
     width: 100%;
     font-family: $font-principal;
+    color:$table-font-color;
   }
 
   &__body {
@@ -22,7 +22,7 @@
     justify-content: space-between;
     padding: 8px;
     width: 100%;
-    color: $white;
+    // color: $white;
     border-bottom: 1px solid $white;
   }
 
@@ -31,23 +31,23 @@
     justify-content: space-between;
     padding: 15px;
     width: 100%;
-    color: $white;
+    // color: $white;
     border-bottom: 1px solid $white;
   }
 
   &__time {
-    color: $white;
+    // color: $white;
     width: 25%;
   }
 
   &__quantity {
-    color: $white;
+    // color: $white;
     width: 50%;
     text-align: center;
   }
 
   &__amount {
-    color: $white;
+    // color: $white;
     width: 25%;
     text-align: right;
   }
@@ -60,8 +60,8 @@ button {
   height: 4.8rem;
   align-items: center;
   border-radius: 0.8rem;
-  color: $white;
-  background: $secondary;
+  color: $button-font-color;
+  background: $button-bg-color;
   position: relative;
   border: none;
   font-size: 1.6rem;

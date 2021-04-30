@@ -126,7 +126,7 @@ export async function goToLanding() {
 
   // Sales //
   await loadHtml('content', '/components/sales.html');
-  // getTable();
+  getTable();
   document.querySelector('#sale').addEventListener('click', () => {
     ROUTER.goToRoute('sale');
   });
