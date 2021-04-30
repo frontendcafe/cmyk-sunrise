@@ -1,0 +1,69 @@
+.sales {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__table {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    font-family: $font-principal;
+    color:$table-font-color;
+  }
+
+  &__body {
+    width: 100%;
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    width: 100%;
+    // color: $white;
+    border-bottom: 1px solid $white;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    width: 100%;
+    // color: $white;
+    border-bottom: 1px solid $white;
+  }
+
+  &__time {
+    // color: $white;
+    width: 25%;
+  }
+
+  &__quantity {
+    // color: $white;
+    width: 50%;
+    text-align: center;
+  }
+
+  &__amount {
+    // color: $white;
+    width: 25%;
+    text-align: right;
+  }
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 4.8rem;
+  align-items: center;
+  border-radius: 0.8rem;
+  color: $button-font-color;
+  background: $button-bg-color;
+  position: relative;
+  border: none;
+  font-size: 1.6rem;
+  font-family: $font-principal;
+}

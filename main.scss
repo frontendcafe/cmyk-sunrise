@@ -4,7 +4,7 @@
 @import 'sass/_header';
 @import 'sass/_totals';
 @import 'sass/_aboutUs';
-@import 'sass/_summary';
+@import 'sass/_sales';
 @import 'sass/_error';
 @import 'sass/_menuMobile';
 
@@ -25,8 +25,9 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
-  background-color: $dark;
-  padding: 5%;
+  // background-color: $dark;
+  background-color: $primary-bg-color;
+  // padding: 5%;
   font-family: $font-principal;
   font-size: 16px;
 }
