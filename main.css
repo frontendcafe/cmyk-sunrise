@@ -740,10 +740,10 @@
   font-size: 1.2rem;
 }
 
-.container {
+.sales {
   background: #181b1b;
   width: 100%;
-  height: 500px;
+  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -755,18 +755,21 @@
           align-items: center;
 }
 
-.summary {
+.sales__table {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  color: #ffff;
-  width: 90%;
+  width: 100%;
   font-family: "Lora", serif;
 }
 
-.summary__row {
+.sales__body {
+  width: 100%;
+}
+
+.sales__items {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -774,8 +777,39 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 8px;
-  width: 350px;
+  width: 100%;
+  color: #ffff;
   border-bottom: 1px solid #ffff;
+}
+
+.sales__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 15px;
+  width: 100%;
+  color: #ffff;
+  border-bottom: 1px solid #ffff;
+}
+
+.sales__time {
+  color: #ffff;
+  width: 25%;
+}
+
+.sales__quantity {
+  color: #ffff;
+  width: 50%;
+  text-align: center;
+}
+
+.sales__amount {
+  color: #ffff;
+  width: 25%;
+  text-align: right;
 }
 
 button {
