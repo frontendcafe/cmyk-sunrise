@@ -4,13 +4,14 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  color: $primary-font-color;
 
   &__description {
     display: inline;
     width: 36.2rem;
     height: 12rem;
     border-radius: 1rem;
-    background-color: $gray;
+    background-color: $secondary-bg-color;
   }
 
   &__paragraph {
@@ -25,7 +26,7 @@
     width: 36.2rem;
     height: 10rem;
     border-radius: 1rem;
-    background-color: $primary;
+    background-color: $testimonial-bg-color;
   }
 
   &__image {

@@ -3,6 +3,7 @@ import { onLoadTotalsConfig, renderTotals, dbGetTotalSales } from './_totals.js'
 import { onLoadHeaderConfig } from '/js/_header.js';
 import Router from './router.js';
 import { PATHS } from './routes.js';
+import { getTable } from './_sales.js';
 
 const ROUTER = new Router(PATHS);
 
@@ -45,7 +46,7 @@ export const buttonSale = function () {
 };
 
 export async function goToHome() {
-  // First, make invisible all divs  
+  // First, make invisible all divs
   // setDisplay('.header', 'none');
   setDisplay('.totals', 'none');
   setDisplay('#content', 'none');
@@ -62,8 +63,9 @@ export async function goToHome() {
 
   document.getElementById('content').innerHTML = '';
 
-  // Summary //
-  await loadHtml('content', '/components/summary.html');
+  // Sales //  console.log('entra a sales');
+  await loadHtml('content', '/components/sales.html');
+  getTable();
   document.querySelector('#sale').addEventListener('click', () => {
     ROUTER.goToRoute('sale');
   });
@@ -103,7 +105,7 @@ export async function goToSale() {
 }
 
 export async function goToLanding() {
-  // First, make invisible all divs  
+  // First, make invisible all divs
   setDisplay('.header', 'none');
   setDisplay('.totals', 'none');
   setDisplay('#content', 'none');
@@ -122,8 +124,9 @@ export async function goToLanding() {
   await dbGetTotalSales();
   renderTotals('home'); // inyect values in DOM
 
-  // Summary //
-  await loadHtml('content', '/components/summary.html');
+  // Sales //
+  await loadHtml('content', '/components/sales.html');
+  getTable();
   document.querySelector('#sale').addEventListener('click', () => {
     ROUTER.goToRoute('sale');
   });
@@ -151,7 +154,7 @@ export async function goToAbout() {
 
   // About //
   await loadHtml('content', '/components/aboutUs.html');
-  
+
   setDisplay('.header', 'flex');
   setDisplay('.totals', 'block');
   setDisplay('#content', 'grid');

@@ -11,12 +11,12 @@
     margin: 0 auto;
 
     border-radius: 0.7rem;
-    background-color: $primary;
-    color: $dark;
+    background-color: $totals-bg-color;
+    color: $totals-font-color;
   }
 
   &__mobile[data-layout='products'] {
-    background-color: $gray;
+    background-color: $totals-bg-color-sale;
   }
 
   &__panel-container {
@@ -31,6 +31,7 @@
     font-size: 2rem;
     font-weight: bold;
     text-shadow: 0px 4px 4px #00000040;
+    color: $totals-font-color-weak;
   }
 
   &__box--title[data-layout='products'] {
@@ -41,7 +42,7 @@
     padding-left: 2.5rem;
 
     text-align: left;
-    border-right: 0.1rem solid rgba(0, 0, 0, 0.171);
+    border-right: 0.1rem solid #f4f4f5;
   }
 
   &__box--units {
@@ -56,6 +57,7 @@
 
   &__subtitle {
     font-size: 1.8rem;
+    color: $totals-font-color-weak;
   }
 
   &__heading,
@@ -76,9 +78,7 @@
     &__desktop {
       display: grid;
       gap: 2rem;
-      //grid-template-columns: repeat(3, 1fr);
       grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
-      //grid-template-columns: 1fr 1fr minmax(25rem, 30rem);
 
       min-width: 80%;
       max-width: 95%;
@@ -102,13 +102,13 @@
       height: 12rem;
       padding: 0 1rem;
 
-      background-color: $primary;
-      color: $dark;
+      background-color: $totals-bg-color;
+      color: $totals-font-color-home;
       border-radius: 1.2rem;
     }
 
     &__box[data-layout='products'] {
-      background-color: $gray;
+      background-color: $totals-bg-color-sale;
     }
 
     &__box--first[data-layout='products'] {
@@ -120,6 +120,7 @@
       padding: 0;
       text-align: center;
       font-size: 2.4rem;
+      color: $totals-font-color-weak;
     }
 
     &__quantity--desktop {
@@ -127,6 +128,7 @@
       padding: 0;
       font-size: 2.5rem;
       font-weight: bold;
+      color: $totals-font-color;
     }
 
     &__total-money {
