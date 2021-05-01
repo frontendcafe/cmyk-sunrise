@@ -1,6 +1,7 @@
 import { summarySales } from './_totals.js';
 
 export function getTable() {
+  //summarySales.length=0; //simulate 0 sales
   let sales = document.getElementById('sales');
   sales.innerHTML = `
       <tr class="sales__items">
