@@ -578,13 +578,11 @@
 }
 
 .totals__box--money {
-  padding-left: 2.5rem;
   text-align: left;
   border-right: 0.1rem solid #f4f4f5;
 }
 
 .totals__box--units {
-  padding-right: 2.5rem;
   text-align: right;
 }
 
