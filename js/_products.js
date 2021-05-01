@@ -1,3 +1,5 @@
+import { renderTotals } from './_totals.js';
+
 const db = firebase.firestore();
 let totalSaleSum = 0;
 let cantProductsSaleSum = 0;
@@ -40,7 +42,6 @@ function populateTableWithNewData(tableBody) {
 }
 
 function saveSale() {
-
   db.collection('sales')
     .add({
       amount: totalSaleSum,
@@ -48,9 +49,10 @@ function saveSale() {
       time: Date().toString(),
     })
     .then(() => {
-      alert('Venta registrada !!')
+      console.log('Venta registrada !!');
     })
     .catch((error) => {
+      alert('Error al registrar la venta.');
       console.error('Error adding document: ', error);
     });
 }
@@ -64,6 +66,8 @@ export function onLoadProducts() {
   const registerSaleConfirmButton = document.querySelector('.confirm-sale__buttons-confirm');
 
   registerSaleButton.addEventListener('click', () => {
+    window.scroll({ top: 40, left: 0, behavior: 'smooth' });
+
     sectionConfirmSale.classList.add('confirm-sale-active');
 
     removeCurrentData(tableBody);
@@ -103,10 +107,12 @@ export function getProducts() {
         decreaseButton.addEventListener('click', () => {
           amount.textContent =
             Number(amount.textContent) === 0 ? 0 : Number(amount.textContent) - 1;
+          renderTotals('products');
         });
 
         increaseButton.addEventListener('click', () => {
           amount.textContent = Number(amount.textContent) + 1;
+          renderTotals('products');
         });
 
         section.appendChild(productClone);

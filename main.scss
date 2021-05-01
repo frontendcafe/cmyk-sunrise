@@ -1,9 +1,12 @@
 @import 'sass/_base';
+@import 'sass/_landing';
 @import 'sass/_products';
 @import 'sass/_header';
 @import 'sass/_totals';
 @import 'sass/_aboutUs';
-@import 'sass/_summary';
+@import 'sass/_sales';
+@import 'sass/_error';
+@import 'sass/_menuMobile';
 
 html {
   box-sizing: border-box;
@@ -22,8 +25,9 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
-  background-color: $dark;
-  padding: 5%;
+  // background-color: $dark;
+  background-color: $primary-bg-color;
+  // padding: 5%;
   font-family: $font-principal;
   font-size: 16px;
 }
@@ -42,6 +46,7 @@ button {
   margin: 3.2rem 0;
   position: relative;
   width: 100%;
-  display: grid;
+  // display: grid; //<- original layout
+  display: none;
   place-items: center;
 }

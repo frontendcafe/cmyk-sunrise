@@ -1,0 +1,81 @@
+.sales {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  &__table {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    font-family: $font-principal;
+    color: $table-font-color;
+  }
+
+  &__body {
+    width: 100%;
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    width: 100%;
+    border-bottom: 1px solid $dark;
+    color: $dark;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    width: 100%;
+    line-height: 3px;
+    color: $dark;
+    border-bottom: 1px solid $dark;
+
+    @media (max-width: 360px) {
+      line-height: 6px;
+    }
+  }
+
+  &__time {
+    width: 25%;
+    text-align: left;
+  }
+
+  &__quantity {
+    width: 100%;
+    text-align: center;
+  }
+
+  &__quantity-item {
+    display: flex;
+    justify-content: center;
+
+    @media (max-width: 360px) {
+      text-align: right;
+    }
+  }
+
+  &__amount {
+    width: 25%;
+    text-align: right;
+  }
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  height: 4.8rem;
+  align-items: center;
+  border-radius: 0.8rem;
+  color: $button-font-color;
+  background: $button-bg-color;
+  position: relative;
+  border: none;
+  font-size: 1.6rem;
+  font-family: $font-principal;
+}
