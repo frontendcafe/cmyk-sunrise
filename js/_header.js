@@ -1,6 +1,7 @@
 export function onLoadHeaderConfig(whichPage) {
   // layout references:
   const uiHeaderIcon = document.querySelector('.header__icon');
+  const uiHeaderTitle = document.querySelector('.header__title');
 
   switch (whichPage) {
     case 'products':
@@ -13,6 +14,7 @@ export function onLoadHeaderConfig(whichPage) {
 
     case 'about':
       uiHeaderIcon.innerHTML = '<i class="fas fa-chevron-left"></i>';
+      uiHeaderTitle.textContent = 'Nosotros';
       break;
 
     default:

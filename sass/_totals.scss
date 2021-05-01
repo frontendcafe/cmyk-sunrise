@@ -78,9 +78,7 @@
     &__desktop {
       display: grid;
       gap: 2rem;
-      //grid-template-columns: repeat(3, 1fr);
       grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
-      //grid-template-columns: 1fr 1fr minmax(25rem, 30rem);
 
       min-width: 80%;
       max-width: 95%;
@@ -104,13 +102,13 @@
       height: 12rem;
       padding: 0 1rem;
 
-      background-color: $primary;
-      color: $dark;
+      background-color: $totals-bg-color;
+      color: $totals-font-color-home;
       border-radius: 1.2rem;
     }
 
     &__box[data-layout='products'] {
-      background-color: $gray;
+      background-color: $totals-bg-color-sale;
     }
 
     &__box--first[data-layout='products'] {
@@ -122,6 +120,7 @@
       padding: 0;
       text-align: center;
       font-size: 2.4rem;
+      color: $totals-font-color-weak;
     }
 
     &__quantity--desktop {
@@ -129,6 +128,7 @@
       padding: 0;
       font-size: 2.5rem;
       font-weight: bold;
+      color: $totals-font-color;
     }
 
     &__total-money {
