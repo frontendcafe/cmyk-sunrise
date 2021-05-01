@@ -14,7 +14,8 @@
     position: relative;
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(#00c39d, #181b1b);
+    //background: linear-gradient(#00c39d, #181b1b);
+    background: linear-gradient(179.98deg, #5E3E00 0.02%, #181B1B 99.98%), #C4C4C4;
   }
 
   &__picture-box {
@@ -71,7 +72,8 @@
     top: 65%;
     left: 2rem;
     width: 12rem;
-    color: $light;
+    color: $dark;
+    font-weight: bold;
     animation: fadeInFromNone 2s ease-in-out;
   }
 
@@ -82,7 +84,9 @@
       width: 45rem;
       transform: translateX(-50%);
       text-align: center;
-    }
+      color: $light;
+      font-weight: normal;
+      }
   }
 
   &__text {
@@ -110,11 +114,11 @@
   @media (min-width: 768px) {
     &__wave--left {
       width: 15%;
-      filter: drop-shadow(2px 6px 1px #102723);
+      filter: drop-shadow(2px 6px 1px rgba(0,0,0,0.25));
     }
     &__wave--right {
       width: 15%;
-      filter: drop-shadow(-2px 6px 1px #102723);
+      filter: drop-shadow(-2px 6px 1px rgba(0,0,0,0.25));
     }
   }
 }
