@@ -746,7 +746,6 @@
 
 .sales {
   width: 100%;
-  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -795,18 +794,23 @@
           justify-content: space-between;
   padding: 15px;
   width: 100%;
-  line-height: 3px;
+  line-height: 6px;
   color: #181b1b;
   border-bottom: 1px solid #181b1b;
 }
 
-@media (max-width: 360px) {
+@media (min-width: 768px) {
   .sales__row {
-    line-height: 6px;
+    line-height: 3px;
   }
 }
 
-.sales__time {
+.sales__no-sales {
+  text-align: center;
+  font-weight: bold;
+}
+
+.sales__count {
   width: 25%;
   text-align: left;
 }
@@ -823,38 +827,18 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  text-align: right;
 }
 
-@media (max-width: 360px) {
+@media (min-width: 768px) {
   .sales__quantity-item {
-    text-align: right;
+    text-align: center;
   }
 }
 
 .sales__amount {
   width: 25%;
   text-align: right;
-}
-
-button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 50%;
-  height: 4.8rem;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-radius: 0.8rem;
-  color: #f4f4f5;
-  background: #330e00;
-  position: relative;
-  border: none;
-  font-size: 1.6rem;
-  font-family: "Lora", serif;
 }
 
 .content {
