@@ -52,7 +52,7 @@ function saveSale() {
     .add({
       amount: totalSaleSum,
       quantity: cantProductsSaleSum,
-      time: Date().toString(),
+      time: new Date(),
     })
     .then(() => {
       console.log('Venta registrada !!');
