@@ -52,7 +52,7 @@ function saveSale() {
     .add({
       amount: totalSaleSum,
       quantity: cantProductsSaleSum,
-      time: Date().toString(),
+      time: new Date(),
     })
     .then(() => {
       console.log('Venta registrada !!');
@@ -80,7 +80,6 @@ export function onLoadProducts() {
     removeCurrentData(tableBody);
     // resetTotalValue();
     populateTableWithNewData(tableBody);
-
   });
 
   registerSaleCancelButton.addEventListener('click', () => {
