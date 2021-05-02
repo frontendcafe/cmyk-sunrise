@@ -265,7 +265,7 @@
 }
 
 .products__card:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .products__title {
@@ -338,8 +338,8 @@
 }
 
 .register-sale-button {
-  width: 90%;
-  margin: 3.2rem 0;
+  width: calc(100% - 2rem);
+  margin: 3.2rem 1rem;
   position: fixed;
   bottom: 0;
   background-color: #330e00;
@@ -357,6 +357,7 @@
 @media (min-width: 768px) {
   .register-sale-button {
     width: 52.5rem;
+    margin: 3.2rem 0;
     font-size: 3rem;
   }
 }
@@ -970,6 +971,7 @@
 .sales__no-sales {
   text-align: center;
   font-weight: bold;
+  font-size: 2.4rem;
 }
 
 .sales__count {
@@ -983,13 +985,8 @@
 }
 
 .sales__quantity-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: right;
+  width: 100%;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
@@ -1004,8 +1001,8 @@
 }
 
 .new-sale-button {
-  width: 90%;
-  margin: 3.2rem 0;
+  width: calc(100% - 2rem);
+  margin: 3.2rem 1rem;
   position: fixed;
   bottom: 0;
   background-color: #330e00;
@@ -1023,6 +1020,7 @@
 @media (min-width: 768px) {
   .new-sale-button {
     width: 52.5rem;
+    margin: 3.2rem 0;
     font-size: 3rem;
   }
 }
@@ -1202,7 +1200,7 @@ button:hover {
 }
 
 #content {
-  margin: 3.2rem 0;
+  margin: 3.2rem 0 9.6rem 0;
   position: relative;
   width: 100%;
   display: none;

@@ -20,7 +20,7 @@
     }
 
     &:hover {
-      opacity: .8;
+      opacity: 0.8;
     }
   }
 
@@ -35,10 +35,10 @@
     min-height: 9.6rem;
   }
 
-  &__price{
-    color:$card-price-color;
+  &__price {
+    color: $card-price-color;
   }
-  
+
   // &__price-title {
   //   // opacity: 50%;
   // }
@@ -88,8 +88,8 @@
 }
 
 .register-sale-button {
-  width: 90%;
-  margin: 3.2rem 0;
+  width: calc(100% - 2rem);
+  margin: 3.2rem 1rem;
   position: fixed;
   bottom: 0;
   background-color: $button-bg-color;
@@ -104,6 +104,7 @@
   transform: translate(-50%, 0);
   @media (min-width: $tablet-width) {
     width: 52.5rem;
+    margin: 3.2rem 0;
     font-size: 3rem;
   }
 }
