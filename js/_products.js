@@ -10,10 +10,16 @@ function removeCurrentData(tableBody) {
   }
 }
 
+function showRegisterSaleButton() {
+  const registerSaleButton = document.getElementById('register-sale');
+  registerSaleButton.classList.add('register-sale-button--active');
+}
+
 function populateTableWithNewData(tableBody) {
   const productsCard = document.querySelectorAll('.products__card');
   const templateRow = document.getElementById('confirm-sale-template-row');
   const totalSale = document.querySelector('.confirm-sale__total-sale');
+  totalSaleSum = 0;
 
   productsCard.forEach((product) => {
     const name = product.querySelector('.products__title').textContent;
@@ -46,7 +52,7 @@ function saveSale() {
     .add({
       amount: totalSaleSum,
       quantity: cantProductsSaleSum,
-      time: Date().toString(),
+      time: new Date(),
     })
     .then(() => {
       console.log('Venta registrada !!');
@@ -59,6 +65,7 @@ function saveSale() {
 
 export function onLoadProducts() {
   const registerSaleButton = document.getElementById('register-sale');
+
   const sectionConfirmSale = document.getElementById('section-confirm-sale');
   const tableBody = document.querySelector('.confirm-sale__table-body');
 
@@ -71,6 +78,7 @@ export function onLoadProducts() {
     sectionConfirmSale.classList.add('confirm-sale-active');
 
     removeCurrentData(tableBody);
+    // resetTotalValue();
     populateTableWithNewData(tableBody);
   });
 
@@ -113,6 +121,7 @@ export function getProducts() {
         increaseButton.addEventListener('click', () => {
           amount.textContent = Number(amount.textContent) + 1;
           renderTotals('products');
+          showRegisterSaleButton();
         });
 
         section.appendChild(productClone);

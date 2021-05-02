@@ -1,6 +1,5 @@
 .aboutUs {
   display: flex;
-  height: 87.4rem;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -9,15 +8,24 @@
   &__description {
     display: inline;
     width: 36.2rem;
-    height: 12rem;
+    height: 17rem;
     border-radius: 1rem;
     background-color: $secondary-bg-color;
   }
 
   &__paragraph {
     width: 34.2rem;
-    margin: 2rem auto;
+    margin: 1rem auto;
     font-size: 1.4rem;
+    text-align: center;
+  }
+
+  &__testimonial--container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 70rem;
+    margin-top: 2rem;
   }
 
   &__testimonial {
@@ -35,14 +43,98 @@
     margin-left: 2rem;
   }
 
-  &__paragraph--name {
-    margin: 0 0 0 2rem;
-    font-size: 1.8rem;
+  &__info {
+    display: flex;
+    width: 24.1rem;
+    height: 6.7rem;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 0 2rem;
   }
 
-  &__paragraph--testimony {
-    margin: 0 2.5rem 0 2rem;
-    margin-right: 2.5rem;
-    font-size: 1.2rem;
+  &__text {
+    display: block;
+    width: 17rem;
+    height: 6.7rem;
+  }
+
+  &__paragraph--name {
+    margin: 0rem;
+    font-size: 2.2rem;
+  }
+
+  &__paragraph--profile {
+    margin: 0;
+    font-size: 1.6rem;
+  }
+
+  &__media {
+    display: flex;
+    text-align: center;
+    align-items: flex-end;
+    width: 8rem;
+    height: 6.7rem;
+  }
+}
+
+.fa-github-square,
+.fa-linkedin {
+  font-size: 4rem;
+  color: $light-brown;
+  margin-right: 0.8rem;
+}
+
+@media (min-width: $desktop-width) {
+  .aboutUs {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0 auto;
+
+    &__description {
+      width: 54.2rem;
+      height: 32rem;
+    }
+
+    &__paragraph {
+      width: 49.6rem;
+      font-size: 2.2rem;
+      margin: 1rem auto;
+      line-height: 1.5;
+    }
+
+    &__testimonial--container {
+      width: 59.3rem;
+      height: 82rem;
+      justify-content: space-between;
+      margin: 0;
+    }
+
+    &__testimonial:nth-child(even) {
+      position: relative;
+      right: -17.3rem;
+    }
+
+    &__testimonial {
+      width: 42rem;
+      height: 12rem;
+    }
+
+    &__image {
+      width: 7.5rem;
+      height: 7.7rem;
+      margin-left: 2rem;
+    }
+
+    &__info {
+      width: 37.7rem;
+      height: 7.7rem;
+    }
+
+    &__text {
+      display: block;
+      width: 21rem;
+      height: 6.7rem;
+    }
   }
 }
