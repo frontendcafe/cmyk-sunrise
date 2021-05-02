@@ -1,6 +1,5 @@
 .sales {
   width: 100%;
-  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -31,16 +30,21 @@
     justify-content: space-between;
     padding: 15px;
     width: 100%;
-    line-height: 3px;
+    line-height: 6px;
     color: $dark;
     border-bottom: 1px solid $dark;
 
-    @media (max-width: 360px) {
-      line-height: 6px;
+    @media (min-width: $tablet-width) {
+      line-height: 3px;
     }
   }
 
-  &__time {
+  &__no-sales {
+    text-align: center;
+    font-weight: bold;
+  }
+
+  &__count {
     width: 25%;
     text-align: left;
   }
@@ -53,9 +57,10 @@
   &__quantity-item {
     display: flex;
     justify-content: center;
+    text-align: right;
 
-    @media (max-width: 360px) {
-      text-align: right;
+    @media (min-width: $tablet-width) {
+      text-align: center;
     }
   }
 
@@ -63,19 +68,4 @@
     width: 25%;
     text-align: right;
   }
-}
-
-button {
-  display: flex;
-  justify-content: center;
-  width: 50%;
-  height: 4.8rem;
-  align-items: center;
-  border-radius: 0.8rem;
-  color: $button-font-color;
-  background: $button-bg-color;
-  position: relative;
-  border: none;
-  font-size: 1.6rem;
-  font-family: $font-principal;
 }

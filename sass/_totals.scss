@@ -71,7 +71,7 @@
   }
 
   // DESKTOP LAYOUT
-  @media (min-width: 768px) {
+  @media (min-width: $tablet-width) {
     &__mobile {
       display: none;
     }
@@ -135,7 +135,7 @@
       padding: 0;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: $desktop-width) {
     &__desktop {
       width: 80%;
     }
