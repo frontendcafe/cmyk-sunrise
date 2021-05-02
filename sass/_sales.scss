@@ -34,7 +34,7 @@
     color: $dark;
     border-bottom: 1px solid $dark;
 
-    @media (min-width: 768px) {
+    @media (min-width: $tablet-width) {
       line-height: 3px;
     }
   }
@@ -59,7 +59,7 @@
     justify-content: center;
     text-align: right;
 
-    @media (min-width: 768px) {
+    @media (min-width: $tablet-width) {
       text-align: center;
     }
   }
