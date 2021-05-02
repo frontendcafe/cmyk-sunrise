@@ -1,4 +1,5 @@
 // Colors
+//    basic colors
 $light: #f4f4f5;
 $dark: #181b1b;
 $white: #ffff;
@@ -11,15 +12,17 @@ $dark-brown: #330e00;
 $brown2: #5e3e00;
 $light-weak: #f4f4f5bf; // $light @alpha:75%
 
+//   component colors
 $primary-bg-color: $light-brown;
 $secondary-bg-color: $brown2;
 $primary-font-color: $light;
 
 $header-bg-color: $dark-brown;
-$totals-bg-color: $dark;
+$totals-bg-color: $brown2;
 $totals-bg-color-sale: $brown2;
 $totals-font-color: $light;
 $totals-font-color-weak: $light-weak;
+$totals-font-color-home: $light-brown;
 
 $button-bg-color: $dark-brown;
 $button-font-color: $light;
@@ -35,6 +38,10 @@ $confirm-btn-bg-color: $dark-brown;
 $confirm-cancel-bg-color: $brown2;
 
 $testimonial-bg-color: $dark;
+
+// For Media Queries
+$tablet-width: 768px;
+$desktop-width: 1024px;
 
 // Fonts
 @import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@400;700&family=Lora:wght@400;700&display=swap');
