@@ -42,6 +42,7 @@
   &__no-sales {
     text-align: center;
     font-weight: bold;
+    font-size: 2.4rem;
   }
 
   &__count {
@@ -52,6 +53,17 @@
   &__quantity {
     width: 100%;
     text-align: center;
+  }
+
+  &__quantity-item {
+    // display: flex;
+    // justify-content: center;
+    width: 100%;
+    text-align: center;
+
+    @media (min-width: $tablet-width) {
+      text-align: center;
+    }
   }
 
   &__quantity-item {
@@ -71,8 +83,8 @@
 }
 
 .new-sale-button {
-  width: 90%;
-  margin: 3.2rem 0;
+  width: calc(100% - 2rem);
+  margin: 3.2rem 1rem;
   position: fixed;
   bottom: 0;
   background-color: $button-bg-color;
@@ -85,6 +97,7 @@
 
   @media (min-width: 768px) {
     width: 52.5rem;
+    margin: 3.2rem 0;
     left: 50%;
     transform: translate(-50%, 0);
     font-size: 3rem;

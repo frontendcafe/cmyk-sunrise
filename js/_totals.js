@@ -92,6 +92,9 @@ function updateProductsChosen() {
 }
 
 export function onLoadTotalsConfig(whichPage) {
+  const uiTotals = document.querySelector('.totals');
+  uiTotals.dataset.layout = whichPage;
+
   // mobile layout references:
   const uiTotalsMobile = document.querySelector('.totals__mobile');
   const uiTotalsMobileTitle = document.querySelector('.totals__box--title');
@@ -133,7 +136,7 @@ export async function dbGetTotalSales() {
   await db
     .collection('sales')
     .where('time', '>=', new Date(new Date().setHours(0, 0, 0, 0)))
-    .orderBy('time', 'asc')    
+    .orderBy('time', 'asc')
     .get()
     .then((querySnapshot) => {
       querySnapshot.forEach((register) => {
@@ -148,7 +151,6 @@ export async function dbGetTotalSales() {
       totals.globalUnits = summarySales.reduce((acc, item) => (acc = acc + item.quantity), 0);
       totals.globalTotalMoney = summarySales.reduce((acc, item) => (acc = acc + item.amount), 0);
       totals.globalSales = summarySales.length;
-
     })
     .catch((error) => console.error('[dbGetTotalSales]:', error));
 }
