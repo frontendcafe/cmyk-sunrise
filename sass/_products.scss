@@ -100,11 +100,11 @@
   font-size: 2.4rem;
   display: none;
 
-  left: 50%;
-  transform: translate(-50%, 0);
   @media (min-width: $tablet-width) {
     width: 52.5rem;
     margin: 3.2rem 0;
+    left: 50%;
+    transform: translate(-50%, 0);
     font-size: 3rem;
   }
 }
