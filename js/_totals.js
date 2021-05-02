@@ -31,6 +31,8 @@ export function renderTotals(whichPage) {
   }
 }
 
+
+
 // renderGlobalTotals: used in home page
 //      extract data from firebase DB
 function renderGlobalTotals() {

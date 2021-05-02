@@ -66,6 +66,16 @@
     }
   }
 
+  &__quantity-item {
+    display: flex;
+    justify-content: center;
+    text-align: right;
+
+    @media (min-width: $tablet-width) {
+      text-align: center;
+    }
+  }
+
   &__amount {
     width: 25%;
     text-align: right;

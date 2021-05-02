@@ -987,6 +987,7 @@
 .sales__quantity-item {
   width: 100%;
   text-align: center;
+  font-weight: bold;
 }
 
 @media (min-width: 768px) {
@@ -997,7 +998,7 @@
 
 .sales__amount {
   width: 25%;
-  text-align: right;
+  text-align: left;
 }
 
 .new-sale-button {
