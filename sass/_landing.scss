@@ -14,8 +14,7 @@
     position: relative;
     width: 100vw;
     height: 100vh;
-    //background: linear-gradient(#00c39d, #181b1b);
-    background: linear-gradient(179.98deg, #5E3E00 0.02%, #181B1B 99.98%), #C4C4C4;
+    background: linear-gradient(179.98deg, #5e3e00 0.02%, #181b1b 99.98%), #c4c4c4;
   }
 
   &__picture-box {
@@ -71,7 +70,7 @@
     position: absolute;
     top: 65%;
     left: 2rem;
-    width: 12rem;
+    width: 13rem;
     color: $dark;
     font-weight: bold;
     animation: fadeInFromNone 2s ease-in-out;
@@ -86,7 +85,7 @@
       text-align: center;
       color: $light;
       font-weight: normal;
-      }
+    }
   }
 
   &__text {
@@ -95,7 +94,14 @@
 
   @media (min-width: $tablet-width) {
     &__text {
+      font-size: 2.2rem;
       animation: letters-expand 6s ease-in;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    &__text {
+      font-size: 2.4rem;
     }
   }
 
@@ -114,11 +120,11 @@
   @media (min-width: $tablet-width) {
     &__wave--left {
       width: 15%;
-      filter: drop-shadow(2px 6px 1px rgba(0,0,0,0.25));
+      filter: drop-shadow(2px 6px 1px rgba(0, 0, 0, 0.25));
     }
     &__wave--right {
       width: 15%;
-      filter: drop-shadow(-2px 6px 1px rgba(0,0,0,0.25));
+      filter: drop-shadow(-2px 6px 1px rgba(0, 0, 0, 0.25));
     }
   }
 }

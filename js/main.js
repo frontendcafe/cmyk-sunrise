@@ -37,13 +37,6 @@ window.onpopstate = () => {
   const page = ROUTER.getRoute();
   ROUTER.goToRoute(page, true);
 };
-export const buttonHome = function () {
-  goToHome();
-};
-
-export const buttonSale = function () {
-  goToSale();
-};
 
 export async function goToHome() {
   // First, make invisible all divs
