@@ -2,11 +2,11 @@
   width: 80%;
   display: flex;
   flex-direction: column;
-  @media (min-width: 1024px) {
+  @media (min-width: $desktop-width) {
     flex-direction: row;
   }
   &__colum {
-    @media (min-width: 1024px) {
+    @media (min-width: $desktop-width) {
       width: 50%;
     }
   }
@@ -17,7 +17,7 @@
       width: 100%;
 
       &:nth-child(2) {
-        @media (min-width: 1024px) {
+        @media (min-width: $desktop-width) {
           width: 70%;
         }
       }
@@ -47,7 +47,7 @@
     display: block;
     margin: 0 auto;
     text-align: center;
-    @media (min-width: 1024px) {
+    @media (min-width: $desktop-width) {
       width: 75%;
     }
   }

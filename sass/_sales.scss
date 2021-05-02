@@ -1,16 +1,15 @@
 .sales {
   width: 100%;
-  min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 
   &__table {
     display: flex;
     justify-content: space-around;
-    width: 100%;
+    width: 80%;
     font-family: $font-principal;
-    color:$table-font-color;
+    color: $table-font-color;
   }
 
   &__body {
@@ -22,8 +21,8 @@
     justify-content: space-between;
     padding: 8px;
     width: 100%;
-    // color: $white;
-    border-bottom: 1px solid $white;
+    border-bottom: 1px solid $dark;
+    color: $dark;
   }
 
   &__row {
@@ -31,39 +30,42 @@
     justify-content: space-between;
     padding: 15px;
     width: 100%;
-    // color: $white;
-    border-bottom: 1px solid $white;
+    line-height: 6px;
+    color: $dark;
+    border-bottom: 1px solid $dark;
+
+    @media (min-width: $tablet-width) {
+      line-height: 3px;
+    }
   }
 
-  &__time {
-    // color: $white;
+  &__no-sales {
+    text-align: center;
+    font-weight: bold;
+  }
+
+  &__count {
     width: 25%;
+    text-align: left;
   }
 
   &__quantity {
-    // color: $white;
-    width: 50%;
+    width: 100%;
     text-align: center;
   }
 
+  &__quantity-item {
+    display: flex;
+    justify-content: center;
+    text-align: right;
+
+    @media (min-width: $tablet-width) {
+      text-align: center;
+    }
+  }
+
   &__amount {
-    // color: $white;
     width: 25%;
     text-align: right;
   }
-}
-
-button {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 4.8rem;
-  align-items: center;
-  border-radius: 0.8rem;
-  color: $button-font-color;
-  background: $button-bg-color;
-  position: relative;
-  border: none;
-  font-size: 1.6rem;
-  font-family: $font-principal;
 }
