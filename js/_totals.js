@@ -132,7 +132,7 @@ export async function dbGetTotalSales() {
 
   await db
     .collection('sales')
-    //.where('time', '>=', new Date(new Date().setHours(0, 0, 0, 0)))
+    .where('time', '>=', new Date(new Date().setHours(0, 0, 0, 0)))
     .orderBy('time', 'asc')    
     .get()
     .then((querySnapshot) => {
