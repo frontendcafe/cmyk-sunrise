@@ -1,33 +1,40 @@
 <section id="section-produts" class="products">
   <!-- will load the products with js -->
 </section>
-<section id="section-confirm-sale" class="confirm-sale">
-  <div class="confirm-sale__div">
-    <h3 class="confirm-sale__title">¿Confirmar venta?</h3>
-    <p class="confirm-sale__description">
-      La venta quedará registrada con los items cargados hasta el momento
-    </p>
 
-    <table class="confirm-sale__table" aria-label="products to sale">
-      <tr class="confirm-sale__table-header">
-        <th id="name">Producto</th>
-        <th id="amount">Cantidad</th>
-        <th id="total">Total</th>
-      </tr>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <section id="section-confirm-sale" class="confirm-sale">
+    <div class="confirm-sale__div">
+      <h3 class="confirm-sale__title">¿Confirmar venta?</h3>
+      <p class="confirm-sale__description">
+        La venta quedará registrada con los items cargados hasta el momento
+      </p>
 
-      <tbody class="confirm-sale__table-body"></tbody>
-      <tr class="confirm-sale__table-footer">
-        <td colspan="2">Total</td>
-        <td class="confirm-sale__total-sale"></td>
-      </tr>
-    </table>
+      <table class="confirm-sale__table" aria-label="products to sale">
+        <tr class="confirm-sale__table-header">
+          <th id="name">Producto</th>
+          <th id="amount">Cantidad</th>
+          <th id="total">Total</th>
+        </tr>
 
-    <div class="confirm-sale__buttons">
-      <button class="confirm-sale__buttons-cancel">Cancelar</button>
-      <button id="confirm-sale__Button-Confirm" class="confirm-sale__buttons-confirm">Confirmar</button>
+        <tbody class="confirm-sale__table-body"></tbody>
+        <tr class="confirm-sale__table-footer">
+          <td colspan="2">Total</td>
+          <td class="confirm-sale__total-sale"></td>
+        </tr>
+      </table>
+
+      <div class="confirm-sale__buttons">
+        <button class="confirm-sale__buttons-cancel">Cancelar</button>
+        <button id="confirm-sale__Button-Confirm" class="confirm-sale__buttons-confirm">
+          Confirmar
+        </button>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>
 
 <button id="register-sale" class="register-sale-button">Registrar venta</button>
 
