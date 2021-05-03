@@ -4,6 +4,7 @@
   justify-content: space-between;
   align-items: center;
   color: $primary-font-color;
+  margin-top: 7rem;
 
   &__description {
     display: inline;
@@ -35,6 +36,7 @@
     height: 10rem;
     border-radius: 1rem;
     background-color: $testimonial-bg-color;
+    box-shadow: 0px 4px 4px rgba(24, 27, 27, 0.5);
   }
 
   &__image {
@@ -89,7 +91,7 @@
     width: 100%;
     flex-direction: row;
     justify-content: space-evenly;
-    margin: 0 auto;
+    margin: 7rem auto 0 auto;
 
     &__description {
       width: 54.2rem;
