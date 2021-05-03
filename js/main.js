@@ -199,3 +199,5 @@ function menuMobileListener(){
 
 const setDisplay = (div, style) => (document.querySelector(div).style.display = style);
 const setAnimation = (div, animation) => (document.querySelector(div).style.animation = animation);
+
+
