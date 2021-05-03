@@ -163,9 +163,7 @@ export function getProducts() {
         increaseButton.addEventListener('click', () => {
           amount.textContent = Number(amount.textContent) + 1;
           checkIfShowModalSale();
-
           renderTotals('products');
-          showRegisterSaleButton();
         });
 
         section.appendChild(productClone);

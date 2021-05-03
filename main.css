@@ -276,7 +276,9 @@
 
 .products__image {
   width: 100%;
+  max-width: 16rem;
   min-height: 9.6rem;
+  max-height: 15rem;
 }
 
 .products__price {
@@ -318,7 +320,7 @@
 
 .products__button {
   height: 3.2rem;
-  weight: 3.2rem;
+  width: 3.2rem;
   background-color: #181b1b;
   color: #ffff;
   border: none;
