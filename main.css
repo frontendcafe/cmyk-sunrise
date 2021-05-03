@@ -314,10 +314,6 @@
   }
 }
 
-.products__buttons:hover {
-  background-color: #235fac;
-}
-
 .products__button {
   height: 3.2rem;
   width: 3.2rem;
