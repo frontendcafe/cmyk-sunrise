@@ -836,6 +836,8 @@
   height: 10rem;
   border-radius: 1rem;
   background-color: #181b1b;
+  -webkit-box-shadow: 0px 4px 4px rgba(24, 27, 27, 0.5);
+          box-shadow: 0px 4px 4px rgba(24, 27, 27, 0.5);
 }
 
 .aboutUs__image {
@@ -904,7 +906,7 @@
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
-    margin: 0 auto;
+    margin: 7rem auto 0 auto;
   }
   .aboutUs__description {
     width: 54.2rem;
@@ -1028,13 +1030,33 @@
 .sales__quantity-item {
   width: 100%;
   text-align: center;
-  font-weight: bold;
 }
 
 @media (min-width: 768px) {
   .sales__quantity-item {
     text-align: center;
   }
+}
+
+.sales__quantity-item {
+  width: 100%;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .sales__quantity-item {
+    text-align: center;
+  }
+}
+
+.sales__quantity-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: right;
 }
 
 @media (min-width: 768px) {
@@ -1045,7 +1067,7 @@
 
 .sales__amount {
   width: 25%;
-  text-align: left;
+  text-align: right;
 }
 
 .new-sale-button {
