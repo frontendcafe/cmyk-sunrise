@@ -1,4 +1,4 @@
-import { goToLanding, goToHome, goToSale, goToError,goToAbout } from './main.js';
+import { goToLanding, goToHome, goToSale, goToError, goToAbout } from './main.js';
 
 export const PATHS = {
   landing: {
