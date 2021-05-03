@@ -32,7 +32,9 @@
 
   &__image {
     width: 100%;
+    max-width: 16rem;
     min-height: 9.6rem;
+    max-height: 15rem;
   }
 
   &__price {
@@ -53,7 +55,7 @@
     justify-content: space-between;
     align-items: center;
     width: 85%;
-    background-color: $white;
+    background-color: $dark;
     color: $dark;
     border-radius: 3.2rem;
     overflow: hidden;
@@ -84,6 +86,13 @@
 
   &__amount {
     margin: 0;
+    background-color: $white;
+    width: 50%;
+    width: calc(100% - (3.2rem * 2));
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -114,7 +123,9 @@
 }
 
 .confirm-sale {
-  display: none;
+  // display: none;
+  display: flex;
+  justify-content: center;
 
   &__div {
     background-color: $white;
@@ -124,7 +135,6 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    border: 1px solid $dark;
     border-radius: 1rem;
     overflow: hidden;
   }
@@ -231,12 +241,36 @@
   }
 }
 
-.confirm-sale-active {
-  position: absolute;
-  top: 3.2rem;
-  width: 100%;
-  z-index: 1;
-  display: grid;
-  place-items: center;
-  max-width: 90rem;
+// .confirm-sale-active {
+//   position: absolute;
+//   top: 3.2rem;
+//   width: 100%;
+//   z-index: 1;
+//   display: grid;
+//   place-items: center;
+//   max-width: 90rem;
+// }
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  // padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
 }

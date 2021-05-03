@@ -276,7 +276,9 @@
 
 .products__image {
   width: 100%;
+  max-width: 16rem;
   min-height: 9.6rem;
+  max-height: 15rem;
 }
 
 .products__price {
@@ -300,7 +302,7 @@
       -ms-flex-align: center;
           align-items: center;
   width: 85%;
-  background-color: #ffff;
+  background-color: #181b1b;
   color: #181b1b;
   border-radius: 3.2rem;
   overflow: hidden;
@@ -335,6 +337,19 @@
 
 .products__amount {
   margin: 0;
+  background-color: #ffff;
+  width: 50%;
+  width: calc(100% - (3.2rem * 2));
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .register-sale-button {
@@ -367,7 +382,12 @@
 }
 
 .confirm-sale {
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .confirm-sale__div {
@@ -385,7 +405,6 @@
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  border: 1px solid #181b1b;
   border-radius: 1rem;
   overflow: hidden;
 }
@@ -503,15 +522,36 @@
   background-color: #330e00;
 }
 
-.confirm-sale-active {
-  position: absolute;
-  top: 3.2rem;
-  width: 100%;
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
   z-index: 1;
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
-  max-width: 90rem;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  border: 1px solid #888;
+  width: 80%;
 }
 
 .header {
@@ -752,6 +792,7 @@
       -ms-flex-align: center;
           align-items: center;
   color: #f4f4f5;
+  margin-top: 7rem;
 }
 
 .aboutUs__description {
@@ -996,6 +1037,12 @@
   }
 }
 
+@media (min-width: 768px) {
+  .sales__quantity-item {
+    text-align: center;
+  }
+}
+
 .sales__amount {
   width: 25%;
   text-align: left;
@@ -1028,6 +1075,7 @@
 
 .content {
   width: 80%;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1035,6 +1083,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background-color: #ab9b7e;
 }
 
 @media (min-width: 1024px) {
@@ -1049,6 +1098,26 @@
 @media (min-width: 1024px) {
   .content__colum {
     width: 50%;
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media (min-width: 1024px) {
+  .content__image {
+    width: 100%;
   }
 }
 
@@ -1059,13 +1128,19 @@
 }
 
 @media (min-width: 1024px) {
-  .content__image img:nth-child(2) {
-    width: 70%;
+  .content__image img {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .content__image-second {
+    width: 60% !important;
   }
 }
 
 .content__text {
-  color: #ffff;
+  color: #181b1b;
 }
 
 .content__text-title {
@@ -1080,7 +1155,7 @@
 
 .content__link {
   color: white;
-  background-color: #235fac;
+  background-color: #330e00;
   border-radius: 10px;
   width: 160px;
   height: 60px;
@@ -1090,11 +1165,13 @@
   display: block;
   margin: 0 auto;
   text-align: center;
+  margin-bottom: 50px;
 }
 
 @media (min-width: 1024px) {
   .content__link {
     width: 75%;
+    margin-bottom: 0;
   }
 }
 
@@ -1103,8 +1180,11 @@
   width: 26rem;
   height: 100vh;
   position: absolute;
-  left: 0;
+  left: -26rem;
   background: url(/images/Wave.svg);
+  z-index: 100;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .menu__elements {
@@ -1126,27 +1206,28 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: bold;
   font-family: "Lora", serif;
   text-transform: uppercase;
   text-decoration: none;
-  color: #f4f4f5;
+  color: #181b1b;
 }
 
-.menu__anchor-home {
+.menu__anchor-close {
   position: absolute;
-  top: 8vh;
+  top: 8rem;
+  text-align: center;
 }
 
 .menu__anchor-products {
   position: absolute;
-  top: 27vh;
+  top: 22rem;
 }
 
 .menu__anchor-aboutUs {
   position: absolute;
-  top: 46vh;
+  top: 37.5rem;
 }
 
 .menu__icon {
@@ -1155,7 +1236,23 @@
   height: 4.5rem;
   margin-right: 1rem;
   font-size: 4rem;
-  color: #235fac;
+  color: #181b1b;
+}
+
+@media (min-width: 768px) {
+  .menu {
+    display: none;
+  }
+}
+
+.opacity {
+  opacity: 0.4;
+}
+
+.show {
+  left: 0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 html {
