@@ -11,7 +11,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1.6rem;
-    background-color: $primary;
+    background-color: $card-bg-color;
     border-radius: 1.6rem;
     box-shadow: 0rem 1rem 2rem rgba(44, 37, 210, 0.05);
 
@@ -27,6 +27,7 @@
   &__title {
     margin: 0 0 0.8rem 0;
     font-size: 2.08rem;
+    color: $card-font-color;
   }
 
   &__image {
@@ -34,9 +35,13 @@
     min-height: 9.6rem;
   }
 
-  &__price-title {
-    opacity: 50%;
+  &__price{
+    color:$card-price-color;
   }
+  
+  // &__price-title {
+  //   // opacity: 50%;
+  // }
 
   &__price-value {
     font-weight: 700;
@@ -87,12 +92,13 @@
   margin: 3.2rem 0;
   position: fixed;
   bottom: 0;
-  background-color: $secondary;
-  color: $white;
+  background-color: $button-bg-color;
+  color: $button-font-color;
   border: none;
   border-radius: 0.8rem;
   height: 4.8rem;
   font-size: 2.4rem;
+  display: none;
 
   @media (min-width: 768px) {
     width: 52.5rem;
@@ -100,6 +106,10 @@
     transform: translate(-50%, 0);
     font-size: 3rem;
   }
+}
+
+.register-sale-button--active {
+  display: block;
 }
 
 .confirm-sale {
@@ -119,10 +129,10 @@
   }
 
   &__title {
-    background-color: $secondary;
+    background-color: $confirm-title-bg-color;
     width: 100%;
     margin: 0;
-    color: $white;
+    color: $confirm-font-color;
     padding: 1rem 0;
     border-bottom: 1px solid $dark;
     font-family: $font-title;
@@ -198,7 +208,7 @@
   &__buttons-confirm {
     border: 1px solid #27272c;
     padding: 1rem 2rem;
-    color: white;
+    color: $confirm-font-color;
     font-family: $font-title;
     font-size: 2rem;
     font-weight: 700;
@@ -212,11 +222,11 @@
   }
 
   &__buttons-cancel {
-    background-color: gray;
+    background-color: $confirm-cancel-bg-color;
   }
 
   &__buttons-confirm {
-    background-color: $secondary;
+    background-color: $confirm-btn-bg-color;
   }
 }
 

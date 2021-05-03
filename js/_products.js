@@ -1,3 +1,5 @@
+import { renderTotals } from './_totals.js';
+
 const db = firebase.firestore();
 let totalSaleSum = 0;
 let cantProductsSaleSum = 0;
@@ -8,10 +10,16 @@ function removeCurrentData(tableBody) {
   }
 }
 
+function showRegisterSaleButton() {
+  const registerSaleButton = document.getElementById('register-sale');
+  registerSaleButton.classList.add('register-sale-button--active');
+}
+
 function populateTableWithNewData(tableBody) {
   const productsCard = document.querySelectorAll('.products__card');
   const templateRow = document.getElementById('confirm-sale-template-row');
   const totalSale = document.querySelector('.confirm-sale__total-sale');
+  totalSaleSum = 0;
 
   productsCard.forEach((product) => {
     const name = product.querySelector('.products__title').textContent;
@@ -40,23 +48,24 @@ function populateTableWithNewData(tableBody) {
 }
 
 function saveSale() {
-
   db.collection('sales')
     .add({
       amount: totalSaleSum,
       quantity: cantProductsSaleSum,
-      time: Date().toString(),
+      time: new Date(),
     })
     .then(() => {
-      alert('Venta registrada !!')
+      console.log('Venta registrada !!');
     })
     .catch((error) => {
+      alert('Error al registrar la venta.');
       console.error('Error adding document: ', error);
     });
 }
 
 export function onLoadProducts() {
   const registerSaleButton = document.getElementById('register-sale');
+
   const sectionConfirmSale = document.getElementById('section-confirm-sale');
   const tableBody = document.querySelector('.confirm-sale__table-body');
 
@@ -64,10 +73,14 @@ export function onLoadProducts() {
   const registerSaleConfirmButton = document.querySelector('.confirm-sale__buttons-confirm');
 
   registerSaleButton.addEventListener('click', () => {
+    window.scroll({ top: 40, left: 0, behavior: 'smooth' });
+
     sectionConfirmSale.classList.add('confirm-sale-active');
 
     removeCurrentData(tableBody);
+    // resetTotalValue();
     populateTableWithNewData(tableBody);
+
   });
 
   registerSaleCancelButton.addEventListener('click', () => {
@@ -103,10 +116,13 @@ export function getProducts() {
         decreaseButton.addEventListener('click', () => {
           amount.textContent =
             Number(amount.textContent) === 0 ? 0 : Number(amount.textContent) - 1;
+          renderTotals('products');
         });
 
         increaseButton.addEventListener('click', () => {
           amount.textContent = Number(amount.textContent) + 1;
+          renderTotals('products');
+          showRegisterSaleButton();
         });
 
         section.appendChild(productClone);
