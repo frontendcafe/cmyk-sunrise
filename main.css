@@ -725,6 +725,28 @@
   .totals__quantity--desktop {
     font-size: 3.6rem;
   }
+  .totals__total-money {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1130px) {
+  .totals__desktop {
+    width: 113rem;
+  }
+  .totals__quantity--desktop {
+    font-size: 3.6rem;
+  }
+}
+
+.totals[data-layout='products'] {
+  margin-top: 8.3rem;
+}
+
+@media (min-width: 920px) {
+  .totals {
+    margin-top: 12.3rem;
+  }
 }
 
 .totals[data-layout='products'] {
@@ -1027,6 +1049,7 @@
 
 .content {
   width: 80%;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1034,6 +1057,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background-color: #ab9b7e;
 }
 
 @media (min-width: 1024px) {
@@ -1048,6 +1072,26 @@
 @media (min-width: 1024px) {
   .content__colum {
     width: 50%;
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media (min-width: 1024px) {
+  .content__image {
+    width: 100%;
   }
 }
 
@@ -1058,13 +1102,19 @@
 }
 
 @media (min-width: 1024px) {
-  .content__image img:nth-child(2) {
-    width: 70%;
+  .content__image img {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .content__image-second {
+    width: 60% !important;
   }
 }
 
 .content__text {
-  color: #ffff;
+  color: #181b1b;
 }
 
 .content__text-title {
@@ -1079,7 +1129,7 @@
 
 .content__link {
   color: white;
-  background-color: #235fac;
+  background-color: #330e00;
   border-radius: 10px;
   width: 160px;
   height: 60px;
@@ -1089,11 +1139,13 @@
   display: block;
   margin: 0 auto;
   text-align: center;
+  margin-bottom: 50px;
 }
 
 @media (min-width: 1024px) {
   .content__link {
     width: 75%;
+    margin-bottom: 0;
   }
 }
 
