@@ -3,8 +3,10 @@
   width: 26rem;
   height: 100vh;
   position: absolute;
-  left: 0;
+  left: -26rem;
   background: url(/images/Wave.svg);
+  z-index: 100;
+  transition: all 0.5s;
 
   &__elements {
     display: flex;
@@ -16,27 +18,28 @@
     display: flex;
     margin-left: 2.5rem;
     align-items: center;
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: bold;
     font-family: $font-principal;
     text-transform: uppercase;
     text-decoration: none;
-    color: $light;
+    color: $dark;
   }
 
-  &__anchor-home {
+  &__anchor-close {
     position: absolute;
-    top: 8vh;
+    top: 8rem;
+    text-align: center;
   }
 
   &__anchor-products {
     position: absolute;
-    top: 27vh;
+    top: 22rem;
   }
 
   &__anchor-aboutUs {
     position: absolute;
-    top: 46vh;
+    top: 37.5rem;
   }
 
   &__icon {
@@ -45,6 +48,21 @@
     height: 4.5rem;
     margin-right: 1rem;
     font-size: 4rem;
-    color: $secondary;
+    color: $dark;
   }
+}
+
+@media (min-width: $tablet-width) {
+  .menu {
+    display: none;
+  }
+}
+
+.opacity {
+  opacity: 0.4;
+}
+
+.show {
+  left: 0;
+  transition: all 0.5s;
 }

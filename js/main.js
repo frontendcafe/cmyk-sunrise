@@ -47,13 +47,18 @@ export const buttonSale = function () {
 
 export async function goToHome() {
   // First, make invisible all divs
-  // setDisplay('.header', 'none');
+  //setDisplay('.header', 'none');
   setDisplay('.totals', 'none');
   setDisplay('#content', 'none');
 
   // Header //
   await loadHtml('header', '/components/header.html');
   onLoadHeaderConfig('home');
+
+  //menu mobile
+  await loadHtml('menuMobile', '/components/menuMobile.html');
+  menuMobileListener();
+
 
   // Totals Panel Info //
   await loadHtml('totals', '/components/totals.html');
@@ -118,6 +123,10 @@ export async function goToLanding() {
   await loadHtml('header', '/components/header.html');
   onLoadHeaderConfig('home');
 
+  //menu mobile
+  await loadHtml('menuMobile', '/components/menuMobile.html');
+  menuMobileListener();
+
   // Totals Panel Info //
   await loadHtml('totals', '/components/totals.html');
   onLoadTotalsConfig('home'); //set appropriated layout (which screen)
@@ -156,7 +165,7 @@ export async function goToAbout() {
   await loadHtml('content', '/components/aboutUs.html');
 
   setDisplay('.header', 'flex');
-  setDisplay('.totals', 'block');
+  setDisplay('.totals', 'none');
   setDisplay('#content', 'grid');
 }
 
@@ -168,6 +177,29 @@ export function goToError() {
 async function wait(ms) {
   return new Promise((resolve) => {
     setTimeout(resolve, ms);
+  });
+}
+
+function menuMobileListener(){
+  document.querySelector('.header__icon').addEventListener('click',()=>{
+    document.querySelector('#menu').classList.add("show");
+    const btnSale = document.querySelector('#sale');
+    btnSale.disabled=true;
+    btnSale.classList.add('opacity');
+  });
+  document.querySelector('.menu__anchor-close').addEventListener('click',()=>{
+    document.querySelector('#menu').classList.remove('show');
+    const btnSale = document.querySelector('#sale');
+    btnSale.disabled=false;
+    btnSale.classList.remove('opacity');    
+  });
+  document.querySelector('.menu__anchor-products').addEventListener('click', () => {
+    document.querySelector('#menu').classList.remove('show');
+    ROUTER.goToRoute('sale');
+  });
+  document.querySelector('.menu__anchor-aboutUs').addEventListener('click', () => {
+    document.querySelector('#menu').classList.remove('show');
+    ROUTER.goToRoute('about');
   });
 }
 
