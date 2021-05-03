@@ -94,7 +94,6 @@ export async function goToSale() {
   getProducts();
 
   document.querySelector('#confirm-sale__Button-Confirm').addEventListener('click', () => {
-    console.log('di click en buttonConfirm');
     ROUTER.goToRoute('home');
   });
 

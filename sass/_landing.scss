@@ -96,6 +96,7 @@
     &__text {
       font-size: 2.2rem;
       animation: letters-expand 6s ease-in;
+      animation-direction: alternate;
     }
   }
 

@@ -107,6 +107,8 @@
     font-size: 2.2rem;
     -webkit-animation: letters-expand 6s ease-in;
             animation: letters-expand 6s ease-in;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
   }
 }
 
