@@ -1,30 +1,43 @@
 .content {
   width: 80%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  @media (min-width: $desktop-width) {
+  background-color: $light-brown;
+  @media (min-width: 1024px) {
     flex-direction: row;
   }
   &__colum {
-    @media (min-width: $desktop-width) {
+    @media (min-width: 1024px) {
       width: 50%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
     }
   }
   &__image {
+    @media (min-width: 1024px) {
+      width: 100%;
+    }
     img {
       display: block;
       margin: 0 auto 50px auto;
       width: 100%;
-
-      &:nth-child(2) {
-        @media (min-width: $desktop-width) {
-          width: 70%;
-        }
+      @media (min-width: 1024px) {
+        width: 80%;
+        // margin-top: 100px;
+      }
+    }
+    &-second {
+      @media (min-width: 1024px) {
+        width: 60% !important;
       }
     }
   }
   &__text {
-    color: $white;
+    color: $dark;
 
     &-title {
       font-size: 18px;
@@ -37,7 +50,7 @@
   }
   &__link {
     color: white;
-    background-color: $secondary;
+    background-color: $dark-brown;
     border-radius: 10px;
     width: 160px;
     height: 60px;
@@ -47,8 +60,10 @@
     display: block;
     margin: 0 auto;
     text-align: center;
-    @media (min-width: $desktop-width) {
+    margin-bottom: 50px;
+    @media (min-width: 1024px) {
       width: 75%;
+      margin-bottom: 0;
     }
   }
 }
