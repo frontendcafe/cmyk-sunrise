@@ -31,8 +31,6 @@ export function renderTotals(whichPage) {
   }
 }
 
-
-
 // renderGlobalTotals: used in home page
 //      extract data from firebase DB
 function renderGlobalTotals() {
@@ -146,8 +144,17 @@ export async function dbGetTotalSales() {
         //console.log(registerSale);
         summarySales.push({ ...registerSale });
       });
-      console.log('summarySales:', summarySales);
       //summarySales.length=0; //simulate 0 sales
+      // test for a lot of sales:
+      // for (let index = 0; index < 250; index++) {
+      //   const amount = Math.floor(Math.random() * 1500);
+      //   const quantity = Math.floor(Math.random() * 5 + 1);
+      //   const time = new Date();
+      //   const objSale = { amount, quantity, time };
+      //   summarySales.push(objSale);
+      // }
+
+      console.log('summarySales:', summarySales);
       totals.globalUnits = summarySales.reduce((acc, item) => (acc = acc + item.quantity), 0);
       totals.globalTotalMoney = summarySales.reduce((acc, item) => (acc = acc + item.amount), 0);
       totals.globalSales = summarySales.length;
