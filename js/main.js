@@ -39,8 +39,7 @@ window.onpopstate = () => {
 };
 
 export async function goToHome() {
-  // First, make invisible all divs
-  //setDisplay('.header', 'none');
+  // First, make invisible related divs
   setDisplay('.totals', 'none');
   setDisplay('#content', 'none');
 
@@ -86,6 +85,8 @@ export async function goToSale() {
   onLoadTotalsConfig('products'); //set appropriated layout (which screen)
   await dbGetTotalSales();
   renderTotals('products'); // inyect values in DOM
+
+  document.getElementById('content').innerHTML = '';
 
   // Products //
   await loadHtml('content', '/components/products.html');
