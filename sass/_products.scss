@@ -53,7 +53,7 @@
     justify-content: space-between;
     align-items: center;
     width: 85%;
-    background-color: $white;
+    background-color: $dark;
     color: $dark;
     border-radius: 3.2rem;
     overflow: hidden;
@@ -69,7 +69,6 @@
 
   &__button {
     height: 3.2rem;
-    width: 3.2rem;
     background-color: $dark;
     color: $white;
     border: none;
@@ -84,6 +83,13 @@
 
   &__amount {
     margin: 0;
+    background-color: $white;
+    width: 50%;
+    width: calc(100% - (3.2rem * 2));
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
