@@ -8,7 +8,7 @@
     flex-direction: row;
   }
   &__colum {
-    @media (min-width: 1024px) {
+    @media (min-width: $desktop-width) {
       width: 50%;
       height: 100vh;
       display: flex;
