@@ -610,8 +610,12 @@
 
 .header__menu {
   display: none;
-  font-size: 1.5rem;
-  padding-left: 1%;
+  font-size: 1.9rem;
+}
+
+.header__menu nav {
+  float: right;
+  width: 45vw;
 }
 
 .header__menu nav ul {
@@ -620,6 +624,7 @@
 
 .header__menu nav ul a {
   text-decoration: none;
+  padding-left: 3%;
 }
 
 .header__menu nav ul a li {
@@ -631,7 +636,7 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    padding-right: 5%;
+    padding-right: 0%;
   }
 }
 

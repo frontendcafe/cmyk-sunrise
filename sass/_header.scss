@@ -47,15 +47,17 @@
 
   &__menu {
     display: none;
-    font-size: 1.5rem;
-    
-    padding-left: 1%;
+    font-size: 1.9rem;
 
+    
     nav {
+      float: right;
+      width: 45vw;
       ul {
         list-style: none;
         a {
           text-decoration: none;
+          padding-left: 3%;
           li {
             display: inline;
           }
@@ -65,7 +67,7 @@
 
     @media (min-width: 768px) {
       display: flex;
-      padding-right: 5%;
+      padding-right: 0%;
     }
   }
 }
