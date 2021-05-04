@@ -1132,7 +1132,7 @@
   display: block;
   width: 26rem;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   left: -26rem;
   background: url(/images/Wave.svg);
   z-index: 100;
