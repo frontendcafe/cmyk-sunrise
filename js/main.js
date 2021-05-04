@@ -46,6 +46,12 @@ export async function goToHome() {
   // Header //
   await loadHtml('header', '/components/header.html');
   onLoadHeaderConfig('home');
+  menuDesktopListener();
+
+  //menu mobile
+  await loadHtml('menuMobile', '/components/menuMobile.html');
+  menuMobileListener();
+
 
   //menu mobile
   await loadHtml('menuMobile', '/components/menuMobile.html');
@@ -79,6 +85,7 @@ export async function goToSale() {
   document.querySelector('.header__icon').addEventListener('click', () => {
     ROUTER.goToRoute('home');
   });
+  menuDesktopListener();
 
   // Totals Panel//
   await loadHtml('totals', '/components/totals.html');
@@ -116,6 +123,11 @@ export async function goToLanding() {
   // Header //
   await loadHtml('header', '/components/header.html');
   onLoadHeaderConfig('home');
+  menuDesktopListener();
+
+  //menu mobile
+  await loadHtml('menuMobile', '/components/menuMobile.html');
+  menuMobileListener();
 
   //menu mobile
   await loadHtml('menuMobile', '/components/menuMobile.html');
@@ -151,6 +163,7 @@ export async function goToAbout() {
   document.querySelector('.header__icon').addEventListener('click', () => {
     ROUTER.goToRoute('home');
   });
+  menuDesktopListener();
 
   // Totals Panel//
   setDisplay('.totals', 'none');
@@ -197,6 +210,20 @@ function menuMobileListener(){
   });
 }
 
+function menuDesktopListener(){
+  document.querySelector('.nav__anchor-home').addEventListener('click',()=>{
+    document.querySelector('#menu_header').classList.remove('show');
+    ROUTER.goToRoute('home');
+  });
+  document.querySelector('.nav__anchor-products').addEventListener('click', () => {
+    document.querySelector('#menu_header').classList.remove('show');
+    ROUTER.goToRoute('sale');
+  });
+  document.querySelector('.nav__anchor-aboutUs').addEventListener('click', () => {
+    document.querySelector('#menu').classList.remove('show');
+    ROUTER.goToRoute('about');
+  });
+}
 const setDisplay = (div, style) => (document.querySelector(div).style.display = style);
 const setAnimation = (div, animation) => (document.querySelector(div).style.animation = animation);
 

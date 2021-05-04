@@ -314,10 +314,6 @@
   }
 }
 
-.products__buttons:hover {
-  background-color: #235fac;
-}
-
 .products__button {
   height: 3.2rem;
   width: 3.2rem;
@@ -576,12 +572,27 @@
   text-align: center;
 }
 
+@media (min-width: 768px) {
+  .header__left .fa-bars {
+    display: none;
+  }
+}
+
 .header__right {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
   padding-right: 10%;
   text-align: center;
+}
+
+@media (min-width: 768px) {
+  .header__right {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 5%;
+  }
 }
 
 .header__icon {
@@ -595,6 +606,38 @@
       align-self: center;
   font-family: "Advent Pro", sans-serif;
   font-size: 2.4rem;
+}
+
+.header__menu {
+  display: none;
+  font-size: 1.9rem;
+}
+
+.header__menu nav {
+  float: right;
+  width: 45vw;
+}
+
+.header__menu nav ul {
+  list-style: none;
+}
+
+.header__menu nav ul a {
+  text-decoration: none;
+  padding-left: 3%;
+}
+
+.header__menu nav ul a li {
+  display: inline;
+}
+
+@media (min-width: 768px) {
+  .header__menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-right: 0%;
+  }
 }
 
 .totals {
@@ -836,6 +879,8 @@
   height: 10rem;
   border-radius: 1rem;
   background-color: #181b1b;
+  -webkit-box-shadow: 0px 4px 4px rgba(24, 27, 27, 0.5);
+          box-shadow: 0px 4px 4px rgba(24, 27, 27, 0.5);
 }
 
 .aboutUs__image {
@@ -904,7 +949,7 @@
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
-    margin: 0 auto;
+    margin: 7rem auto 0 auto;
   }
   .aboutUs__description {
     width: 54.2rem;
@@ -985,6 +1030,7 @@
           justify-content: space-between;
   padding: 8px;
   width: 100%;
+  line-height: 14px;
   border-bottom: 1px solid #181b1b;
   color: #181b1b;
 }
@@ -1021,14 +1067,51 @@
 }
 
 .sales__quantity {
-  width: 100%;
+  width: 50%;
   text-align: center;
 }
 
 .sales__quantity-item {
   width: 100%;
   text-align: center;
-  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .sales__quantity-item {
+    text-align: center;
+  }
+}
+
+.sales__quantity-item {
+  width: 100%;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .sales__quantity-item {
+    text-align: center;
+  }
+}
+
+.sales__quantity-item {
+  width: 100%;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .sales__quantity-item {
+    text-align: center;
+  }
+}
+
+.sales__quantity-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: right;
 }
 
 @media (min-width: 768px) {
@@ -1045,7 +1128,7 @@
 
 .sales__amount {
   width: 25%;
-  text-align: left;
+  text-align: right;
 }
 
 .new-sale-button {
@@ -1179,7 +1262,7 @@
   display: block;
   width: 26rem;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   left: -26rem;
   background: url(/images/Wave.svg);
   z-index: 100;
