@@ -197,6 +197,20 @@ function menuMobileListener(){
   });
 }
 
+function menuDesktopListener(){
+  document.querySelector('.nav__anchor-home').addEventListener('click',()=>{
+    document.querySelector('#menu_nav').classList.remove('show');
+    ROUTER.goToRoute('home');
+  });
+  document.querySelector('.menu__anchor-products').addEventListener('click', () => {
+    document.querySelector('#menu').classList.remove('show');
+    ROUTER.goToRoute('sale');
+  });
+  document.querySelector('.menu__anchor-aboutUs').addEventListener('click', () => {
+    document.querySelector('#menu').classList.remove('show');
+    ROUTER.goToRoute('about');
+  });
+}
 const setDisplay = (div, style) => (document.querySelector(div).style.display = style);
 const setAnimation = (div, animation) => (document.querySelector(div).style.animation = animation);
 

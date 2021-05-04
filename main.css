@@ -611,13 +611,18 @@
 .header__menu {
   display: none;
   font-size: 1.5rem;
+  padding-left: 1%;
 }
 
 .header__menu nav ul {
   list-style: none;
 }
 
-.header__menu nav ul li {
+.header__menu nav ul a {
+  text-decoration: none;
+}
+
+.header__menu nav ul a li {
   display: inline;
 }
 
