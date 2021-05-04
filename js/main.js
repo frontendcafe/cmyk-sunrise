@@ -53,6 +53,11 @@ export async function goToHome() {
   menuMobileListener();
 
 
+  //menu mobile
+  await loadHtml('menuMobile', '/components/menuMobile.html');
+  menuMobileListener();
+
+
   // Totals Panel Info //
   await loadHtml('totals', '/components/totals.html');
   onLoadTotalsConfig('home'); //set appropriated layout (which screen)
@@ -119,6 +124,10 @@ export async function goToLanding() {
   await loadHtml('header', '/components/header.html');
   onLoadHeaderConfig('home');
   menuDesktopListener();
+
+  //menu mobile
+  await loadHtml('menuMobile', '/components/menuMobile.html');
+  menuMobileListener();
 
   //menu mobile
   await loadHtml('menuMobile', '/components/menuMobile.html');

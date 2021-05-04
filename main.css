@@ -1094,7 +1094,6 @@
 }
 
 .sales__quantity-item {
-<<<<<<< HEAD
   width: 100%;
   text-align: center;
 }
@@ -1113,15 +1112,12 @@
       -ms-flex-pack: center;
           justify-content: center;
   text-align: right;
-=======
-  width: 30%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
->>>>>>> dev
+}
+
+@media (min-width: 768px) {
+  .sales__quantity-item {
+    text-align: center;
+  }
 }
 
 @media (min-width: 768px) {
