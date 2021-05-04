@@ -21,6 +21,7 @@
     justify-content: space-between;
     padding: 8px;
     width: 100%;
+    line-height: 14px;
     border-bottom: 1px solid $dark;
     color: $dark;
   }
@@ -51,24 +52,11 @@
   }
 
   &__quantity {
-    width: 100%;
+    width: 50%;
     text-align: center;
   }
 
   &__quantity-item {
-    // display: flex;
-    // justify-content: center;
-    width: 100%;
-    text-align: center;
-
-    @media (min-width: $tablet-width) {
-      text-align: center;
-    }
-  }
-
-  &__quantity-item {
-    // display: flex;
-    // justify-content: center;
     width: 100%;
     text-align: center;
 
@@ -78,9 +66,18 @@
   }
 
   &__quantity-item {
+    width: 100%;
+    text-align: center;
+
+    @media (min-width: $tablet-width) {
+      text-align: center;
+    }
+  }
+
+  &__quantity-item {
+    width: 30%;
     display: flex;
-    justify-content: center;
-    text-align: right;
+    justify-content: flex-end;
 
     @media (min-width: $tablet-width) {
       text-align: center;

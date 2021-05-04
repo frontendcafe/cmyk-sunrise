@@ -987,6 +987,7 @@
           justify-content: space-between;
   padding: 8px;
   width: 100%;
+  line-height: 14px;
   border-bottom: 1px solid #181b1b;
   color: #181b1b;
 }
@@ -1023,7 +1024,7 @@
 }
 
 .sales__quantity {
-  width: 100%;
+  width: 50%;
   text-align: center;
 }
 
@@ -1050,13 +1051,13 @@
 }
 
 .sales__quantity-item {
+  width: 30%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: right;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 @media (min-width: 768px) {
