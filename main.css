@@ -276,7 +276,9 @@
 
 .products__image {
   width: 100%;
+  max-width: 16rem;
   min-height: 9.6rem;
+  max-height: 15rem;
 }
 
 .products__price {
@@ -300,7 +302,7 @@
       -ms-flex-align: center;
           align-items: center;
   width: 85%;
-  background-color: #ffff;
+  background-color: #181b1b;
   color: #181b1b;
   border-radius: 3.2rem;
   overflow: hidden;
@@ -335,6 +337,19 @@
 
 .products__amount {
   margin: 0;
+  background-color: #ffff;
+  width: 50%;
+  width: calc(100% - (3.2rem * 2));
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .register-sale-button {
@@ -367,7 +382,12 @@
 }
 
 .confirm-sale {
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .confirm-sale__div {
@@ -385,7 +405,6 @@
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  border: 1px solid #181b1b;
   border-radius: 1rem;
   overflow: hidden;
 }
@@ -503,15 +522,36 @@
   background-color: #330e00;
 }
 
-.confirm-sale-active {
-  position: absolute;
-  top: 3.2rem;
-  width: 100%;
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
   z-index: 1;
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
-  max-width: 90rem;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  border: 1px solid #888;
+  width: 80%;
 }
 
 .header {
@@ -796,6 +836,8 @@
   height: 10rem;
   border-radius: 1rem;
   background-color: #181b1b;
+  -webkit-box-shadow: 0px 4px 4px rgba(24, 27, 27, 0.5);
+          box-shadow: 0px 4px 4px rgba(24, 27, 27, 0.5);
 }
 
 .aboutUs__image {
@@ -864,7 +906,7 @@
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
-    margin: 0 auto;
+    margin: 7rem auto 0 auto;
   }
   .aboutUs__description {
     width: 54.2rem;
@@ -988,6 +1030,33 @@
 .sales__quantity-item {
   width: 100%;
   text-align: center;
+}
+
+@media (min-width: 768px) {
+  .sales__quantity-item {
+    text-align: center;
+  }
+}
+
+.sales__quantity-item {
+  width: 100%;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .sales__quantity-item {
+    text-align: center;
+  }
+}
+
+.sales__quantity-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: right;
 }
 
 @media (min-width: 768px) {
