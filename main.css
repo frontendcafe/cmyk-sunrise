@@ -879,6 +879,8 @@
   height: 10rem;
   border-radius: 1rem;
   background-color: #181b1b;
+  -webkit-box-shadow: 0px 4px 4px rgba(24, 27, 27, 0.5);
+          box-shadow: 0px 4px 4px rgba(24, 27, 27, 0.5);
 }
 
 .aboutUs__image {
@@ -947,7 +949,7 @@
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
-    margin: 0 auto;
+    margin: 7rem auto 0 auto;
   }
   .aboutUs__description {
     width: 54.2rem;
@@ -1028,6 +1030,7 @@
           justify-content: space-between;
   padding: 8px;
   width: 100%;
+  line-height: 14px;
   border-bottom: 1px solid #181b1b;
   color: #181b1b;
 }
@@ -1064,7 +1067,7 @@
 }
 
 .sales__quantity {
-  width: 100%;
+  width: 50%;
   text-align: center;
 }
 
@@ -1080,6 +1083,18 @@
 }
 
 .sales__quantity-item {
+  width: 100%;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .sales__quantity-item {
+    text-align: center;
+  }
+}
+
+.sales__quantity-item {
+<<<<<<< HEAD
   width: 100%;
   text-align: center;
 }
@@ -1098,6 +1113,15 @@
       -ms-flex-pack: center;
           justify-content: center;
   text-align: right;
+=======
+  width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+>>>>>>> dev
 }
 
 @media (min-width: 768px) {
@@ -1242,7 +1266,7 @@
   display: block;
   width: 26rem;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   left: -26rem;
   background: url(/images/Wave.svg);
   z-index: 100;
