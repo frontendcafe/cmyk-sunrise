@@ -9,16 +9,27 @@
   &__description {
     display: inline;
     width: 36.2rem;
-    height: 17rem;
+    height: 20rem;
     border-radius: 1rem;
     background-color: $secondary-bg-color;
+  }
+
+  &__description--team {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2.2rem;
+    margin: 1rem auto;
+  }
+
+  &__description--image {
+    display: none;
   }
 
   &__paragraph {
     width: 34.2rem;
     margin: 1rem auto;
     font-size: 1.4rem;
-    text-align: center;
+    text-align: justify;
   }
 
   &__testimonial--container {
@@ -95,7 +106,17 @@
 
     &__description {
       width: 54.2rem;
-      height: 32rem;
+      height: 82rem;
+    }
+
+    &__description--team {
+      font-size: 3rem;
+      margin: 2.5rem auto;
+    }
+
+    &__description--image {
+      display: block;
+      margin: 6.6rem auto;
     }
 
     &__paragraph {
