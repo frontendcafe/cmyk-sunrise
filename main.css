@@ -798,16 +798,27 @@
 .aboutUs__description {
   display: inline;
   width: 36.2rem;
-  height: 17rem;
+  height: 20rem;
   border-radius: 1rem;
   background-color: #5e3e00;
+}
+
+.aboutUs__description--team {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2.2rem;
+  margin: 1rem auto;
+}
+
+.aboutUs__description--image {
+  display: none;
 }
 
 .aboutUs__paragraph {
   width: 34.2rem;
   margin: 1rem auto;
   font-size: 1.4rem;
-  text-align: center;
+  text-align: justify;
 }
 
 .aboutUs__testimonial--container {
@@ -910,7 +921,15 @@
   }
   .aboutUs__description {
     width: 54.2rem;
-    height: 32rem;
+    height: 82rem;
+  }
+  .aboutUs__description--team {
+    font-size: 3rem;
+    margin: 2.5rem auto;
+  }
+  .aboutUs__description--image {
+    display: block;
+    margin: 6.6rem auto;
   }
   .aboutUs__paragraph {
     width: 49.6rem;
@@ -1302,7 +1321,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: 100vh;
+  height: 100vh;
   margin: 0;
   background-color: #ab9b7e;
   font-family: "Lora", serif;
