@@ -314,10 +314,6 @@
   }
 }
 
-.products__buttons:hover {
-  background-color: #235fac;
-}
-
 .products__button {
   height: 3.2rem;
   width: 3.2rem;
@@ -576,12 +572,27 @@
   text-align: center;
 }
 
+@media (min-width: 768px) {
+  .header__left .fa-bars {
+    display: none;
+  }
+}
+
 .header__right {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
   padding-right: 10%;
   text-align: center;
+}
+
+@media (min-width: 768px) {
+  .header__right {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 5%;
+  }
 }
 
 .header__icon {
@@ -595,6 +606,38 @@
       align-self: center;
   font-family: "Advent Pro", sans-serif;
   font-size: 2.4rem;
+}
+
+.header__menu {
+  display: none;
+  font-size: 1.9rem;
+}
+
+.header__menu nav {
+  float: right;
+  width: 45vw;
+}
+
+.header__menu nav ul {
+  list-style: none;
+}
+
+.header__menu nav ul a {
+  text-decoration: none;
+  padding-left: 3%;
+}
+
+.header__menu nav ul a li {
+  display: inline;
+}
+
+@media (min-width: 768px) {
+  .header__menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-right: 0%;
+  }
 }
 
 .totals {
@@ -1070,13 +1113,30 @@
 }
 
 .sales__quantity-item {
-  width: 30%;
+  width: 100%;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .sales__quantity-item {
+    text-align: center;
+  }
+}
+
+.sales__quantity-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: right;
+}
+
+@media (min-width: 768px) {
+  .sales__quantity-item {
+    text-align: center;
+  }
 }
 
 @media (min-width: 768px) {
