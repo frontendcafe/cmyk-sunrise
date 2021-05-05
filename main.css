@@ -5,7 +5,7 @@
   top: 0;
   left: 0;
   height: 100vh;
-  width: 100vh;
+  width: 100vw;
   z-index: 999;
   background-color: #181b1b;
   -webkit-animation: fadeInFromNone 1s ease-in-out;
@@ -565,7 +565,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100vw;
+  width: 100%;
   height: 7.7rem;
   background-color: #330e00;
   color: #f4f4f5;
@@ -600,7 +600,7 @@
 }
 
 .totals {
-  width: 100vw;
+  width: 100%;
   margin-top: 9.5rem;
   display: none;
 }
