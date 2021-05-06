@@ -262,10 +262,9 @@
   .products__card {
     width: 25rem;
   }
-}
-
-.products__card:hover {
-  opacity: 0.8;
+  .products__card:hover {
+    opacity: 0.8;
+  }
 }
 
 .products__title {
@@ -1113,30 +1112,13 @@
 }
 
 .sales__quantity-item {
-  width: 100%;
-  text-align: center;
-}
-
-@media (min-width: 768px) {
-  .sales__quantity-item {
-    text-align: center;
-  }
-}
-
-.sales__quantity-item {
+  width: 30%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: right;
-}
-
-@media (min-width: 768px) {
-  .sales__quantity-item {
-    text-align: center;
-  }
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 @media (min-width: 768px) {
