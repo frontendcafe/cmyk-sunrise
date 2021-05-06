@@ -52,11 +52,9 @@ export async function goToHome() {
   await loadHtml('menuMobile', '/components/menuMobile.html');
   menuMobileListener();
 
-
   //menu mobile
   await loadHtml('menuMobile', '/components/menuMobile.html');
   menuMobileListener();
-
 
   // Totals Panel Info //
   await loadHtml('totals', '/components/totals.html');
@@ -101,7 +99,6 @@ export async function goToSale() {
   getProducts();
 
   document.querySelector('#confirm-sale__Button-Confirm').addEventListener('click', () => {
-    console.log('di click en buttonConfirm');
     ROUTER.goToRoute('home');
   });
 
@@ -187,18 +184,18 @@ async function wait(ms) {
   });
 }
 
-function menuMobileListener(){
-  document.querySelector('.header__icon').addEventListener('click',()=>{
-    document.querySelector('#menu').classList.add("show");
+function menuMobileListener() {
+  document.querySelector('.header__icon').addEventListener('click', () => {
+    document.querySelector('#menu').classList.add('show');
     const btnSale = document.querySelector('#sale');
-    btnSale.disabled=true;
+    btnSale.disabled = true;
     btnSale.classList.add('opacity');
   });
-  document.querySelector('.menu__anchor-close').addEventListener('click',()=>{
+  document.querySelector('.menu__anchor-close').addEventListener('click', () => {
     document.querySelector('#menu').classList.remove('show');
     const btnSale = document.querySelector('#sale');
-    btnSale.disabled=false;
-    btnSale.classList.remove('opacity');    
+    btnSale.disabled = false;
+    btnSale.classList.remove('opacity');
   });
   document.querySelector('.menu__anchor-products').addEventListener('click', () => {
     document.querySelector('#menu').classList.remove('show');
@@ -210,8 +207,8 @@ function menuMobileListener(){
   });
 }
 
-function menuDesktopListener(){
-  document.querySelector('.nav__anchor-home').addEventListener('click',()=>{
+function menuDesktopListener() {
+  document.querySelector('.nav__anchor-home').addEventListener('click', () => {
     document.querySelector('#menu_header').classList.remove('show');
     ROUTER.goToRoute('home');
   });
@@ -226,5 +223,3 @@ function menuDesktopListener(){
 }
 const setDisplay = (div, style) => (document.querySelector(div).style.display = style);
 const setAnimation = (div, animation) => (document.querySelector(div).style.animation = animation);
-
-
