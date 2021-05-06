@@ -109,6 +109,8 @@
             animation: letters-expand 6s ease-in;
     -webkit-animation-direction: alternate;
             animation-direction: alternate;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
   }
 }
 

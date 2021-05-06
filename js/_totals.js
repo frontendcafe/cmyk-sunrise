@@ -156,13 +156,13 @@ export async function dbGetTotalSales() {
       // simulate 0 sales:
       // summarySales.length=0;
       // test for a lot of sales:
-      for (let index = 0; index < 250; index++) {
-        const amount = Math.floor(Math.random() * 1500);
-        const quantity = Math.floor(Math.random() * 5 + 1);
-        const time = new Date();
-        const objSale = { amount, quantity, time };
-        summarySales.push(objSale);
-      }
+      // for (let index = 0; index < 250; index++) {
+      //   const amount = Math.floor(Math.random() * 1500);
+      //   const quantity = Math.floor(Math.random() * 5 + 1);
+      //   const time = new Date();
+      //   const objSale = { amount, quantity, time };
+      //   summarySales.push(objSale);
+      // }
 
       console.log('summarySales:', summarySales);
       totals.globalUnits = summarySales.reduce((acc, item) => (acc = acc + item.quantity), 0);
