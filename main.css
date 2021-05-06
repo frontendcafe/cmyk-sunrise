@@ -595,6 +595,9 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     padding-left: 5%;
   }
 }
@@ -617,18 +620,13 @@
   font-size: 1.9rem;
 }
 
-.header__menu nav {
-  float: right;
-  width: 45vw;
-}
-
 .header__menu nav ul {
   list-style: none;
 }
 
 .header__menu nav ul a {
   text-decoration: none;
-  padding-left: 3%;
+  cursor: pointer;
 }
 
 .header__menu nav ul a li {
@@ -641,6 +639,13 @@
     display: -ms-flexbox;
     display: flex;
     padding-right: 0%;
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header__menu {
+    font-size: 2.0rem;
   }
 }
 
