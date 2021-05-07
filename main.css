@@ -648,7 +648,10 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
+  }
+  .header__menu img {
+    height: 1.0rem;
   }
   .header__menu ul {
     margin-top: 25px;

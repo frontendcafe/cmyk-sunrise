@@ -75,7 +75,10 @@
 
     @media (min-width: $tablet-width) {
       display: flex;
-      font-size: 1.8rem;
+      font-size: 1.4rem;
+      img {
+        height: 1.0rem;
+      }
 
       ul {
         margin-top: 25px;
