@@ -15,7 +15,6 @@
     background-color: $card-bg-color;
     border-radius: 1.6rem;
     box-shadow: 0rem 1rem 2rem rgba(44, 37, 210, 0.05);
-
     @media (min-width: $tablet-width) {
       width: 25rem;
 
@@ -271,4 +270,16 @@
   // padding: 20px;
   border: 1px solid #888;
   width: 80%;
+}
+
+// Limit max cards per row
+.products {
+  min-width: 0;
+  max-width: $card-with-x3;
+}
+@media (min-width: $tablet-width) {
+  .products {
+    min-width: 0;
+    max-width: $desktop-card-with-x4;
+  }
 }
