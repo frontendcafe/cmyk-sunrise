@@ -31,8 +31,6 @@ export function renderTotals(whichPage) {
   }
 }
 
-
-
 // renderGlobalTotals: used in home page
 //      extract data from firebase DB
 function renderGlobalTotals() {
@@ -93,11 +91,13 @@ function updateProductsChosen() {
 
 export function onLoadTotalsConfig(whichPage) {
   const uiTotals = document.querySelector('.totals');
+
   uiTotals.dataset.layout = whichPage;
 
   // mobile layout references:
   const uiTotalsMobile = document.querySelector('.totals__mobile');
   const uiTotalsMobileTitle = document.querySelector('.totals__box--title');
+
   uiTotalsMobile.dataset.layout = whichPage;
   uiTotalsMobileTitle.dataset.layout = whichPage;
 
@@ -105,9 +105,15 @@ export function onLoadTotalsConfig(whichPage) {
   const uiSubtitleUnits = document.querySelector('.totals__subtitle--units');
   const uiTotalsDesktop = document.querySelector('.totals__desktop');
   const uiTotalsBox = document.querySelectorAll('.totals__box');
+  const uiSubtitleDesktop = document.querySelectorAll('.totals__subtitle--desktop');
+  const uiTotalsQuantity = document.querySelectorAll('.totals__quantity--desktop');
+  const uiTotalMoney = uiTotals.querySelectorAll('.totals__total-money');
 
   uiTotalsDesktop.dataset.layout = whichPage;
   uiTotalsBox.forEach((element) => (element.dataset.layout = whichPage));
+  uiSubtitleDesktop.forEach((element) => (element.dataset.layout = whichPage));
+  uiTotalsQuantity.forEach((element) => (element.dataset.layout = whichPage));
+  uiTotalMoney.forEach((element) => (element.dataset.layout = whichPage));
 
   switch (whichPage) {
     case 'products':
@@ -146,8 +152,19 @@ export async function dbGetTotalSales() {
         //console.log(registerSale);
         summarySales.push({ ...registerSale });
       });
+      // test:
+      // simulate 0 sales:
+      // summarySales.length=0;
+      // test for a lot of sales:
+      // for (let index = 0; index < 250; index++) {
+      //   const amount = Math.floor(Math.random() * 1500);
+      //   const quantity = Math.floor(Math.random() * 5 + 1);
+      //   const time = new Date();
+      //   const objSale = { amount, quantity, time };
+      //   summarySales.push(objSale);
+      // }
+
       console.log('summarySales:', summarySales);
-      //summarySales.length=0; //simulate 0 sales
       totals.globalUnits = summarySales.reduce((acc, item) => (acc = acc + item.quantity), 0);
       totals.globalTotalMoney = summarySales.reduce((acc, item) => (acc = acc + item.amount), 0);
       totals.globalSales = summarySales.length;
