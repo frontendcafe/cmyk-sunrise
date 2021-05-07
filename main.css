@@ -358,7 +358,8 @@
   border-radius: 0.8rem;
   height: 4.8rem;
   font-size: 2.4rem;
-  display: none;
+  display: block;
+  opacity: 50%;
 }
 
 @media (min-width: 768px) {
@@ -373,7 +374,7 @@
 }
 
 .register-sale-button--active {
-  display: block;
+  opacity: 100%;
 }
 
 .confirm-sale {

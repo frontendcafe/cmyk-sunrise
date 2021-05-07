@@ -10,10 +10,12 @@ function removeCurrentData(tableBody) {
   }
 }
 
+ 
 function showRegisterSaleButton() {
   const registerSaleButton = document.getElementById('register-sale');
   registerSaleButton.classList.add('register-sale-button--active');
-}
+  registerSaleButton.disabled=false;
+} 
 
 function populateTableWithNewData(tableBody) {
   const productsCard = document.querySelectorAll('.products__card');
@@ -79,14 +81,16 @@ function checkIfShowModalSale() {
 
   if (cantProducts > 0) {
     registerSaleButton.classList.add('register-sale-button--active');
+    registerSaleButton.disabled=false;
   } else {
     registerSaleButton.classList.remove('register-sale-button--active');
+    registerSaleButton.disabled=true;
   }
 }
 
 export function onLoadProducts() {
   const registerSaleButton = document.getElementById('register-sale');
-
+  registerSaleButton.disabled=true;
   const sectionConfirmSale = document.getElementById('section-confirm-sale');
   const tableBody = document.querySelector('.confirm-sale__table-body');
 
