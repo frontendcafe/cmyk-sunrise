@@ -57,8 +57,17 @@
         a {
           text-decoration: none;
           cursor: pointer;
+          img {
+            height: 16px;
+          }
           li {
             display: inline;
+            padding: 0 15px 0 0;
+            &:hover {
+              // border-bottom: 2px solid $light-brown;
+              // text-decoration: underline $light-brown ;
+              color: $light-brown;
+            }
           }
         }
       }
@@ -66,8 +75,11 @@
 
     @media (min-width: $tablet-width) {
       display: flex;
-      padding-right: 0%;
-      font-size: 1.3rem;
+      font-size: 1.8rem;
+
+      ul {
+        margin-top: 25px;
+      }
     }
     @media (min-width: $desktop-width) {
       font-size: 2.0rem;

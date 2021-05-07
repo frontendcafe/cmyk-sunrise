@@ -630,8 +630,17 @@
   cursor: pointer;
 }
 
+.header__menu nav ul a img {
+  height: 16px;
+}
+
 .header__menu nav ul a li {
   display: inline;
+  padding: 0 15px 0 0;
+}
+
+.header__menu nav ul a li:hover {
+  color: #ab9b7e;
 }
 
 @media (min-width: 768px) {
@@ -639,8 +648,10 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    padding-right: 0%;
-    font-size: 1.3rem;
+    font-size: 1.8rem;
+  }
+  .header__menu ul {
+    margin-top: 25px;
   }
 }
 
